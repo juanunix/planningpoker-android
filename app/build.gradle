@@ -1,13 +1,15 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
 
 android {
-  compileSdkVersion 24
-  buildToolsVersion "23.0.3"
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
     applicationId "com.beeva.planningpoker"
-    minSdkVersion 16
-    targetSdkVersion 24
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 1
     versionName "1.0"
   }
@@ -22,6 +24,24 @@ android {
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   testCompile 'junit:junit:4.12'
-  compile 'com.android.support:appcompat-v7:24.2.1'
-  compile 'com.android.support:design:24.2.1'
+
+  compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+  compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+  compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+
+  compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+  apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+
+  compile "com.google.firebase:firebase-core:$rootProject.ext.firebaseVersion"
+  compile "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
+  compile "com.google.firebase:firebase-database:$rootProject.ext.firebaseVersion"
+  compile "com.google.firebase:firebase-crash:$rootProject.ext.firebaseVersion"
+
+  apt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+  compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+  provided "javax.annotation:jsr250-api:$rootProject.ext.jsrVersion"
+
+  compile "org.greenrobot:eventbus:$rootProject.ext.eventBusVersion"
+  compile "de.hdodenhof:circleimageview:$rootProject.ext.circleImageViewVersion"
+  compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
 }
