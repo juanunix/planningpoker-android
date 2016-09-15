@@ -26,9 +26,14 @@ public abstract class BaseFragment extends Fragment {
     super.onViewCreated(view, savedInstanceState);
   }
 
-  private void setHeaderTitle(View view){
+  private void setHeaderTitle(View view) {
     if(getHeaderTitle() != 0) {
-      ((TextView) view.findViewById(R.id.txtHeaderTitle)).setText(getActivity().getString(getHeaderTitle()));
+      try{
+        ((TextView) view.findViewById(R.id.txtHeaderTitle)).setText(getActivity().getString(getHeaderTitle()));
+      }
+      catch (NullPointerException nullPointerException){
+        System.err.println(getActivity().getString(R.string.error_missing_header));
+      }
     }
   }
 }

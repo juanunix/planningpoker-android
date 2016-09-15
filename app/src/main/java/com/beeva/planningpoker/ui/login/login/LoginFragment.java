@@ -13,7 +13,6 @@ import com.beeva.planningpoker.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-
 public class LoginFragment extends BaseFragment {
   @BindView(R.id.txtHeaderTitle) TextView txtHeaderTitle;
   @BindView(R.id.etEmail) TextView etEmail;

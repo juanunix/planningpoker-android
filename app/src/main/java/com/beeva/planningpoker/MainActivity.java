@@ -88,7 +88,6 @@ public class MainActivity extends BaseActivity
     this.fragment = fragment;
     FragmentManager fm = getFragmentManager();
     fm.beginTransaction()
-        .addToBackStack(fragment.getClass().getSimpleName())
         .replace(R.id.container_main, fragment, fragment.getClass().getSimpleName())
         .commit();
   }
