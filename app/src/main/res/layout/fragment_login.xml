@@ -46,7 +46,7 @@
           android:layout_centerHorizontal="true"
           android:ems="10"
           android:hint="@string/login.message.password"
-          android:inputType="numberPassword"
+          android:inputType="textPassword"
           />
     </android.support.design.widget.TextInputLayout>
 

@@ -1,8 +1,7 @@
 package com.beeva.planningpoker.ui.login.login;
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,7 @@ import com.beeva.planningpoker.R;
  * A simple {@link Fragment} subclass.
  */
 
-public class LoginFragment extends BaseFragment{
+public class LoginFragment extends BaseFragment {
   @BindView(R.id.txtHeaderTitle) TextView txtHeaderTitle;
   @BindView(R.id.etEmail) TextView etEmail;
   @BindView(R.id.etPassword) TextView etPassword;
@@ -23,6 +22,11 @@ public class LoginFragment extends BaseFragment{
 
   public LoginFragment() {
     // Required empty public constructor
+  }
+
+  public static LoginFragment newInstance() {
+    LoginFragment fragment = new LoginFragment();
+    return fragment;
   }
 
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,5 +38,4 @@ public class LoginFragment extends BaseFragment{
   @Override protected int getHeaderTitle() {
     return R.string.login_header_title;
   }
-
 }
