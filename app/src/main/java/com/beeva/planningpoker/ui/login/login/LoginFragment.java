@@ -9,6 +9,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
+import com.beeva.planningpoker.di.MainComponent;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,11 +31,18 @@ public class LoginFragment extends BaseFragment {
 
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
     return inflater.inflate(R.layout.fragment_login, container, false);
   }
 
   @Override protected int getHeaderTitle() {
     return R.string.login_header_title;
+  }
+
+  @Override protected void initializePresenter() {
+
+  }
+
+  @Override protected void initializeDagger(MainComponent mainComponent) {
+
   }
 }

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
+import com.beeva.planningpoker.di.MainComponent;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,5 +29,13 @@ public class HowToPlayFragment extends BaseFragment {
 
   @Override protected int getHeaderTitle() {
     return R.string.howtoplay_header_title;
+  }
+
+  @Override protected void initializePresenter() {
+
+  }
+
+  @Override protected void initializeDagger(MainComponent mainComponent) {
+
   }
 }

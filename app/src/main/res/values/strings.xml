@@ -34,6 +34,11 @@
   <string name="label.share.facebook">Facebook</string>
   <string name="label.share.twitter">Twitter</string>
   <string name="label.share.google">Google+</string>
+  <string name="packageName.share.linkedin">com.linkedin.android</string>
+  <string name="packageName.share.facebook">com.facebook.katana</string>
+  <string name="packageName.share.twitter">com.twitter.android</string>
+  <string name="packageName.share.google">com.google.android.apps.plus</string>
+
 
 
   <!-- AboutApp -->

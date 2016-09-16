@@ -1,7 +1,5 @@
 package com.beeva.planningpoker;
 
-import android.support.annotation.Nullable;
-
 /**
  * Created by david.gonzalez on 15/9/16.
  */
