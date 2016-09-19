@@ -1,0 +1,97 @@
+package com.beeva.planningpoker.ui.settings;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
+import com.beeva.planningpoker.BaseFragment;
+import com.beeva.planningpoker.R;
+import com.beeva.planningpoker.di.MainComponent;
+import javax.inject.Inject;
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class SettingsFragment extends BaseFragment
+    implements SettingsPresenter.View, RadioGroup.OnCheckedChangeListener {
+  @BindView(R.id.cbKeepScreenOn) CheckBox cbKeepScreenOn;
+  @BindView(R.id.cbPressToShow) CheckBox cbPressToShow;
+  @BindView(R.id.cbShakeToShow) CheckBox cbShakeToShow;
+  @BindView(R.id.rgLanguage) RadioGroup rgLanguage;
+  @BindView(R.id.rbSpanish) RadioButton rbSpanish;
+  @BindView(R.id.rbEnglish) RadioButton rbEnglish;
+
+  @Inject SettingsPresenter presenter;
+
+  public SettingsFragment() {
+    // Required empty public constructor
+  }
+
+  public static SettingsFragment newInstance() {
+    return new SettingsFragment();
+  }
+
+  @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
+      Bundle savedInstanceState) {
+    final View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
+    ButterKnife.bind(this, rootView);
+
+    return rootView;
+  }
+
+  @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+    rgLanguage.setOnCheckedChangeListener(this);
+  }
+
+  @Override protected int getHeaderTitle() {
+    return R.string.settings_header_title;
+  }
+
+  @Override protected void initializePresenter() {
+    presenter.setView(this);
+    presenter.initialize();
+  }
+
+  @Override protected void initializeDagger(MainComponent mainComponent) {
+    mainComponent.inject(this);
+  }
+
+  @OnCheckedChanged(R.id.cbKeepScreenOn) public void onClickKeepScreenOn() {
+    presenter.onClickKeepScreenOn(cbKeepScreenOn.isChecked());
+  }
+
+  @OnCheckedChanged(R.id.cbPressToShow) public void onClickPressToShow() {
+    presenter.onClickPressToShow(cbPressToShow.isChecked());
+  }
+
+  @OnCheckedChanged(R.id.cbShakeToShow) public void onClickShakeToShow() {
+    presenter.onClickShakeToShow(cbKeepScreenOn.isChecked());
+  }
+
+  //TODO: Implement
+  @Override public void onCheckedChanged(RadioGroup group, int checkedId) {
+    RadioButton checkedRadioButton = (RadioButton) group.findViewById(checkedId);
+    presenter.onLanguageChanged();
+  }
+
+  @Override public void setCheckKeepScreenOn(boolean state) {
+    cbKeepScreenOn.setChecked(state);
+  }
+
+  @Override public void setCheckPressToShow(boolean state) {
+    cbPressToShow.setChecked(state);
+  }
+
+  @Override public void setCheckShakeToShow(boolean state) {
+    cbShakeToShow.setChecked(state);
+  }
+}

@@ -6,6 +6,7 @@ import com.beeva.planningpoker.Presenter;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.ui.aboutApp.AboutAppFragment;
 import com.beeva.planningpoker.ui.howToPlay.HowToPlayFragment;
+import com.beeva.planningpoker.ui.settings.SettingsFragment;
 import com.beeva.planningpoker.ui.share.ShareFragment;
 import javax.inject.Inject;
 
@@ -35,6 +36,7 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
       case R.id.nav_sizes_deck:
         break;
       case R.id.nav_settings:
+        fragment = SettingsFragment.newInstance();
         break;
       case R.id.nav_howToPlay:
         fragment = HowToPlayFragment.newInstance();
@@ -52,7 +54,7 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
         break;
     }
 
-    view.setFragment(fragment);
+    if (fragment != null) view.setFragment(fragment);
   }
 
   public interface View extends Presenter.View {
