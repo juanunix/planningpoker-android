@@ -1,6 +1,7 @@
 package com.beeva.planningpoker.di;
 
 import com.beeva.planningpoker.MainActivity;
+import com.beeva.planningpoker.ui.decks.DeckActivity;
 import com.beeva.planningpoker.ui.settings.SettingsFragment;
 import com.beeva.planningpoker.ui.share.ShareFragment;
 import dagger.Component;
@@ -11,6 +12,7 @@ import javax.inject.Singleton;
  */
 @Singleton @Component(modules = MainModule.class) public interface MainComponent {
   void inject(MainActivity mainActivity);
+  void inject(DeckActivity deckActivity);
 
   void inject(ShareFragment shareFragment);
   void inject(SettingsFragment settingsFragment);
