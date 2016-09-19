@@ -1,10 +1,12 @@
 package com.beeva.planningpoker.ui.login.login;
 
-
 import android.app.Fragment;
 import android.view.MenuItem;
 import com.beeva.planningpoker.Presenter;
 import com.beeva.planningpoker.R;
+import com.beeva.planningpoker.ui.aboutApp.AboutAppFragment;
+import com.beeva.planningpoker.ui.howToPlay.HowToPlayFragment;
+import com.beeva.planningpoker.ui.share.ShareFragment;
 import javax.inject.Inject;
 
 /**
@@ -24,24 +26,36 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
   }
 
   public void onNavigationItemSelected(MenuItem item) {
-    Fragment fragment;
+    Fragment fragment = null;
     int id = item.getItemId();
 
-    switch (id){
-      case R.id.nav_numbers_deck: break;
-      case R.id.nav_sizes_deck: break;
-      case R.id.nav_settings: break;
-      case R.id.nav_howToPlay: break;
-      case R.id.nav_share: break;
-      case R.id.nav_aboutApp: break;
-      case R.id.nav_logOut: break;
+    switch (id) {
+      case R.id.nav_numbers_deck:
+        break;
+      case R.id.nav_sizes_deck:
+        break;
+      case R.id.nav_settings:
+        break;
+      case R.id.nav_howToPlay:
+        fragment = HowToPlayFragment.newInstance();
+        break;
+      case R.id.nav_share:
+        fragment = ShareFragment.newInstance();
+        break;
+      case R.id.nav_aboutApp:
+        fragment = AboutAppFragment.newInstance();
+        break;
+      case R.id.nav_logOut:
+        break;
+      default:
+        fragment = LoginFragment.newInstance();
+        break;
     }
 
-    fragment = LoginFragment.newInstance();
     view.setFragment(fragment);
   }
 
-  public interface View extends Presenter.View{
+  public interface View extends Presenter.View {
     void setFragment(Fragment fragment);
   }
 }

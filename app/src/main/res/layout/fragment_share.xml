@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.beeva.planningpoker.ui.share.ShareFragment"
+    >
+  <include layout="@layout/item_layout_header_title"/>
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+      <TextView
+          android:id="@+id/txtShare"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/lorem.long"
+          android:textSize="35sp"
+          />
+
+      <include layout="@layout/item_layout_share_social"/>
+
+    </LinearLayout>
+  </ScrollView>
+
+</LinearLayout>
