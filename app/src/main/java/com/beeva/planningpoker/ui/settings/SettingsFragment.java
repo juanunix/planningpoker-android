@@ -15,6 +15,7 @@ import butterknife.OnCheckedChanged;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.manager.language.LanguageEnum;
 import javax.inject.Inject;
 
 /**
@@ -77,10 +78,19 @@ public class SettingsFragment extends BaseFragment
     presenter.onClickShakeToShow(cbKeepScreenOn.isChecked());
   }
 
-  //TODO: Implement
   @Override public void onCheckedChanged(RadioGroup group, int checkedId) {
-    RadioButton checkedRadioButton = (RadioButton) group.findViewById(checkedId);
-    presenter.onLanguageChanged();
+
+    switch (checkedId) {
+      case R.id.rbEnglish:
+        presenter.onLanguageChanged(LanguageEnum.ENGLISH);
+        break;
+      case R.id.rbSpanish:
+        presenter.onLanguageChanged(LanguageEnum.SPANISH);
+        break;
+      default:
+        presenter.onLanguageChanged(LanguageEnum.getDefaultLanguage());
+        break;
+    }
   }
 
   @Override public void setCheckKeepScreenOn(boolean state) {
@@ -93,5 +103,19 @@ public class SettingsFragment extends BaseFragment
 
   @Override public void setCheckShakeToShow(boolean state) {
     cbShakeToShow.setChecked(state);
+  }
+
+  @Override public void setRadioButtonLanguage(LanguageEnum language) {
+    switch (language) {
+      case ENGLISH:
+        rbEnglish.setChecked(true);
+        break;
+      case SPANISH:
+        rbSpanish.setChecked(true);
+        break;
+      default:
+        rbEnglish.setChecked(true);
+        break;
+    }
   }
 }

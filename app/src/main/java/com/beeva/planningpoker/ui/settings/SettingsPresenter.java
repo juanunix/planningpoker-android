@@ -1,6 +1,8 @@
 package com.beeva.planningpoker.ui.settings;
 
 import com.beeva.planningpoker.Presenter;
+import com.beeva.planningpoker.manager.language.LanguageEnum;
+import com.beeva.planningpoker.manager.language.LanguageManager;
 import com.beeva.planningpoker.model.DataRepository;
 import javax.inject.Inject;
 
@@ -10,6 +12,7 @@ import javax.inject.Inject;
 public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
 
   @Inject DataRepository dataRepository;
+  @Inject LanguageManager languageManager;
   private View view;
 
   @Inject public SettingsPresenter() {
@@ -23,6 +26,7 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
     view.setCheckKeepScreenOn(dataRepository.isKeepScreenOn());
     view.setCheckPressToShow(dataRepository.isPressToShow());
     view.setCheckShakeToShow(dataRepository.isShakeToShow());
+    view.setRadioButtonLanguage(dataRepository.getAppLanguage());
   }
 
   public void onClickKeepScreenOn(boolean checked) {
@@ -37,9 +41,9 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
     dataRepository.setShakeToShow(checked);
   }
 
-  //TODO: Implement
-  public void onLanguageChanged() {
-
+  public void onLanguageChanged(LanguageEnum language) {
+    languageManager.changeLocale(language);
+    dataRepository.setAppLanguage(language);
   }
 
   public interface View extends Presenter.View {
@@ -48,5 +52,7 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
     void setCheckPressToShow(boolean state);
 
     void setCheckShakeToShow(boolean state);
+
+    void setRadioButtonLanguage(LanguageEnum language);
   }
 }
