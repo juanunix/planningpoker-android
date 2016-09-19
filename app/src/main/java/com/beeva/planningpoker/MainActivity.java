@@ -1,15 +1,16 @@
 package com.beeva.planningpoker;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import com.beeva.planningpoker.application.PlanningPokerAplication;
+import com.beeva.planningpoker.di.MainComponent;
 import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
 import javax.inject.Inject;
 
@@ -28,9 +29,8 @@ public class MainActivity extends BaseActivity
     return R.layout.activity_main;
   }
 
-  @Override protected void initializeDagger() {
-    PlanningPokerAplication app = (PlanningPokerAplication) getApplication();
-    app.getMainComponent().inject(this);
+  @Override protected void initializeDagger(MainComponent mainComponent) {
+    mainComponent.inject(this);
   }
 
   @Override protected void initializePresenter() {
@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivity
     navigationView.setNavigationItemSelectedListener(this);
   }
 
-  @Override public boolean onNavigationItemSelected(MenuItem item) {
+  @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
     presenter.onNavigationItemSelected(item);
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -72,23 +72,10 @@ public class MainActivity extends BaseActivity
     }
   }
 
-  @Override public void showProgress(int resourceMessage) {
-
-  }
-
-  @Override public void hideLoading() {
-
-  }
-
-  @Override public void showToast(int resourceMessage) {
-
-  }
-
   @Override public void setFragment(Fragment fragment) {
     this.fragment = fragment;
     FragmentManager fm = getFragmentManager();
     fm.beginTransaction()
-        .addToBackStack(fragment.getClass().getSimpleName())
         .replace(R.id.container_main, fragment, fragment.getClass().getSimpleName())
         .commit();
   }
