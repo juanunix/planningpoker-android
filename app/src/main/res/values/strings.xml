@@ -28,6 +28,15 @@
   <!-- How to play -->
   <string name="howtoplay.header.title">How to play</string>
 
+  <!-- Settings -->
+  <string name="settings.header.title">Settings</string>
+  <string name="settings.label.language">Language</string>
+  <string name="settings.label.language.spanish">ES</string>
+  <string name="settings.label.language.english">EN</string>
+  <string name="settings.label.keep_screen_on">Keep screen on</string>
+  <string name="settings.label.press_to_show">Push to show</string>
+  <string name="settings.label.shake_to_show">Shake to show</string>
+
   <!-- Share -->
   <string name="share.header.title">Share</string>
   <string name="label.share.linkedin">LinkedIn</string>
@@ -38,8 +47,6 @@
   <string name="packageName.share.facebook">com.facebook.katana</string>
   <string name="packageName.share.twitter">com.twitter.android</string>
   <string name="packageName.share.google">com.google.android.apps.plus</string>
-
-
 
   <!-- AboutApp -->
   <string name="aboutapp.header.title">How to play</string>
