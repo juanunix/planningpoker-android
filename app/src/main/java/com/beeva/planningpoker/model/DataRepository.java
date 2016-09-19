@@ -1,39 +1,14 @@
 package com.beeva.planningpoker.model;
 
-import javax.inject.Inject;
+import com.beeva.planningpoker.manager.SharedPreferences;
 
 /**
  * Created by david.gonzalez on 19/9/16.
  */
-public class DataRepository implements DataRepositoryAppConfigInput, DataRepositoryAppConfigOutput {
+public class DataRepository extends DataRepositoryAppConfig {
 
-  @Inject DataRepositoryAppConfig dataRepositoryAppConfig;
-
-  public DataRepository(DataRepositoryAppConfig dataRepositoryAppConfig) {
-    this.dataRepositoryAppConfig = dataRepositoryAppConfig;
+  public DataRepository(SharedPreferences sharedPreferences) {
+    super(sharedPreferences);
   }
 
-  @Override public boolean isKeepScreenOn() {
-    return dataRepositoryAppConfig.isKeepScreenOn();
-  }
-
-  @Override public void setKeepScreenOn(boolean state) {
-    dataRepositoryAppConfig.setKeepScreenOn(state);
-  }
-
-  @Override public boolean isPressToShow() {
-    return dataRepositoryAppConfig.isPressToShow();
-  }
-
-  @Override public void setPressToShow(boolean state) {
-    dataRepositoryAppConfig.setPressToShow(state);
-  }
-
-  @Override public boolean isShakeToShow() {
-    return dataRepositoryAppConfig.isShakeToShow();
-  }
-
-  @Override public void setShakeToShow(boolean state) {
-    dataRepositoryAppConfig.setShakeToShow(state);
-  }
 }

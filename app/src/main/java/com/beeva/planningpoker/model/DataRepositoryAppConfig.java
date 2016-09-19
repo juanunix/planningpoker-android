@@ -1,6 +1,7 @@
 package com.beeva.planningpoker.model;
 
 import com.beeva.planningpoker.manager.SharedPreferences;
+import com.beeva.planningpoker.manager.language.LanguageEnum;
 import javax.inject.Inject;
 
 /**
@@ -9,17 +10,26 @@ import javax.inject.Inject;
 
 interface DataRepositoryAppConfigInput {
   void setKeepScreenOn(boolean state);
+
   void setPressToShow(boolean state);
+
   void setShakeToShow(boolean state);
+
+  void setAppLanguage(LanguageEnum language);
 }
 
 interface DataRepositoryAppConfigOutput {
   boolean isKeepScreenOn();
+
   boolean isPressToShow();
+
   boolean isShakeToShow();
+
+  LanguageEnum getAppLanguage();
 }
 
-public class DataRepositoryAppConfig implements DataRepositoryAppConfigInput, DataRepositoryAppConfigOutput {
+public class DataRepositoryAppConfig
+    implements DataRepositoryAppConfigInput, DataRepositoryAppConfigOutput {
 
   @Inject SharedPreferences sharedPreferences;
 
@@ -49,5 +59,19 @@ public class DataRepositoryAppConfig implements DataRepositoryAppConfigInput, Da
 
   public void setShakeToShow(boolean state) {
     sharedPreferences.setBooleanPreference(SharedPreferences.SETTINGS_SHAKE_TO_SHOW, state);
+  }
+
+  @Override public LanguageEnum getAppLanguage() {
+    String language = sharedPreferences.getStringPreference(SharedPreferences.SETTINGS_LANGUAGE);
+
+    if (language != null) {
+      return LanguageEnum.valueOf(language);
+    } else {
+      return LanguageEnum.getDefaultLanguage();
+    }
+  }
+
+  @Override public void setAppLanguage(LanguageEnum language) {
+    sharedPreferences.setStringPreference(SharedPreferences.SETTINGS_LANGUAGE, language.toString());
   }
 }
