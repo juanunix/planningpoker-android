@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.beeva.planningpoker.ui.settings.SettingsFragment"
+    >
+  <include layout="@layout/item_layout_header_title"/>
+
+  <include layout="@layout/item_layout_settings_language"/>
+  <include layout="@layout/item_layout_settings_keepscreenon"/>
+  <include layout="@layout/item_layout_settings_presstoshow"/>
+  <include layout="@layout/item_layout_settings_shaketoshow"/>
+
+</LinearLayout>

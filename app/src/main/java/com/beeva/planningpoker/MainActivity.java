@@ -11,13 +11,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.ui.MainPresenter;
 import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
 import javax.inject.Inject;
 
 public class MainActivity extends BaseActivity
-    implements NavigationView.OnNavigationItemSelectedListener, DrawerPresenter.View {
+    implements NavigationView.OnNavigationItemSelectedListener, DrawerPresenter.View, MainPresenter.View {
 
-  @Inject DrawerPresenter presenter;
+  @Inject DrawerPresenter drawerPresenter;
+  @Inject MainPresenter mainPresenter;
   private Toolbar toolbar;
   private Fragment fragment;
 
@@ -34,8 +36,10 @@ public class MainActivity extends BaseActivity
   }
 
   @Override protected void initializePresenter() {
-    presenter.setView(this);
-    presenter.initialize();
+    drawerPresenter.setView(this);
+    drawerPresenter.initialize();
+    mainPresenter.setView(this);
+    mainPresenter.initialize();
   }
 
   @Override protected void initializeToolbar() {
@@ -56,7 +60,7 @@ public class MainActivity extends BaseActivity
   }
 
   @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-    presenter.onNavigationItemSelected(item);
+    drawerPresenter.onNavigationItemSelected(item);
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     drawer.closeDrawer(GravityCompat.START);
