@@ -1,5 +1,6 @@
 package com.beeva.planningpoker.di;
 
+import com.beeva.planningpoker.manager.language.LanguageManager;
 import com.beeva.planningpoker.manager.SharedPreferences;
 import com.beeva.planningpoker.model.DataRepository;
 import com.beeva.planningpoker.model.DataRepositoryAppConfig;
@@ -19,12 +20,12 @@ import javax.inject.Singleton;
   @Singleton public com.beeva.planningpoker.manager.SharedPreferences provideSharedPreferences() {
     return new SharedPreferences();
   }
+  @Provides @Singleton public LanguageManager provideLanguageManager() {
+    return new LanguageManager();
+  }
 
   @Provides @Singleton public DataRepository provideDataRepository() {
-    return new DataRepository(provideDataRepositoryAppConfig());
+    return new DataRepository(provideSharedPreferences());
   }
 
-  @Singleton public DataRepositoryAppConfig provideDataRepositoryAppConfig() {
-    return new DataRepositoryAppConfig(provideSharedPreferences());
-  }
 }
