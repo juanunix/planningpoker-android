@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.beeva.planningpoker.ui.splash.SplashActivity"
+    >
+
+  <com.beeva.corporate.TextView
+      android:id="@+id/tvBeeva"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:text="BEEVA"
+      android:textColor="@android:color/white"
+      android:textSize="30sp"
+      app:font="@string/font.corporative.black"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      >
+    <com.beeva.corporate.TextView
+        android:id="@+id/tvPlanning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:text="Planning"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        app:font="@string/font.corporative.book"
+        />
+
+    <Space
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        />
+
+    <com.beeva.corporate.TextView
+        android:id="@+id/tvPoker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:text="Poker"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        app:font="@string/font.corporative.black"
+        />
+
+  </LinearLayout>
+
+
+</RelativeLayout>
