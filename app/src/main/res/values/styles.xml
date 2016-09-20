@@ -13,6 +13,12 @@
     <item name="windowNoTitle">true</item>
   </style>
 
+  <style name="AppTheme.Menu" parent="AppTheme.NoActionBar">
+    <item name="android:textColorSecondary">@color/beeva.white</item>
+    <item name="android:activatedBackgroundIndicator">@drawable/selector_list_menu_background</item>
+    <!--<item name="android:listDivider">@android:drawable/divider_horizontal_bright</item>-->
+  </style>
+
   <style name="SplashTheme" parent="AppTheme.NoActionBar">
     <item name="android:windowBackground">@drawable/background_splash</item>
   </style>

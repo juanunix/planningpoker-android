@@ -16,7 +16,8 @@ import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
 import javax.inject.Inject;
 
 public class MainActivity extends BaseActivity
-    implements NavigationView.OnNavigationItemSelectedListener, DrawerPresenter.View, MainPresenter.View {
+    implements NavigationView.OnNavigationItemSelectedListener, DrawerPresenter.View,
+    MainPresenter.View {
 
   @Inject DrawerPresenter drawerPresenter;
   @Inject MainPresenter mainPresenter;
@@ -57,6 +58,7 @@ public class MainActivity extends BaseActivity
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
+    drawerPresenter.initializeMenu(this, navigationView);
   }
 
   @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
