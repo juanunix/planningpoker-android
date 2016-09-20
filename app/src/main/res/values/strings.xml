@@ -33,7 +33,7 @@
   <string name="decks.label.sizes">@string/label.menu.sizes</string>
 
   <!-- Settings -->
-  <string name="settings.header.title">Settings</string>
+  <string name="settings.header.title">@string/label.menu.settings</string>
   <string name="settings.label.language">Language</string>
   <string name="settings.label.language.spanish">ES</string>
   <string name="settings.label.language.english">EN</string>
@@ -42,7 +42,7 @@
   <string name="settings.label.shake_to_show">Shake to show</string>
 
   <!-- Share -->
-  <string name="share.header.title">Share</string>
+  <string name="share.header.title">@string/label.menu.share</string>
   <string name="label.share.linkedin">LinkedIn</string>
   <string name="label.share.facebook">Facebook</string>
   <string name="label.share.twitter">Twitter</string>
@@ -53,7 +53,7 @@
   <string name="packageName.share.google">com.google.android.apps.plus</string>
 
   <!-- AboutApp -->
-  <string name="aboutapp.header.title">How to play</string>
+  <string name="aboutapp.header.title">@string/label.menu.about_app</string>
 
   <!-- Console Errors -->
   <string name="error.missing.header">Missing header include</string>
@@ -61,7 +61,6 @@
   <!-- Dummy Data-->
   <string name="lorem.title.short">Lorem ipsum</string>
   <string name="lorem.long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis arcu sed risus pulvinar, sed pellentesque magna molestie. Mauris at ex dui. Aliquam congue ultricies metus sit amet ultrices. Nullam auctor, nunc in tempor pulvinar, augue leo efficitur lectus, ut mattis nisl tellus a nibh. Sed felis neque, porttitor sed viverra id, placerat sit amet erat. Aliquam pulvinar hendrerit dolor ut finibus. Nullam condimentum urna at dolor molestie, quis lobortis ante dictum.</string>
-
 
   <!-- Corporate Font Strings -->
   <string name="font.corporative.black">font_black.otf</string>
@@ -80,6 +79,5 @@
   <string name="font.corporative.thin.italic">font_thin_italic.otf</string>
   <string name="font.corporative.xbold">font_xbold.otf</string>
   <string name="font.corporative.xbold.italic">font_xbold_italic.otf</string>
-
 
 </resources>
