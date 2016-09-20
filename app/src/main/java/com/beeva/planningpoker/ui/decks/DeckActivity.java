@@ -40,6 +40,7 @@ public class DeckActivity extends BaseActivity implements DeckPresenter.View, On
     if (getSupportActionBar() != null) {
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
       getSupportActionBar().setDisplayShowHomeEnabled(true);
+      getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
   }
 

@@ -3,10 +3,15 @@
 
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>
-
   <string name="action_settings">Settings</string>
-
   <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+  <!-- Common Strings -->
+  <string name="beeva">BEEVA</string>
+  <string name="planning">planning</string>
+  <string name="poker">poker</string>
+  <string name="planning_poker">planning poker</string>
 
   <!-- NavDrawer -->
   <string name="label.menu.numbers">Numbers</string>

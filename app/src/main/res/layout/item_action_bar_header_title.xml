@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+  <com.beeva.corporate.TextView
+      android:id="@+id/tvBeeva"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:text="@string/beeva"
+      android:textColor="@android:color/white"
+      app:font="@string/font.corporative.black"
+      />
+
+  <Space
+      android:layout_width="10dp"
+      android:layout_height="wrap_content"
+      />
+
+  <com.beeva.corporate.TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:text="@string/planning_poker"
+      android:textAllCaps="true"
+      android:textColor="@android:color/white"
+      app:font="@string/font.corporative.book"
+      />
+</merge>

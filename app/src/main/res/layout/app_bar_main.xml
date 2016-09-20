@@ -21,10 +21,11 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/AppTheme.PopupOverlay"
-        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-
         >
+
+      <include layout="@layout/item_action_bar_header_title"/>
 
     </android.support.v7.widget.Toolbar>
 

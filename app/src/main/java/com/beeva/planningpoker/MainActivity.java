@@ -46,6 +46,10 @@ public class MainActivity extends BaseActivity
   @Override protected void initializeToolbar() {
     toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
+
+    if (getSupportActionBar() != null) {
+      getSupportActionBar().setDisplayShowTitleEnabled(false);
+    }
   }
 
   @SuppressWarnings("deprecation") @Override protected void initializeDrawer() {

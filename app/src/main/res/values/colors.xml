@@ -5,7 +5,8 @@
   <color name="colorAccent">#FF4081</color>
 
   <color name="beeva.gray">#2F2E32</color>
-  <color name="beeva.yellow">#FFD539</color>
+  <color name="beeva.gray.dark">#2F272B</color>
   <color name="beeva.white">#FFFFFF</color>
+  <color name="beeva.yellow">#FFD539</color>
 
 </resources>
