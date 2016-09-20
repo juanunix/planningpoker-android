@@ -27,6 +27,11 @@
   <!-- How to play -->
   <string name="howtoplay.header.title">How to play</string>
 
+  <!-- Decks -->
+  <string name="decks.label.title">Choose a deck type</string>
+  <string name="decks.label.numbers">@string/label.menu.numbers</string>
+  <string name="decks.label.sizes">@string/label.menu.sizes</string>
+
   <!-- Settings -->
   <string name="settings.header.title">Settings</string>
   <string name="settings.label.language">Language</string>

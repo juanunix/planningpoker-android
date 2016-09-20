@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import com.beeva.planningpoker.Presenter;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.ui.aboutApp.AboutAppFragment;
+import com.beeva.planningpoker.ui.decks.DecksFragment;
 import com.beeva.planningpoker.ui.howToPlay.HowToPlayFragment;
 import com.beeva.planningpoker.ui.settings.SettingsFragment;
 import com.beeva.planningpoker.ui.share.ShareFragment;
@@ -32,8 +33,10 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
 
     switch (id) {
       case R.id.nav_numbers_deck:
+        fragment = DecksFragment.newInstance();
         break;
       case R.id.nav_sizes_deck:
+        fragment = DecksFragment.newInstance();
         break;
       case R.id.nav_settings:
         fragment = SettingsFragment.newInstance();
