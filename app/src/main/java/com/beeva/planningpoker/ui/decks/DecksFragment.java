@@ -52,7 +52,6 @@ public class DecksFragment extends BaseFragment {
     unbinder.unbind();
   }
 
-
   @OnClick(R.id.btnNumbers) public void onClickBtnNumbers() {
     navigateToDeckActivity(DeckEnum.NUMBERS);
   }

@@ -13,9 +13,12 @@ import javax.inject.Singleton;
  */
 @Singleton @Component(modules = MainModule.class) public interface MainComponent {
   void inject(SplashActivity splashActivity);
+
   void inject(MainActivity mainActivity);
+
   void inject(DeckActivity deckActivity);
 
   void inject(ShareFragment shareFragment);
+
   void inject(SettingsFragment settingsFragment);
 }

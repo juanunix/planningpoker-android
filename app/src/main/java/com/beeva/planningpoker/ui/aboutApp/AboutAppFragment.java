@@ -42,5 +42,4 @@ public class AboutAppFragment extends BaseFragment {
   @Override protected void unbindButterknife() {
 
   }
-
 }

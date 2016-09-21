@@ -1,10 +1,8 @@
 package com.beeva.planningpoker.ui.share;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import com.beeva.planningpoker.Presenter;
-import com.beeva.planningpoker.application.PlanningPokerAplication;
 import java.util.List;
 import javax.inject.Inject;
 

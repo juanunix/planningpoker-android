@@ -22,7 +22,7 @@ public class SplashPresenter extends Presenter<SplashPresenter.View> {
   @Override public void initialize() {
     super.initialize();
     view = getView();
-    
+
     languageManager.changeLocale(dataRepository.getAppLanguage());
   }
 
@@ -33,7 +33,9 @@ public class SplashPresenter extends Presenter<SplashPresenter.View> {
 
   public interface View extends Presenter.View {
     void startAnimation();
+
     void startTimer();
+
     void navigateToMainActivity();
   }
 }

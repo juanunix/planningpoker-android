@@ -10,8 +10,7 @@ import android.text.style.TypefaceSpan;
  * Created by david.gonzalez on 20/9/16.
  */
 
-@SuppressLint("ParcelCreator")
-public class CustomTypefaceSpan extends TypefaceSpan {
+@SuppressLint("ParcelCreator") public class CustomTypefaceSpan extends TypefaceSpan {
 
   private final Typeface newType;
 
@@ -48,6 +47,4 @@ public class CustomTypefaceSpan extends TypefaceSpan {
   @Override public void updateMeasureState(TextPaint paint) {
     applyCustomTypeFace(paint, newType);
   }
-
-
 }

@@ -45,7 +45,8 @@ public class LanguageManager {
   }
 
   @TargetApi(Build.VERSION_CODES.N)
-  private Configuration getConfigurationLocalized(Configuration configuration, LanguageEnum languageEnum) {
+  private Configuration getConfigurationLocalized(Configuration configuration,
+      LanguageEnum languageEnum) {
     switch (languageEnum) {
       case SPANISH:
         configuration.getLocales().indexOf(new Locale(LOCALE_SPANISH));

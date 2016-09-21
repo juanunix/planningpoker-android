@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import butterknife.Unbinder;
 import com.beeva.planningpoker.application.PlanningPokerAplication;
 import com.beeva.planningpoker.di.MainComponent;
 

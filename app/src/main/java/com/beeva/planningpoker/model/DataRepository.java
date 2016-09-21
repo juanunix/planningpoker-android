@@ -10,5 +10,4 @@ public class DataRepository extends DataRepositoryAppConfig {
   public DataRepository(SharedPreferences sharedPreferences) {
     super(sharedPreferences);
   }
-
 }

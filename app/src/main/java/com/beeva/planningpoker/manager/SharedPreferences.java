@@ -2,7 +2,6 @@ package com.beeva.planningpoker.manager;
 
 import android.content.Context;
 import com.beeva.planningpoker.application.PlanningPokerAplication;
-import java.util.Locale;
 
 /**
  * Created by david.gonzalez on 19/9/16.
@@ -10,13 +9,11 @@ import java.util.Locale;
 
 public class SharedPreferences {
 
-  private static final String SHARED_PREFERENCES_ENVIROMENT = "SharedPrefsEnviroment";
-
   public static final String SETTINGS_LANGUAGE = "language";
   public static final String SETTINGS_KEEP_SCREEN_ON = "keepScreenOn";
   public static final String SETTINGS_PUSH_TO_SHOW = "pushToShow";
   public static final String SETTINGS_SHAKE_TO_SHOW = "shakeToShow";
-
+  private static final String SHARED_PREFERENCES_ENVIROMENT = "SharedPrefsEnviroment";
   android.content.SharedPreferences sharedPreferences = getSharedPreferences();
 
   private android.content.SharedPreferences getSharedPreferences() {
