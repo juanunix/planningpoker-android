@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import butterknife.Unbinder;
 import com.beeva.planningpoker.application.PlanningPokerAplication;
 import com.beeva.planningpoker.di.MainComponent;
 
@@ -34,8 +35,6 @@ public abstract class BaseFragment extends Fragment implements Presenter.View {
     }
   }
 
-
-
   @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
     initializeDagger(((PlanningPokerAplication) getActivity().getApplication()).getMainComponent());
     initializePresenter();
@@ -43,6 +42,11 @@ public abstract class BaseFragment extends Fragment implements Presenter.View {
     setHeaderTitle(view);
 
     super.onViewCreated(view, savedInstanceState);
+  }
+
+  @Override public void onDestroyView() {
+    unbindButterknife();
+    super.onDestroyView();
   }
 
   @Override public void showProgress(int resourceMessage) {
@@ -61,4 +65,6 @@ public abstract class BaseFragment extends Fragment implements Presenter.View {
   protected abstract void initializePresenter();
 
   protected abstract void initializeDagger(MainComponent mainComponent);
+
+  protected abstract void unbindButterknife();
 }

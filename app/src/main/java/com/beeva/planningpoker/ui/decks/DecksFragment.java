@@ -8,16 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
-import com.beeva.planningpoker.ui.aboutApp.AboutAppFragment;
 import com.beeva.planningpoker.utils.BundleConstants;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class DecksFragment extends BaseFragment {
+
+  private Unbinder unbinder;
 
   public DecksFragment() {
     // Required empty public constructor
@@ -30,7 +32,7 @@ public class DecksFragment extends BaseFragment {
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     final View rootView = inflater.inflate(R.layout.fragment_decks, container, false);
-    ButterKnife.bind(this, rootView);
+    unbinder = ButterKnife.bind(this, rootView);
 
     return rootView;
   }
@@ -45,6 +47,11 @@ public class DecksFragment extends BaseFragment {
 
   @Override protected void initializeDagger(MainComponent mainComponent) {
   }
+
+  @Override protected void unbindButterknife() {
+    unbinder.unbind();
+  }
+
 
   @OnClick(R.id.btnNumbers) public void onClickBtnNumbers() {
     navigateToDeckActivity(DeckEnum.NUMBERS);

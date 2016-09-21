@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
+import butterknife.Unbinder;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
@@ -32,6 +33,8 @@ public class SettingsFragment extends BaseFragment
 
   @Inject SettingsPresenter presenter;
 
+  private Unbinder unbinder;
+
   public SettingsFragment() {
     // Required empty public constructor
   }
@@ -43,7 +46,7 @@ public class SettingsFragment extends BaseFragment
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     final View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
-    ButterKnife.bind(this, rootView);
+    unbinder = ButterKnife.bind(this, rootView);
 
     return rootView;
   }
@@ -64,6 +67,10 @@ public class SettingsFragment extends BaseFragment
 
   @Override protected void initializeDagger(MainComponent mainComponent) {
     mainComponent.inject(this);
+  }
+
+  @Override protected void unbindButterknife() {
+    unbinder.unbind();
   }
 
   @OnCheckedChanged(R.id.cbKeepScreenOn) public void onClickKeepScreenOn() {
