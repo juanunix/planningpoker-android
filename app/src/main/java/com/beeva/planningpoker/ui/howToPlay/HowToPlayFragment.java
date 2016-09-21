@@ -38,4 +38,8 @@ public class HowToPlayFragment extends BaseFragment {
   @Override protected void initializeDagger(MainComponent mainComponent) {
 
   }
+
+  @Override protected void unbindButterknife() {
+
+  }
 }

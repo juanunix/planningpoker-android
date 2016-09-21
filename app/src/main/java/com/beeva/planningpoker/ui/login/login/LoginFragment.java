@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
@@ -20,6 +22,8 @@ public class LoginFragment extends BaseFragment {
   @BindView(R.id.etPassword) TextView etPassword;
   @BindView(R.id.btnSignin) TextView btnSignin;
 
+  private Unbinder unbinder;
+
   public LoginFragment() {
     // Required empty public constructor
   }
@@ -31,7 +35,10 @@ public class LoginFragment extends BaseFragment {
 
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    return inflater.inflate(R.layout.fragment_login, container, false);
+    final View rootView = inflater.inflate(R.layout.fragment_login, container, false);
+    unbinder = ButterKnife.bind(this, rootView);
+
+    return rootView;
   }
 
   @Override protected int getHeaderTitle() {
@@ -45,4 +52,9 @@ public class LoginFragment extends BaseFragment {
   @Override protected void initializeDagger(MainComponent mainComponent) {
 
   }
+
+  @Override protected void unbindButterknife() {
+    unbinder.unbind();
+  }
+
 }

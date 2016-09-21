@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
@@ -20,6 +21,8 @@ public class ShareFragment extends BaseFragment implements SharePresenter.View {
 
   @Inject SharePresenter presenter;
 
+  private Unbinder unbinder;
+
   public ShareFragment() {
   }
 
@@ -30,7 +33,7 @@ public class ShareFragment extends BaseFragment implements SharePresenter.View {
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     final View rootView = inflater.inflate(R.layout.fragment_share, container, false);
-    ButterKnife.bind(this, rootView);
+    unbinder = ButterKnife.bind(this, rootView);
 
     return rootView;
   }
@@ -46,6 +49,10 @@ public class ShareFragment extends BaseFragment implements SharePresenter.View {
 
   @Override protected void initializeDagger(MainComponent mainComponent) {
     mainComponent.inject(this);
+  }
+
+  @Override protected void unbindButterknife() {
+    unbinder.unbind();
   }
 
   @OnClick(R.id.btnLinkedIn) @Override public void onClickLinkedIn() {
