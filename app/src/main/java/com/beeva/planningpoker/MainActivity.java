@@ -2,6 +2,7 @@ package com.beeva.planningpoker;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -10,9 +11,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.beeva.planningpoker.di.MainComponent;
 import com.beeva.planningpoker.ui.MainPresenter;
+import com.beeva.planningpoker.ui.decks.DeckActivity;
+import com.beeva.planningpoker.ui.decks.DeckEnum;
+import com.beeva.planningpoker.ui.decks.DecksFragment;
 import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
+import com.beeva.planningpoker.utils.BundleConstants;
 import javax.inject.Inject;
 
 public class MainActivity extends BaseActivity
@@ -21,11 +28,25 @@ public class MainActivity extends BaseActivity
 
   @Inject DrawerPresenter drawerPresenter;
   @Inject MainPresenter mainPresenter;
+
+  @BindView(R.id.nav_view) NavigationView nav_view;
+
   private Toolbar toolbar;
   private Fragment fragment;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    ButterKnife.bind(this);
+  }
+
+  @Override protected void onResume() {
+    super.onRestart();
+    setFragment(DecksFragment.newInstance());
+
+    int size = nav_view.getMenu().size();
+    for (int i = 0; i < size; i++) {
+      nav_view.getMenu().getItem(i).setChecked(false);
+    }
   }
 
   @Override protected int getLayoutId() {
@@ -88,5 +109,12 @@ public class MainActivity extends BaseActivity
     fm.beginTransaction()
         .replace(R.id.container_main, fragment, fragment.getClass().getSimpleName())
         .commit();
+  }
+
+  @Override public void navigateToDeckActivity(DeckEnum deckEnum) {
+    Intent intent = new Intent(this, DeckActivity.class);
+    intent.putExtra(BundleConstants.DECK_TYPE, deckEnum);
+
+    startActivity(intent);
   }
 }
