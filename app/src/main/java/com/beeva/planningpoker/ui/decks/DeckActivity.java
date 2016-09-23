@@ -3,6 +3,7 @@ package com.beeva.planningpoker.ui.decks;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,6 +16,8 @@ public class DeckActivity extends BaseActivity implements DeckPresenter.View, On
 
   @BindView(R.id.recyclerViewDeck) RecyclerView recyclerViewDeck;
   @Inject DeckPresenter presenter;
+
+  private Toolbar toolbar;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -37,6 +40,9 @@ public class DeckActivity extends BaseActivity implements DeckPresenter.View, On
   }
 
   @Override protected void initializeToolbar() {
+    toolbar = (Toolbar) findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+
     if (getSupportActionBar() != null) {
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
       getSupportActionBar().setDisplayShowHomeEnabled(true);

@@ -14,7 +14,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme.Menu">
     </activity>
-    <activity android:name=".ui.decks.DeckActivity">
+    <activity android:name=".ui.decks.DeckActivity"
+        android:theme="@style/AppTheme.NoActionBar">
     </activity>
     <activity
         android:name=".ui.splash.SplashActivity"
