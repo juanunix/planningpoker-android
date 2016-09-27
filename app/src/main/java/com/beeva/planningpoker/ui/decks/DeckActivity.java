@@ -1,18 +1,24 @@
 package com.beeva.planningpoker.ui.decks;
 
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.beeva.planningpoker.BaseActivity;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.utils.SpacesItemDecoration;
+import com.beeva.planningpoker.views.dialogs.PickedCardDialogFragment;
 import javax.inject.Inject;
 
-public class DeckActivity extends BaseActivity implements DeckPresenter.View, OnItemClickListener {
+public class DeckActivity extends BaseActivity
+    implements DeckPresenter.View, DeckAdapter.OnItemClickListener,
+    PickedCardDialogFragment.PickedCardDialogListener {
 
   @BindView(R.id.recyclerViewDeck) RecyclerView recyclerViewDeck;
   @Inject DeckPresenter presenter;
@@ -64,9 +70,12 @@ public class DeckActivity extends BaseActivity implements DeckPresenter.View, On
   }
 
   @Override public void prepareRecyclerView(int spanCount) {
+    int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.space_deck_gridLayout);
+
     GridLayoutManager gridLayoutManager = new GridLayoutManager(this, spanCount);
     recyclerViewDeck.setHasFixedSize(true);
     recyclerViewDeck.setLayoutManager(gridLayoutManager);
+    recyclerViewDeck.addItemDecoration(new SpacesItemDecoration(spacingInPixels));
   }
 
   @Override public void setDeckAdapter(DeckAdapter adapter) {
@@ -74,10 +83,19 @@ public class DeckActivity extends BaseActivity implements DeckPresenter.View, On
   }
 
   @Override public void onItemClick(Card card) {
-
+    DialogFragment dialog = new PickedCardDialogFragment();
+    dialog.show(getSupportFragmentManager(), "PickedCardDialogFragment");
   }
 
   @Override public void onItemLongClick(Card card) {
     //Do nothing
+  }
+
+  @Override public void onDialogPositiveClick(DialogFragment dialog) {
+
+  }
+
+  @Override public void onDialogNegativeClick(DialogFragment dialog) {
+
   }
 }

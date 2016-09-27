@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.ViewHolder> {
 
-  private List<Card> cardList; //RENAME
+  private List<Card> cardList;
   private OnItemClickListener onItemClickListener;
 
   public DeckAdapter(List<Card> cardList, OnItemClickListener onItemClickListener) {
@@ -48,6 +48,12 @@ public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.ViewHolder> {
 
   @Override public int getItemCount() {
     return cardList.size();
+  }
+
+  public interface OnItemClickListener {
+    void onItemClick(Card card);
+
+    void onItemLongClick(Card card);
   }
 
   public class ViewHolder extends RecyclerView.ViewHolder {

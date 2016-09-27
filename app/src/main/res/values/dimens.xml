@@ -9,4 +9,5 @@
 
 
   <dimen name="height.header.titleBar">40dp</dimen>
+  <dimen name="space.deck.gridLayout">10dp</dimen>
 </resources>
