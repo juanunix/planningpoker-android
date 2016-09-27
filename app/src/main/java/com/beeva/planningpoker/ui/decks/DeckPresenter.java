@@ -28,6 +28,7 @@ public class DeckPresenter extends Presenter<DeckPresenter.View> {
   //TODO: Remove mocked
   public void start(Intent intent, OnItemClickListener onItemClickListener) {
     DeckEnum deckEnum = ((DeckEnum) intent.getSerializableExtra(BundleConstants.DECK_TYPE));
+    int spanCount = deckEnum == DeckEnum.NUMBERS ? 4 : 3;
 
     //MOCK
     int limit = (deckEnum == DeckEnum.NUMBERS ? 14 : 8);
@@ -41,12 +42,12 @@ public class DeckPresenter extends Presenter<DeckPresenter.View> {
 
     DeckAdapter adapter = new DeckAdapter(cardList, onItemClickListener);
 
-    view.prepareRecyclerView();
+    view.prepareRecyclerView(spanCount);
     view.setDeckAdapter(adapter);
   }
 
   public interface View extends Presenter.View {
-    void prepareRecyclerView();
+    void prepareRecyclerView(int spanCount);
 
     void setDeckAdapter(DeckAdapter adapter);
   }

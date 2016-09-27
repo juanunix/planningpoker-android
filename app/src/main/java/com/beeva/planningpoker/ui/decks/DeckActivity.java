@@ -63,9 +63,10 @@ public class DeckActivity extends BaseActivity implements DeckPresenter.View, On
     return super.onOptionsItemSelected(item);
   }
 
-  @Override public void prepareRecyclerView() {
+  @Override public void prepareRecyclerView(int spanCount) {
+    GridLayoutManager gridLayoutManager = new GridLayoutManager(this, spanCount);
     recyclerViewDeck.setHasFixedSize(true);
-    recyclerViewDeck.setLayoutManager(new GridLayoutManager(this, 3));
+    recyclerViewDeck.setLayoutManager(gridLayoutManager);
   }
 
   @Override public void setDeckAdapter(DeckAdapter adapter) {
