@@ -1,35 +1,31 @@
 package com.beeva.planningpoker.ui.decks;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.Toast;
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.beeva.planningpoker.BaseActivity;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
-import com.beeva.planningpoker.utils.SpacesItemDecoration;
 import com.beeva.planningpoker.views.dialogs.PickedCardDialogFragment;
-import javax.inject.Inject;
 
 public class DeckActivity extends BaseActivity
-    implements DeckPresenter.View, DeckAdapter.OnItemClickListener,
-    PickedCardDialogFragment.PickedCardDialogListener {
-
-  @BindView(R.id.recyclerViewDeck) RecyclerView recyclerViewDeck;
-  @Inject DeckPresenter presenter;
+    implements PickedCardDialogFragment.PickedCardDialogListener {
 
   private Toolbar toolbar;
+  private Fragment fragment;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     ButterKnife.bind(this);
+  }
 
-    presenter.start(getIntent(), this);
+  @Override protected void onResume() {
+    super.onResume();
+    setFragment(DeckChooseFragment.newInstance());
   }
 
   @Override protected int getLayoutId() {
@@ -41,8 +37,7 @@ public class DeckActivity extends BaseActivity
   }
 
   @Override protected void initializePresenter() {
-    presenter.setView(this);
-    presenter.initialize();
+
   }
 
   @Override protected void initializeToolbar() {
@@ -69,33 +64,19 @@ public class DeckActivity extends BaseActivity
     return super.onOptionsItemSelected(item);
   }
 
-  @Override public void prepareRecyclerView(int spanCount) {
-    int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.space_deck_gridLayout);
-
-    GridLayoutManager gridLayoutManager = new GridLayoutManager(this, spanCount);
-    recyclerViewDeck.setHasFixedSize(true);
-    recyclerViewDeck.setLayoutManager(gridLayoutManager);
-    recyclerViewDeck.addItemDecoration(new SpacesItemDecoration(spacingInPixels));
-  }
-
-  @Override public void setDeckAdapter(DeckAdapter adapter) {
-    recyclerViewDeck.setAdapter(adapter);
-  }
-
-  @Override public void onItemClick(Card card) {
-    DialogFragment dialog = new PickedCardDialogFragment();
-    dialog.show(getSupportFragmentManager(), "PickedCardDialogFragment");
-  }
-
-  @Override public void onItemLongClick(Card card) {
-    //Do nothing
+  public void setFragment(Fragment fragment) {
+    this.fragment = fragment;
+    FragmentManager fm = getFragmentManager();
+    fm.beginTransaction()
+        .replace(R.id.container_main, fragment, fragment.getClass().getSimpleName())
+        .commit();
   }
 
   @Override public void onDialogPositiveClick(DialogFragment dialog) {
-
+    ((PickedCardDialogFragment.PickedCardDialogListener) fragment).onDialogPositiveClick(dialog);
   }
 
   @Override public void onDialogNegativeClick(DialogFragment dialog) {
-
+    ((PickedCardDialogFragment.PickedCardDialogListener) fragment).onDialogNegativeClick(dialog);
   }
 }

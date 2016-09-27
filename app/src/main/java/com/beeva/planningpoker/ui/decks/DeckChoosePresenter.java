@@ -12,11 +12,11 @@ import javax.inject.Inject;
  * Created by dagonco on 19/9/16
  */
 
-public class DeckPresenter extends Presenter<DeckPresenter.View> {
+public class DeckChoosePresenter extends Presenter<DeckChoosePresenter.View> {
 
   private View view;
 
-  @Inject public DeckPresenter() {
+  @Inject public DeckChoosePresenter() {
 
   }
 

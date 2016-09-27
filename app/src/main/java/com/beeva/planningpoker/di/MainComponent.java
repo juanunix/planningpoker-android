@@ -2,6 +2,7 @@ package com.beeva.planningpoker.di;
 
 import com.beeva.planningpoker.MainActivity;
 import com.beeva.planningpoker.ui.decks.DeckActivity;
+import com.beeva.planningpoker.ui.decks.DeckChooseFragment;
 import com.beeva.planningpoker.ui.settings.SettingsFragment;
 import com.beeva.planningpoker.ui.share.ShareFragment;
 import com.beeva.planningpoker.ui.splash.SplashActivity;
@@ -21,4 +22,6 @@ import javax.inject.Singleton;
   void inject(ShareFragment shareFragment);
 
   void inject(SettingsFragment settingsFragment);
+
+  void inject(DeckChooseFragment deckChooseFragment);
 }
