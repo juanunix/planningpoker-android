@@ -1,4 +1,4 @@
-package com.beeva.planningpoker.ui.decks;
+package com.beeva.planningpoker.ui.decks.enums;
 
 /**
  * Created by dagonco on 19/9/16

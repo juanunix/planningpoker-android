@@ -1,4 +1,4 @@
-package com.beeva.planningpoker.ui.decks;
+package com.beeva.planningpoker.ui.decks.feature.mainDeck;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,6 +17,9 @@ import butterknife.Unbinder;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.ui.decks.model.Card;
+import com.beeva.planningpoker.ui.decks.views.DeckActivity;
+import com.beeva.planningpoker.ui.decks.adapter.DeckChooseAdapter;
 import com.beeva.planningpoker.utils.SpacesItemDecoration;
 import com.beeva.planningpoker.views.dialogs.PickedCardDialogFragment;
 import javax.inject.Inject;
@@ -25,7 +28,7 @@ import javax.inject.Inject;
  * A simple {@link Fragment} subclass.
  */
 public class DeckChooseFragment extends BaseFragment
-    implements DeckChoosePresenter.View, DeckAdapter.OnItemClickListener,
+    implements DeckChoosePresenter.View, DeckChooseAdapter.OnItemClickListener,
     PickedCardDialogFragment.PickedCardDialogListener {
 
   @Inject DeckChoosePresenter presenter;
@@ -86,7 +89,7 @@ public class DeckChooseFragment extends BaseFragment
     recyclerViewDeck.addItemDecoration(new SpacesItemDecoration(spacingInPixels));
   }
 
-  @Override public void setDeckAdapter(DeckAdapter adapter) {
+  @Override public void setDeckAdapter(DeckChooseAdapter adapter) {
     recyclerViewDeck.setAdapter(adapter);
   }
 

@@ -1,4 +1,4 @@
-package com.beeva.planningpoker.ui.decks;
+package com.beeva.planningpoker.ui.decks.model;
 
 /**
  * Created by david.gonzalez on 20/9/16.

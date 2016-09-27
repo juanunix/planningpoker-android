@@ -1,4 +1,4 @@
-package com.beeva.planningpoker.ui.decks;
+package com.beeva.planningpoker.ui.decks.adapter;
 
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
@@ -11,17 +11,18 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.application.PlanningPokerAplication;
+import com.beeva.planningpoker.ui.decks.model.Card;
 import java.util.List;
 
 /**
  * Created by david.gonzalez on 20/9/16.
  */
-public class DeckAdapter extends RecyclerView.Adapter<DeckAdapter.ViewHolder> {
+public class DeckChooseAdapter extends RecyclerView.Adapter<DeckChooseAdapter.ViewHolder> {
 
   private List<Card> cardList;
   private OnItemClickListener onItemClickListener;
 
-  public DeckAdapter(List<Card> cardList, OnItemClickListener onItemClickListener) {
+  public DeckChooseAdapter(List<Card> cardList, OnItemClickListener onItemClickListener) {
     this.cardList = cardList;
     this.onItemClickListener = onItemClickListener;
   }

@@ -1,4 +1,4 @@
-package com.beeva.planningpoker.ui.decks;
+package com.beeva.planningpoker.ui.decks.views;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -10,6 +10,7 @@ import butterknife.ButterKnife;
 import com.beeva.planningpoker.BaseActivity;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.ui.decks.feature.mainDeck.DeckChooseFragment;
 import com.beeva.planningpoker.views.dialogs.PickedCardDialogFragment;
 
 public class DeckActivity extends BaseActivity
