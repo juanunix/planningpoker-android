@@ -82,7 +82,7 @@ public class SettingsFragment extends BaseFragment
   }
 
   @OnCheckedChanged(R.id.cbShakeToShow) public void onClickShakeToShow() {
-    presenter.onClickShakeToShow(cbKeepScreenOn.isChecked());
+    presenter.onClickShakeToShow(cbShakeToShow.isChecked());
   }
 
   @Override public void onCheckedChanged(RadioGroup group, int checkedId) {
