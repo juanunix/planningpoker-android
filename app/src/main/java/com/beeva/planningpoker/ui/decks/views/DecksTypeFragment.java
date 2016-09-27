@@ -1,4 +1,4 @@
-package com.beeva.planningpoker.ui.decks;
+package com.beeva.planningpoker.ui.decks.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,21 +12,22 @@ import butterknife.Unbinder;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.ui.decks.enums.DeckEnum;
 import com.beeva.planningpoker.utils.BundleConstants;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DecksFragment extends BaseFragment {
+public class DecksTypeFragment extends BaseFragment {
 
   private Unbinder unbinder;
 
-  public DecksFragment() {
+  public DecksTypeFragment() {
     // Required empty public constructor
   }
 
-  public static DecksFragment newInstance() {
-    return new DecksFragment();
+  public static DecksTypeFragment newInstance() {
+    return new DecksTypeFragment();
   }
 
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -1,8 +1,11 @@
-package com.beeva.planningpoker.ui.decks;
+package com.beeva.planningpoker.ui.decks.feature.mainDeck;
 
 import android.content.Intent;
 import com.beeva.planningpoker.Presenter;
 import com.beeva.planningpoker.R;
+import com.beeva.planningpoker.ui.decks.model.Card;
+import com.beeva.planningpoker.ui.decks.adapter.DeckChooseAdapter;
+import com.beeva.planningpoker.ui.decks.enums.DeckEnum;
 import com.beeva.planningpoker.utils.BundleConstants;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +15,11 @@ import javax.inject.Inject;
  * Created by dagonco on 19/9/16
  */
 
-public class DeckPresenter extends Presenter<DeckPresenter.View> {
+public class DeckChoosePresenter extends Presenter<DeckChoosePresenter.View> {
 
   private View view;
 
-  @Inject public DeckPresenter() {
+  @Inject public DeckChoosePresenter() {
 
   }
 
@@ -26,8 +29,9 @@ public class DeckPresenter extends Presenter<DeckPresenter.View> {
   }
 
   //TODO: Remove mocked
-  public void start(Intent intent, OnItemClickListener onItemClickListener) {
+  public void start(Intent intent, DeckChooseAdapter.OnItemClickListener onItemClickListener) {
     DeckEnum deckEnum = ((DeckEnum) intent.getSerializableExtra(BundleConstants.DECK_TYPE));
+    int spanCount = deckEnum == DeckEnum.NUMBERS ? 4 : 3;
 
     //MOCK
     int limit = (deckEnum == DeckEnum.NUMBERS ? 14 : 8);
@@ -39,15 +43,14 @@ public class DeckPresenter extends Presenter<DeckPresenter.View> {
     }
     //END MOCK
 
-    DeckAdapter adapter = new DeckAdapter(cardList, onItemClickListener);
-
-    view.prepareRecyclerView();
+    DeckChooseAdapter adapter = new DeckChooseAdapter(cardList, onItemClickListener);
+    view.prepareRecyclerView(spanCount);
     view.setDeckAdapter(adapter);
   }
 
   public interface View extends Presenter.View {
-    void prepareRecyclerView();
+    void prepareRecyclerView(int spanCount);
 
-    void setDeckAdapter(DeckAdapter adapter);
+    void setDeckAdapter(DeckChooseAdapter adapter);
   }
 }

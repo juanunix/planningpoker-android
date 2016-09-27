@@ -85,4 +85,8 @@
   <string name="font.corporative.xbold">font_xbold.otf</string>
   <string name="font.corporative.xbold.italic">font_xbold_italic.otf</string>
 
+  <!-- Dialogs -->
+  <string name="dialog.title.card.picked">Are you sure you want to choose this card?</string>
+
+
 </resources>

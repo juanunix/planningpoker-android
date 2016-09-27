@@ -15,9 +15,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.beeva.planningpoker.di.MainComponent;
 import com.beeva.planningpoker.ui.MainPresenter;
-import com.beeva.planningpoker.ui.decks.DeckActivity;
-import com.beeva.planningpoker.ui.decks.DeckEnum;
-import com.beeva.planningpoker.ui.decks.DecksFragment;
+import com.beeva.planningpoker.ui.decks.views.DeckActivity;
+import com.beeva.planningpoker.ui.decks.enums.DeckEnum;
+import com.beeva.planningpoker.ui.decks.views.DecksTypeFragment;
 import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
 import com.beeva.planningpoker.utils.BundleConstants;
 import javax.inject.Inject;
@@ -41,7 +41,7 @@ public class MainActivity extends BaseActivity
 
   @Override protected void onResume() {
     super.onRestart();
-    setFragment(DecksFragment.newInstance());
+    setFragment(DecksTypeFragment.newInstance());
 
     int size = nav_view.getMenu().size();
     for (int i = 0; i < size; i++) {
