@@ -10,6 +10,7 @@ import butterknife.ButterKnife;
 import com.beeva.planningpoker.BaseActivity;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.ui.decks.feature.detail.DeckDetailFragment;
 import com.beeva.planningpoker.ui.decks.feature.mainDeck.DeckChooseFragment;
 import com.beeva.planningpoker.views.dialogs.PickedCardDialogFragment;
 
@@ -75,6 +76,7 @@ public class DeckActivity extends BaseActivity
 
   @Override public void onDialogPositiveClick(DialogFragment dialog) {
     ((PickedCardDialogFragment.PickedCardDialogListener) fragment).onDialogPositiveClick(dialog);
+    setFragment(DeckDetailFragment.newInstance());
   }
 
   @Override public void onDialogNegativeClick(DialogFragment dialog) {
