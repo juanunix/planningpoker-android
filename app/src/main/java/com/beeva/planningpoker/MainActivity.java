@@ -77,6 +77,10 @@ public class MainActivity extends BaseActivity
     }
   }
 
+  @Override protected int getHeaderTitle() {
+    return 0;
+  }
+
   @SuppressWarnings("deprecation") @Override protected void initializeDrawer() {
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
     ActionBarDrawerToggle toggle =

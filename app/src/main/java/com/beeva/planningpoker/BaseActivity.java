@@ -2,6 +2,8 @@ package com.beeva.planningpoker;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 import com.beeva.planningpoker.application.PlanningPokerAplication;
 import com.beeva.planningpoker.di.MainComponent;
 
@@ -18,6 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Presente
     initializePresenter();
     initializeToolbar();
     initializeDrawer();
+    setHeaderTitle(this);
   }
 
   @Override public void showProgress(int resourceMessage) {
@@ -32,6 +35,16 @@ public abstract class BaseActivity extends AppCompatActivity implements Presente
 
   }
 
+  private void setHeaderTitle(BaseActivity view) {
+    if (getHeaderTitle() != 0) {
+      try {
+        ((TextView) view.findViewById(R.id.txtHeaderTitle)).setText(getString(getHeaderTitle()));
+      } catch (NullPointerException nullPointerException) {
+        System.err.println(getString(R.string.error_missing_header));
+      }
+    }
+  }
+
   //Abstract Classes
   protected abstract int getLayoutId();
 
@@ -42,4 +55,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Presente
   protected abstract void initializeToolbar();
 
   protected abstract void initializeDrawer();
+
+  protected abstract int getHeaderTitle();
+
 }

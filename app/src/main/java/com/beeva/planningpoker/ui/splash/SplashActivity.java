@@ -57,6 +57,10 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
     //Do nothing
   }
 
+  @Override protected int getHeaderTitle() {
+    return 0;
+  }
+
   @Override public void startAnimation() {
     ViewCompat.animate(tvBeeva)
         .translationY(-25)
