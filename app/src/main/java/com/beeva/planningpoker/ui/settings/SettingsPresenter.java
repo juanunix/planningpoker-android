@@ -34,10 +34,12 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
   }
 
   public void onClickPressToShow(boolean checked) {
+    view.checkDefaultPressed();
     dataRepository.setPressToShow(checked);
   }
 
   public void onClickShakeToShow(boolean checked) {
+    view.checkDefaultPressed();
     dataRepository.setShakeToShow(checked);
   }
 
@@ -54,5 +56,7 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
     void setCheckShakeToShow(boolean state);
 
     void setRadioButtonLanguage(LanguageEnum language);
+
+    void checkDefaultPressed();
   }
 }

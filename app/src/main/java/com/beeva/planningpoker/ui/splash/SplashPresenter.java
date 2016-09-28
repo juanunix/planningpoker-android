@@ -22,13 +22,23 @@ public class SplashPresenter extends Presenter<SplashPresenter.View> {
   @Override public void initialize() {
     super.initialize();
     view = getView();
-
-    languageManager.changeLocale(dataRepository.getAppLanguage());
+    setAplicationLanguage();
+    checkDefaultSettings();
   }
 
   public void onStart() {
     view.startAnimation();
     view.startTimer();
+  }
+
+  private void setAplicationLanguage() {
+    languageManager.changeLocale(dataRepository.getAppLanguage());
+  }
+
+  private void checkDefaultSettings() {
+    if (!dataRepository.isPressToShow() && !dataRepository.isShakeToShow()) {
+      dataRepository.setPressToShow(true);
+    }
   }
 
   public interface View extends Presenter.View {
