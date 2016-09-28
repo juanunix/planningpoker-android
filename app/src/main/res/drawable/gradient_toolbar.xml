@@ -3,9 +3,9 @@
     android:shape="rectangle">
 
   <gradient
-      android:centerColor="@color/beeva.white.23opacity"
-      android:endColor="@color/beeva.black.23opacity"
-      android:startColor="@color/beeva.white.23opacity"
+      android:centerColor="@color/beeva.white.5opacity"
+      android:endColor="@color/beeva.black.5opacity"
+      android:startColor="@color/beeva.white.5opacity"
       android:gradientRadius="500"
       android:type="radial">
 

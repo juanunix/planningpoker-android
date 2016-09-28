@@ -5,7 +5,7 @@
     <!-- Customize your theme here. -->
     <item name="colorPrimary">@color/beeva.gray</item>
     <item name="colorPrimaryDark">@color/beeva.gray.dark</item>
-    <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorAccent">@color/beeva.yellow</item>
   </style>
 
   <style name="AppTheme.NoActionBar">
@@ -16,7 +16,7 @@
   <style name="AppTheme.Menu" parent="AppTheme.NoActionBar">
     <item name="android:textColorSecondary">@color/beeva.white</item>
     <item name="android:activatedBackgroundIndicator">@drawable/selector_list_menu_background</item>
-    <!--<item name="android:listDivider">@android:drawable/divider_horizontal_bright</item>-->
+    <item name="android:listDivider">@drawable/gradient_toolbar</item>
   </style>
 
   <style name="SplashTheme" parent="AppTheme.NoActionBar">

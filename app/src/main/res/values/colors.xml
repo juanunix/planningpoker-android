@@ -6,14 +6,14 @@
 
   <color name="beeva.black">#000000</color>
   <color name="beeva.black.78opacity">#C6000000</color>
-  <color name="beeva.black.23opacity">#3A000000</color>
+  <color name="beeva.black.5opacity">#15000000</color>
   <color name="beeva.gray.light">#6A6767</color>
   <color name="beeva.gray">#2F2E32</color>
   <color name="beeva.gray.separator">#524f5c</color>
   <color name="beeva.gray.dark">#2F272B</color>
   <color name="beeva.white">#FFFFFF</color>
   <color name="beeva.white.78opacity">#C6FFFFFF</color>
-  <color name="beeva.white.23opacity">#3AFFFFFF</color>
+  <color name="beeva.white.5opacity">#15FFFFFF</color>
   <color name="beeva.yellow">#FFD539</color>
 
 
