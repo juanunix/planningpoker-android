@@ -125,4 +125,12 @@ public class SettingsFragment extends BaseFragment
         break;
     }
   }
+
+  //TODO: Dialog
+  //We need cbPressToShow as default check
+  @Override public void checkDefaultPressed() {
+    if (!cbPressToShow.isChecked() && !cbShakeToShow.isChecked()) {
+      cbPressToShow.setChecked(true);
+    }
+  }
 }
