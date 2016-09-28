@@ -33,7 +33,7 @@
   <string name="howtoplay.header.title">How to play</string>
 
   <!-- Decks -->
-  <string name="decks.label.title">Choose a deck type</string>
+  <string name="decks.label.title">Choose a deck type: </string>
   <string name="decks.label.numbers">@string/label.menu.numbers</string>
   <string name="decks.label.sizes">@string/label.menu.sizes</string>
 
@@ -68,22 +68,10 @@
   <string name="lorem.long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis arcu sed risus pulvinar, sed pellentesque magna molestie. Mauris at ex dui. Aliquam congue ultricies metus sit amet ultrices. Nullam auctor, nunc in tempor pulvinar, augue leo efficitur lectus, ut mattis nisl tellus a nibh. Sed felis neque, porttitor sed viverra id, placerat sit amet erat. Aliquam pulvinar hendrerit dolor ut finibus. Nullam condimentum urna at dolor molestie, quis lobortis ante dictum.</string>
 
   <!-- Corporate Font Strings -->
-  <string name="font.corporative.black">font_black.otf</string>
-  <string name="font.corporative.black.italic">font_black_italic.otf</string>
-  <string name="font.corporative.bold">font_bold.otf</string>
-  <string name="font.corporative.bold.italic">font_bold_italic.otf</string>
-  <string name="font.corporative.book">font_book.otf</string>
-  <string name="font.corporative.book.italic">font_book_italic.otf</string>
+  <string name="font.avenir.book">avenir_book.otf</string>
+  <string name="font.avenir.heavy">avenir_heavy.otf</string>
   <string name="font.corporative.heavy">font_heavy.otf</string>
-  <string name="font.corporative.heavy.italic">font_heavy_italic.otf</string>
-  <string name="font.corporative.light">font_light.otf</string>
-  <string name="font.corporative.light.italic">font_light_italic.otf</string>
   <string name="font.corporative.regular">font_regular.otf</string>
-  <string name="font.corporative.regular.italic">font_regular_italic.otf</string>
-  <string name="font.corporative.thin">font_thin.otf</string>
-  <string name="font.corporative.thin.italic">font_thin_italic.otf</string>
-  <string name="font.corporative.xbold">font_xbold.otf</string>
-  <string name="font.corporative.xbold.italic">font_xbold_italic.otf</string>
 
   <!-- Dialogs -->
   <string name="dialog.title.card.picked">Are you sure you want to choose this card?</string>

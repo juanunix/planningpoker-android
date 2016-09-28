@@ -9,11 +9,12 @@
       android:text="@string/beeva"
       android:textAllCaps="true"
       android:textColor="@android:color/white"
-      app:font="@string/font.corporative.black"
+      app:font="@string/font.corporative.heavy"
+      style="@style/TextView"
       />
 
   <Space
-      android:layout_width="10dp"
+      android:layout_width="4dp"
       android:layout_height="wrap_content"
       />
 
@@ -23,7 +24,8 @@
       android:text="@string/planning_poker"
       android:textAllCaps="true"
       android:textColor="@android:color/white"
-      app:font="@string/font.corporative.book"
+      app:font="@string/font.corporative.regular"
+      style="@style/TextView"
       />
 
 </merge>

@@ -15,8 +15,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.beeva.planningpoker.di.MainComponent;
 import com.beeva.planningpoker.ui.MainPresenter;
-import com.beeva.planningpoker.ui.decks.views.DeckActivity;
 import com.beeva.planningpoker.ui.decks.enums.DeckEnum;
+import com.beeva.planningpoker.ui.decks.views.DeckActivity;
 import com.beeva.planningpoker.ui.decks.views.DecksTypeFragment;
 import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
 import com.beeva.planningpoker.utils.BundleConstants;
@@ -37,15 +37,19 @@ public class MainActivity extends BaseActivity
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     ButterKnife.bind(this);
+
+    putDefaultFragment();
   }
 
   @Override protected void onResume() {
     super.onRestart();
-    setFragment(DecksTypeFragment.newInstance());
+    setFragment(fragment);
 
-    int size = nav_view.getMenu().size();
-    for (int i = 0; i < size; i++) {
-      nav_view.getMenu().getItem(i).setChecked(false);
+    if (fragment instanceof DecksTypeFragment) {
+      int size = nav_view.getMenu().size();
+      for (int i = 0; i < size; i++) {
+        nav_view.getMenu().getItem(i).setChecked(false);
+      }
     }
   }
 
@@ -116,5 +120,9 @@ public class MainActivity extends BaseActivity
     intent.putExtra(BundleConstants.DECK_TYPE, deckEnum);
 
     startActivity(intent);
+  }
+
+  @Override public void putDefaultFragment() {
+    this.fragment = DecksTypeFragment.newInstance();
   }
 }

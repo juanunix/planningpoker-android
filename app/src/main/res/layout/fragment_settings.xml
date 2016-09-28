@@ -3,13 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/beeva.gray"
     tools:context="com.beeva.planningpoker.ui.settings.SettingsFragment"
     >
   <include layout="@layout/item_layout_header_title"/>
 
   <include layout="@layout/item_layout_settings_language"/>
+  <include layout="@layout/separator_list"/>
   <include layout="@layout/item_layout_settings_keepscreenon"/>
+  <include layout="@layout/separator_list"/>
   <include layout="@layout/item_layout_settings_presstoshow"/>
+  <include layout="@layout/separator_list"/>
   <include layout="@layout/item_layout_settings_shaketoshow"/>
+  <include layout="@layout/separator_list"/>
+
+
 
 </LinearLayout>

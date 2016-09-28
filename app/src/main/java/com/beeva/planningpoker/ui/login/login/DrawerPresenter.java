@@ -67,7 +67,12 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
         break;
     }
 
-    if (fragment != null) view.setFragment(fragment);
+    if (fragment != null) {
+      view.setFragment(fragment);
+    } else {
+      view.putDefaultFragment();
+    }
+
   }
 
   public void initializeMenu(Context context, NavigationView navigationView) {
@@ -90,7 +95,7 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
 
   private void applyFontToMenuItem(Context context, MenuItem item) {
     Typeface tf = Typeface.createFromAsset(context.getAssets(),
-        "fonts/" + context.getString(R.string.font_corporative_book));
+        "fonts/" + context.getString(R.string.font_avenir_book));
     SpannableString mNewTitle = new SpannableString(item.getTitle());
     mNewTitle.setSpan(new CustomTypefaceSpan("", tf), 0, mNewTitle.length(),
         Spannable.SPAN_INCLUSIVE_INCLUSIVE);
@@ -99,6 +104,9 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
 
   public interface View extends Presenter.View {
     void setFragment(Fragment fragment);
+
     void navigateToDeckActivity(DeckEnum deckEnum);
+
+    void putDefaultFragment();
   }
 }
