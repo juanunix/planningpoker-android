@@ -9,7 +9,8 @@
       android:text="@string/beeva"
       android:textAllCaps="true"
       android:textColor="@android:color/white"
-      app:font="@string/font.corporative.black"
+      app:font="@string/font.corporative.heavy"
+      style="@style/TextView"
       />
 
   <Space
@@ -24,6 +25,7 @@
       android:textAllCaps="true"
       android:textColor="@android:color/white"
       app:font="@string/font.corporative.regular"
+      style="@style/TextView"
       />
 
 </merge>

@@ -33,11 +33,13 @@
 
   <style name="Button">
     <item name="android:textColor">@color/beeva.texts.color.default</item>
+    <item name="font">@string/font.avenir.book</item>
   </style>
 
   <style name="CheckBox">
     <item name="android:textColor">@color/beeva.texts.color.default</item>
     <item name="android:theme">@style/CheckBox.Theme</item>
+    <item name="font">@string/font.avenir.book</item>
   </style>
 
   <style name="CheckBox.Theme">
@@ -58,6 +60,7 @@
   <style name="RadioButton">
     <item name="android:textColor">@color/beeva.texts.color.default</item>
     <item name="android:theme">@style/RadioButton.Theme</item>
+    <item name="font">@string/font.avenir.book</item>
   </style>
 
   <style name="RadioButton.Theme">
@@ -67,6 +70,7 @@
 
   <style name="TextView">
     <item name="android:textColor">@color/beeva.texts.color.default</item>
+    <item name="font">@string/font.avenir.book</item>
   </style>
 
 </resources>

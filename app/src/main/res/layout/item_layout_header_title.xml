@@ -13,7 +13,6 @@
       android:layout_centerInParent="true"
       android:text="@string/lorem.title.short"
       android:textSize="15sp"
-      app:font="@string/font.corporative.book"
       style="@style/TextView"
       />
 

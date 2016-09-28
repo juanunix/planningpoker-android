@@ -18,7 +18,8 @@
       android:text="BEEVA"
       android:textColor="@android:color/white"
       android:textSize="30sp"
-      app:font="@string/font.corporative.black"
+      app:font="@string/font.corporative.heavy"
+      style="@style/TextView"
       />
 
   <LinearLayout
@@ -35,7 +36,8 @@
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:textSize="25sp"
-        app:font="@string/font.corporative.book"
+        app:font="@string/font.corporative.regular"
+        style="@style/TextView"
         />
 
     <Space
@@ -52,10 +54,10 @@
         android:textAllCaps="true"
         android:textColor="@android:color/white"
         android:textSize="25sp"
-        app:font="@string/font.corporative.black"
+        app:font="@string/font.corporative.heavy"
+        style="@style/TextView"
         />
 
   </LinearLayout>
-
 
 </RelativeLayout>

@@ -9,37 +9,26 @@
     >
   <include layout="@layout/item_layout_header_title"/>
 
-  <ScrollView
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:src="@mipmap/ic_launcher"
+      />
+
+  <com.beeva.corporate.TextView
+      android:id="@+id/txtAboutUs"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:src="@mipmap/ic_launcher"
-          />
-
-      <com.beeva.corporate.TextView
-          android:id="@+id/txtAboutUs"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:lineSpacingExtra="10dp"
-          android:paddingLeft="45dp"
-          android:paddingRight="45dp"
-          android:text="@string/lorem.long"
-          android:textAlignment="center"
-          android:textSize="16sp"
-          app:font="@string/font.corporative.book"
-          style="@style/TextView"
-          />
-
-    </LinearLayout>
-  </ScrollView>
+      android:lineSpacingExtra="10dp"
+      android:paddingLeft="45dp"
+      android:paddingRight="45dp"
+      android:scrollbars="horizontal"
+      android:text="@string/lorem.long"
+      android:textAlignment="center"
+      android:textSize="16sp"
+      app:font="@string/font.avenir.book"
+      style="@style/TextView"
+      />
 
 </LinearLayout>

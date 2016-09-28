@@ -95,7 +95,7 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
 
   private void applyFontToMenuItem(Context context, MenuItem item) {
     Typeface tf = Typeface.createFromAsset(context.getAssets(),
-        "fonts/" + context.getString(R.string.font_corporative_book));
+        "fonts/" + context.getString(R.string.font_avenir_book));
     SpannableString mNewTitle = new SpannableString(item.getTitle());
     mNewTitle.setSpan(new CustomTypefaceSpan("", tf), 0, mNewTitle.length(),
         Spannable.SPAN_INCLUSIVE_INCLUSIVE);

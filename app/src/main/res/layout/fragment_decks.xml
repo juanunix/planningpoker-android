@@ -21,7 +21,6 @@
         android:gravity="center"
         android:text="@string/decks.label.title"
         android:textSize="16sp"
-        app:font="@string/font.corporative.book"
         style="@style/TextView"
         />
 
@@ -40,7 +39,6 @@
           android:text="@string/decks.label.numbers"
           android:textAllCaps="false"
           android:textSize="16sp"
-          app:font="@string/font.corporative.book"
           style="@style/Button"
           />
 
@@ -54,7 +52,6 @@
           android:text="@string/decks.label.sizes"
           android:textAllCaps="false"
           android:textSize="16sp"
-          app:font="@string/font.corporative.book"
           style="@style/Button"
           />
     </LinearLayout>
