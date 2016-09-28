@@ -23,11 +23,13 @@ public class DeckActivity extends BaseActivity
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     ButterKnife.bind(this);
+
+    putDefaultFragment();
   }
 
   @Override protected void onResume() {
     super.onResume();
-    setFragment(DeckChooseFragment.newInstance());
+    setFragment(fragment);
   }
 
   @Override protected int getLayoutId() {
@@ -81,5 +83,18 @@ public class DeckActivity extends BaseActivity
 
   @Override public void onDialogNegativeClick(DialogFragment dialog) {
     ((PickedCardDialogFragment.PickedCardDialogListener) fragment).onDialogNegativeClick(dialog);
+  }
+
+  public void putDefaultFragment() {
+    this.fragment = DeckChooseFragment.newInstance();
+  }
+
+  @Override public void onBackPressed() {
+    if (fragment instanceof DeckDetailFragment) {
+      putDefaultFragment();
+      setFragment(fragment);
+    } else {
+      super.onBackPressed();
+    }
   }
 }
