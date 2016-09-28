@@ -28,7 +28,6 @@
   <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
 
-
   <!-- Views -->
 
   <style name="Button">
@@ -71,6 +70,10 @@
   <style name="TextView">
     <item name="android:textColor">@color/beeva.texts.color.default</item>
     <item name="font">@string/font.avenir.book</item>
+  </style>
+
+  <style name="CustomAlertDialog" parent="@android:style/Theme.Dialog">
+    <item name="android:background">@color/beeva.gray</item>
   </style>
 
 </resources>
