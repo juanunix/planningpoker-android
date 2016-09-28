@@ -17,4 +17,12 @@
       style="@style/TextView"
       />
 
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="3dp"
+      android:alpha="0.3"
+      android:layout_alignParentBottom="true"
+      android:background="@drawable/gradient_header_title"
+      />
+
 </RelativeLayout>

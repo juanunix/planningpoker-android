@@ -29,12 +29,44 @@
 
 
 
-  <style name="TextView">
-    <item name="android:textColor">@color/beeva.white</item>
-  </style>
+  <!-- Views -->
 
   <style name="Button">
-    <item name="android:textColor">@color/beeva.white</item>
+    <item name="android:textColor">@color/beeva.texts.color.default</item>
+  </style>
+
+  <style name="CheckBox">
+    <item name="android:textColor">@color/beeva.texts.color.default</item>
+    <item name="android:theme">@style/CheckBox.Theme</item>
+  </style>
+
+  <style name="CheckBox.Theme">
+    <item name="colorAccent">@color/beeva.checkbox.color.enabled</item>
+    <item name="android:textColorSecondary">@color/beeva.checkbox.color.disabled</item>
+  </style>
+
+  <style name="RelativeLayout">
+  </style>
+
+  <style name="RelativeLayout.Settings">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/height.item.settings</item>
+    <item name="android:paddingLeft">@dimen/padding.left.item.settings</item>
+    <item name="android:paddingRight">@dimen/padding.right.item.settings</item>
+  </style>
+
+  <style name="RadioButton">
+    <item name="android:textColor">@color/beeva.texts.color.default</item>
+    <item name="android:theme">@style/RadioButton.Theme</item>
+  </style>
+
+  <style name="RadioButton.Theme">
+    <item name="colorAccent">@color/beeva.checkbox.color.enabled</item>
+    <item name="android:textColorSecondary">@color/beeva.checkbox.color.disabled</item>
+  </style>
+
+  <style name="TextView">
+    <item name="android:textColor">@color/beeva.texts.color.default</item>
   </style>
 
 </resources>

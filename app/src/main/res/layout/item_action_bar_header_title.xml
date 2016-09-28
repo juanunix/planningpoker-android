@@ -23,7 +23,7 @@
       android:text="@string/planning_poker"
       android:textAllCaps="true"
       android:textColor="@android:color/white"
-      app:font="@string/font.corporative.book"
+      app:font="@string/font.corporative.regular"
       />
 
 </merge>
