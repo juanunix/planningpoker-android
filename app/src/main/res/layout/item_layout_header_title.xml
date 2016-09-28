@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/height.header.titleBar"
-    android:background="@color/beeva.black"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     >
 
   <com.beeva.corporate.TextView
       android:id="@+id/txtHeaderTitle"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:layout_height="@dimen/height.header.titleBar"
       android:layout_centerInParent="true"
+      android:background="@color/beeva.black"
       android:text="@string/lorem.title.short"
       android:textSize="15sp"
       style="@style/TextView"
       />
 
-  <View
-      android:layout_width="match_parent"
-      android:layout_height="3dp"
-      android:alpha="0.3"
-      android:layout_alignParentBottom="true"
-      android:background="@drawable/gradient_header_title"
-      />
+  <include layout="@layout/gradient_view"/>
 
-</RelativeLayout>
+</LinearLayout>

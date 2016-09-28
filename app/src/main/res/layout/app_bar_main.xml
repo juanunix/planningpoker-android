@@ -29,6 +29,8 @@
 
     </android.support.v7.widget.Toolbar>
 
+    <include layout="@layout/gradient_view"/>
+
   </android.support.design.widget.AppBarLayout>
 
 </android.support.design.widget.CoordinatorLayout>
