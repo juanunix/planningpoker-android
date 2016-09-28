@@ -8,7 +8,7 @@
   <dimen name="fab_margin">16dp</dimen>
 
 
-  <dimen name="height.header.titleBar">40dp</dimen>
+  <dimen name="height.header.titleBar">37dp</dimen>
   <dimen name="space.deck.gridLayout">10dp</dimen>
 
   <dimen name="height.item.settings">60dp</dimen>
