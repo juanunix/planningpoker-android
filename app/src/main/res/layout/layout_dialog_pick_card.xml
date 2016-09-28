@@ -12,7 +12,6 @@
       android:src="@mipmap/ic_launcher"
       android:text="@string/dialog.title.card.picked"
       android:textAlignment="center"
-      app:font="@string/font.avenir.book"
       />
 
   <ImageView

@@ -21,13 +21,13 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:lineSpacingExtra="10dp"
+      android:maxLines="100"
       android:paddingLeft="45dp"
       android:paddingRight="45dp"
-      android:scrollbars="horizontal"
+      android:scrollbars="vertical"
       android:text="@string/lorem.long"
       android:textAlignment="center"
       android:textSize="16sp"
-      app:font="@string/font.avenir.book"
       style="@style/TextView"
       />
 
