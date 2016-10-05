@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'android-apt'
+apply plugin: 'kotlin-android-extensions'
 
 
 android {
@@ -37,16 +38,16 @@ dependencies {
   compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
 
   compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
-  apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+  kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
 
   compile "com.google.firebase:firebase-core:$rootProject.ext.firebaseVersion"
   compile "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
   compile "com.google.firebase:firebase-database:$rootProject.ext.firebaseVersion"
   compile "com.google.firebase:firebase-crash:$rootProject.ext.firebaseVersion"
 
-  apt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+  kapt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
   compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
-  provided "javax.annotation:jsr250-api:$rootProject.ext.jsrVersion"
+  provided "org.glassfish:javax.annotation:10.0-b28"
 
   compile "org.greenrobot:eventbus:$rootProject.ext.eventBusVersion"
   compile "de.hdodenhof:circleimageview:$rootProject.ext.circleImageViewVersion"

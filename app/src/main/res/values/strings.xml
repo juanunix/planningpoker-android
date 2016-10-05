@@ -66,6 +66,17 @@
   <string name="signup.label.signup">Sign up</string>
   <string name="signup.label.google">I want to login in with Google</string>
 
+  <!-- Sign Up Errors-->
+  <string name="signup.error.emptyfield.name">Name field is empty</string>
+  <string name="signup.error.emptyfield.email">Email field is empty</string>
+  <string name="signup.error.emptyfield.password">Password field is empty</string>
+  <string name="signup.error.emptyfield.passwordrepeat">Password field is empty</string>
+
+  <string name="signup.error.notvalid.email">Your email is not valid</string>
+  <string name="signup.error.notmatch.passwords">Passwords don\'t match</string>
+  <string name="signup.error.notaccepted.policy">You have to accept privacy policy</string>
+
+
   <!-- AboutApp -->
   <string name="aboutapp.header.title">@string/label.menu.about_app</string>
 

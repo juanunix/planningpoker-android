@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import com.beeva.planningpoker.application.PlanningPokerAplication;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.utils.DialogsUtils;
 
 /**
  * Created by david.gonzalez on 15/9/16.
@@ -26,15 +27,15 @@ public abstract class BaseActivity extends AppCompatActivity implements Presente
   }
 
   @Override public void showProgress(int resourceMessage) {
-
+    DialogsUtils.showLoadingMessage(this, resourceMessage);
   }
 
   @Override public void hideLoading() {
-
+    DialogsUtils.hideLoading();
   }
 
   @Override public void showToast(int resourceMessage) {
-
+    DialogsUtils.showToast(this, resourceMessage);
   }
 
   //Abstract Classes

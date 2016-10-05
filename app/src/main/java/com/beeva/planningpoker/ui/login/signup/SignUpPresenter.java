@@ -1,18 +1,26 @@
 package com.beeva.planningpoker.ui.login.signup;
 
+import android.content.Context;
+import android.content.res.Resources;
 import com.beeva.planningpoker.Presenter;
+import com.beeva.planningpoker.R;
+import com.beeva.planningpoker.application.PlanningPokerAplication;
 import javax.inject.Inject;
 
 /**
  * Created by david.gonzalez on 29/9/16.
  */
 
-public class SignUpPresenter extends Presenter<SignUpPresenter.View> {
+public class SignUpPresenter extends Presenter<SignUpPresenter.View> implements DoSignUp.Callback {
 
+  Context context = PlanningPokerAplication.getContext();
+  Resources resources = context.getResources();
   private View view;
+  private DoSignUp doSignUp;
+  private SignUp signUp;
 
-  @Inject public SignUpPresenter() {
-
+  @Inject public SignUpPresenter(DoSignUp doSignUp) {
+    this.doSignUp = doSignUp;
   }
 
   @Override public void initialize() {
@@ -21,43 +29,48 @@ public class SignUpPresenter extends Presenter<SignUpPresenter.View> {
   }
 
   public void signup(SignUp signUp) {
-    try {
-      checkName(signUp);
-    } catch (SignUpException signUpException) {
-      view.setErrorNameField(signUpException.getMessage());
+    this.signUp = signUp;
+
+    doSignUp.doSignUp(signUp, this);
+  }
+
+  @Override public void onSignUpFailure(SignUpError signUpError) {
+    switch (signUpError) {
+      case POLICY_ACCEPTED:
+        view.showToast(R.string.signup_error_notaccepted_policy);
     }
+  }
 
-    try {
-      checkEmail(signUp);
-    } catch (SignUpException signUpException) {
-      view.setErrorNameField(signUpException.getMessage());
+  @Override public void onSignUpFormFailure(SignUpError signUpError) {
+    switch (signUpError) {
+      case EMPTY_NAME:
+        view.setErrorNameField(resources.getString(R.string.signup_error_emptyfield_name));
+        break;
+      case EMPTY_EMAIL:
+        view.setErrorEmailField(resources.getString(R.string.signup_error_emptyfield_email));
+        break;
+      case EMPTY_PASSWORD:
+        view.setErrorPasswordField(resources.getString(R.string.signup_error_emptyfield_password));
+        break;
+      case EMPTY_REPEATPASSWORD:
+        view.setErrorPasswordRepeatField(
+            resources.getString(R.string.signup_error_emptyfield_passwordrepeat));
+        break;
+      case NOTMATCH_PASSWORDS:
+        view.setErrorPasswordRepeatField(resources.getString(R.string.signup_error_notmatch_passwords));
+        break;
+      case NOTVALID_EMAIL:
+        view.setErrorEmailField(resources.getString(R.string.signup_error_notvalid_email));
+        break;
     }
-
-    try {
-      checkPassword(signUp);
-    } catch (SignUpException signUpException) {
-      view.setErrorPasswordField(signUpException.getMessage());
-    }
-
   }
 
-  private void checkName(SignUp signUp) throws SignUpException {
-    if (signUp.getName().isEmpty()) throw new SignUpException("");
-
-
+  @Override public void onSignUpFormSuccess() {
+    doSignUp.checkPolicy(signUp, this);
   }
 
-  private void checkEmail(SignUp signUp) throws SignUpException {
-    if (signUp.getEmail().isEmpty()) throw new SignUpException("");
-  }
+  @Override public void onSignUpSuccess() {
 
-  private void checkPassword(SignUp signUp) throws SignUpException {
-    if (signUp.getPassword().isEmpty()) throw new SignUpException("");
-    if (signUp.getPasswordRepeat().isEmpty()) throw new SignUpException("");
-  }
-
-  private void checkPolicy(SignUp signUp) throws SignUpException {
-    if (signUp.isAcceptedPolicy()) throw new SignUpException("");
   }
 
   public interface View extends Presenter.View {
