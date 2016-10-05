@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="ui.login.login.LoginFragment"
+    style="@style/CommonBase"
     >
 
   <include

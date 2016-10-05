@@ -6,8 +6,8 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
     tools:context="com.beeva.planningpoker.ui.splash.SplashActivity"
+    style="@style/CommonBase"
     >
 
   <com.beeva.corporate.TextView

@@ -57,6 +57,15 @@
   <string name="packageName.share.twitter">com.twitter.android</string>
   <string name="packageName.share.google">com.google.android.apps.plus</string>
 
+  <!-- Sign Up -->
+  <string name="signup.hint.name">Full name</string>
+  <string name="signup.hint.email">Email</string>
+  <string name="signup.hint.password">Password</string>
+  <string name="signup.hint.passwordrepeat">Repeat password</string>
+  <string name="signup.label.privacity">I have read and accept the privacy policy</string>
+  <string name="signup.label.signup">Sign up</string>
+  <string name="signup.label.google">I want to login in with Google</string>
+
   <!-- AboutApp -->
   <string name="aboutapp.header.title">@string/label.menu.about_app</string>
 
@@ -75,6 +84,7 @@
 
   <!-- Dialogs -->
   <string name="dialog.title.card.picked">Are you sure you want to choose this card?</string>
+  <string name="title_activity_sing_up">SingUpActivity</string>
 
 
 </resources>

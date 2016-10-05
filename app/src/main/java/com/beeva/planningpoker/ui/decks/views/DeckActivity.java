@@ -59,6 +59,10 @@ public class DeckActivity extends BaseActivity
     // Do nothing
   }
 
+  @Override protected int getHeaderTitle() {
+    return 0;
+  }
+
   @Override public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
       case android.R.id.home:

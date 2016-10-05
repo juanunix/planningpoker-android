@@ -27,6 +27,10 @@
 
   <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+  <style name="CommonBase">
+    <item name="android:background">@color/beeva.gray</item>
+  </style>
+
 
   <!-- Views -->
 
@@ -46,6 +50,20 @@
     <item name="android:textColorSecondary">@color/beeva.checkbox.color.disabled</item>
   </style>
 
+  <style name="EditText">
+    <item name="android:textColor">@color/beeva.texts.color.default</item>
+    <item name="font">@string/font.avenir.book</item>
+  </style>
+
+  <style name="EditText.Signup">
+    <item name="android:textColor">@color/beeva.texts.color.default</item>
+    <item name="font">@string/font.avenir.book</item>
+    <item name="android:textSize">@dimen/font.size.edittext.signup</item>
+    <item name="android:ems">14</item>
+    <item name="android:imeOptions">actionNext</item>
+    <item name="android:singleLine">true</item>
+  </style>
+
   <style name="RelativeLayout">
   </style>
 
@@ -54,6 +72,9 @@
     <item name="android:layout_height">@dimen/height.item.settings</item>
     <item name="android:paddingLeft">@dimen/padding.left.item.settings</item>
     <item name="android:paddingRight">@dimen/padding.right.item.settings</item>
+  </style>
+
+  <style name="LinearLayout.SignUp" parent="RelativeLayout.Settings">
   </style>
 
   <style name="RadioButton">

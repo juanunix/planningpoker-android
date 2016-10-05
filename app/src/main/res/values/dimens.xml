@@ -14,4 +14,11 @@
   <dimen name="height.item.settings">60dp</dimen>
   <dimen name="padding.right.item.settings">24dp</dimen>
   <dimen name="padding.left.item.settings">24dp</dimen>
+
+
+  <!-- Fonts -->
+  <dimen name="font.size.edittext.signup">16sp</dimen>
+
+  <!-- Fonts -->
+  <dimen name="dimen.edittext.signup.width">16sp</dimen>
 </resources>

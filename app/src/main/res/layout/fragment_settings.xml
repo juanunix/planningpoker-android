@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/beeva.gray"
     tools:context="com.beeva.planningpoker.ui.settings.SettingsFragment"
+    style="@style/CommonBase"
     >
   <include layout="@layout/item_layout_header_title"/>
 
@@ -16,7 +16,6 @@
   <include layout="@layout/separator_list"/>
   <include layout="@layout/item_layout_settings_shaketoshow"/>
   <include layout="@layout/separator_list"/>
-
 
 
 </LinearLayout>

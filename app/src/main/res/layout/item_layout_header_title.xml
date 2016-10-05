@@ -8,10 +8,10 @@
   <com.beeva.corporate.TextView
       android:id="@+id/txtHeaderTitle"
       android:layout_width="match_parent"
-      android:gravity="center"
       android:layout_height="@dimen/height.header.titleBar"
       android:layout_centerInParent="true"
       android:background="@color/beeva.black"
+      android:gravity="center"
       android:text="@string/lorem.title.short"
       android:textSize="15sp"
       style="@style/TextView"
