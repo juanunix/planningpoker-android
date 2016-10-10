@@ -1,70 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     >
 
-  <LinearLayout
-      android:layout_width="0dp"
+  <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:gravity="center"
+      android:layout_centerInParent="true"
+      android:columnCount="2"
       >
-    <Button
-        android:id="@+id/btnLinkedIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableTop="@mipmap/ic_launcher"
-        android:text="@string/label.share.linkedin"
-        />
-  </LinearLayout>
 
-  <LinearLayout
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:gravity="center"
-      >
-    <Button
-        android:id="@+id/btnFacebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableTop="@mipmap/ic_launcher"
-        android:text="@string/label.share.facebook"
-        />
-  </LinearLayout>
-
-  <LinearLayout
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:gravity="center"
-
-      >
-    <Button
+    <com.beeva.corporate.Button
         android:id="@+id/btnTwitter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableTop="@mipmap/ic_launcher"
         android:text="@string/label.share.twitter"
+        style="@style/Button.Share"
         />
-  </LinearLayout>
 
-  <LinearLayout
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:gravity="center"
+    <com.beeva.corporate.Button
+        android:id="@+id/btnFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@mipmap/ic_launcher"
+        android:text="@string/label.share.facebook"
+        style="@style/Button.Share"
+        />
 
-      >
-    <Button
+    <com.beeva.corporate.Button
+        android:id="@+id/btnLinkedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@mipmap/ic_launcher"
+        android:text="@string/label.share.linkedin"
+        style="@style/Button.Share"
+        />
+
+    <com.beeva.corporate.Button
         android:id="@+id/btnGoogle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableTop="@mipmap/ic_launcher"
         android:text="@string/label.share.google"
+        style="@style/Button.Share"
         />
-  </LinearLayout>
 
-</LinearLayout>
+  </GridLayout>
+</RelativeLayout>

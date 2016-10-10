@@ -51,7 +51,7 @@
   <string name="label.share.linkedin">LinkedIn</string>
   <string name="label.share.facebook">Facebook</string>
   <string name="label.share.twitter">Twitter</string>
-  <string name="label.share.google">Google+</string>
+  <string name="label.share.google">GooglePlus</string>
   <string name="packageName.share.linkedin">com.linkedin.android</string>
   <string name="packageName.share.facebook">com.facebook.katana</string>
   <string name="packageName.share.twitter">com.twitter.android</string>
@@ -85,6 +85,7 @@
 
   <!-- Dummy Data-->
   <string name="lorem.title.short">Lorem ipsum</string>
+  <string name="lorem.short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis arcu sed risus pulvinar, sed pellentesque magna molestie.</string>
   <string name="lorem.long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis arcu sed risus pulvinar, sed pellentesque magna molestie. Mauris at ex dui. Aliquam congue ultricies metus sit amet ultrices. Nullam auctor, nunc in tempor pulvinar, augue leo efficitur lectus, ut mattis nisl tellus a nibh. Sed felis neque, porttitor sed viverra id, placerat sit amet erat. Aliquam pulvinar hendrerit dolor ut finibus. Nullam condimentum urna at dolor molestie, quis lobortis ante dictum.</string>
 
   <!-- Corporate Font Strings -->

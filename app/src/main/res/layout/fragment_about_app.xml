@@ -8,11 +8,21 @@
     >
   <include layout="@layout/item_layout_header_title"/>
 
+  <Space
+      android:layout_width="wrap_content"
+      android:layout_height="26dp"
+      />
+
   <ImageView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:src="@mipmap/ic_launcher"
+      />
+
+  <Space
+      android:layout_width="wrap_content"
+      android:layout_height="26dp"
       />
 
   <com.beeva.corporate.TextView
