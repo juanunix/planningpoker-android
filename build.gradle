@@ -41,4 +41,6 @@ ext {
 
   circleImageViewVersion = '2.1.0'
   glideVersion = '3.7.0'
+
+  espressoVersion = '2.2.2'
 }

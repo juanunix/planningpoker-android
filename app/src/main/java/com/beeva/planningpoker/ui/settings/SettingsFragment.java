@@ -52,6 +52,7 @@ public class SettingsFragment extends BaseFragment
 
   @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
+    presenter.initialize();
     rgLanguage.setOnCheckedChangeListener(this);
   }
 
@@ -61,7 +62,6 @@ public class SettingsFragment extends BaseFragment
 
   @Override protected void initializePresenter() {
     presenter.setView(this);
-    presenter.initialize();
   }
 
   @Override protected void initializeDagger(MainComponent mainComponent) {
