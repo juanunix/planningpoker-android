@@ -1,5 +1,6 @@
 package com.beeva.planningpoker.ui.decks.feature.mainDeck;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import com.beeva.planningpoker.Presenter;
@@ -20,6 +21,7 @@ import javax.inject.Inject;
 public class DeckChoosePresenter extends Presenter<DeckChoosePresenter.View> {
 
   private View view;
+  private Context context = PlanningPokerAplication.getContext();
 
   @Inject public DeckChoosePresenter() {
 
@@ -37,11 +39,13 @@ public class DeckChoosePresenter extends Presenter<DeckChoosePresenter.View> {
 
     int spanCount = isNumbersSelected ? 4 : 3;
 
-    TypedArray cardImages = PlanningPokerAplication.getContext()
-        .getResources()
+    TypedArray cardImages = context.getResources()
         .obtainTypedArray(isNumbersSelected ? R.array.number_cards : R.array.size_cards);
-    TypedArray stringImages = PlanningPokerAplication.getContext()
-        .getResources()
+
+    TypedArray cardImagesBig = context.getResources()
+        .obtainTypedArray(isNumbersSelected ? R.array.number_cards_big : R.array.size_cards_big);
+
+    TypedArray stringImages = context.getResources()
         .obtainTypedArray(
             isNumbersSelected ? R.array.number_cards_string : R.array.size_cards_string);
 
@@ -53,7 +57,10 @@ public class DeckChoosePresenter extends Presenter<DeckChoosePresenter.View> {
       String description = PlanningPokerAplication.getContext()
           .getResources()
           .getString(stringImages.getResourceId(i, 0));
-      cardList.add(new Card(cardImages.getResourceId(i, 0), description, i));
+
+      cardList.add(
+          new Card(cardImages.getResourceId(i, 0), cardImagesBig.getResourceId(i, 0), description,
+              i));
     }
 
     cardImages.recycle();

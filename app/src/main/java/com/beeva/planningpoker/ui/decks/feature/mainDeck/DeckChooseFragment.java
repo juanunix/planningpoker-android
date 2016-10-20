@@ -24,6 +24,8 @@ import com.beeva.planningpoker.utils.SpacesItemDecoration;
 import com.beeva.planningpoker.views.dialogs.PickedCardDialogFragment;
 import javax.inject.Inject;
 
+import static com.beeva.planningpoker.utils.BundleConstants.CHOSEN_CARD;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -36,6 +38,7 @@ public class DeckChooseFragment extends BaseFragment
   @BindView(R.id.recyclerViewDeck) RecyclerView recyclerViewDeck;
   private Unbinder unbinder;
   private FragmentActivity context;
+  private Card pickedCard;
 
   public DeckChooseFragment() {
     // Required empty public constructor
@@ -94,7 +97,13 @@ public class DeckChooseFragment extends BaseFragment
   }
 
   @Override public void onItemClick(Card card) {
+    pickedCard = card;
     DialogFragment dialog = new PickedCardDialogFragment();
+
+    Bundle args = new Bundle();
+    args.putParcelable(CHOSEN_CARD, pickedCard);
+    dialog.setArguments(args);
+
     dialog.show(context.getSupportFragmentManager(), "PickedCardDialogFragment");
   }
 
@@ -102,14 +111,18 @@ public class DeckChooseFragment extends BaseFragment
     //Do nothing
   }
 
+  public Card getPickedCard() {
+    return pickedCard;
+  }
+
   /**
    * The implementation is in the parent {@link DeckActivity}.
    */
   @Override public void onDialogPositiveClick(DialogFragment dialog) {
-    //Do nothing
+    dialog.dismiss();
   }
 
   @Override public void onDialogNegativeClick(DialogFragment dialog) {
-    //Do nothing
+    dialog.dismiss();
   }
 }

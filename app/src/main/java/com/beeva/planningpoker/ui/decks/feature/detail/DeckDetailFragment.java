@@ -13,14 +13,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.ui.decks.model.Card;
 import com.beeva.planningpoker.utils.ShakeDetector;
 import javax.inject.Inject;
+
+import static com.beeva.planningpoker.utils.BundleConstants.CHOSEN_CARD;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +36,8 @@ public class DeckDetailFragment extends BaseFragment
   @BindView(R.id.cardFront) View cardFront;
   @BindView(R.id.cardBack) View cardBack;
   @BindView(R.id.frameLayout) View frameLayout;
+  @BindView(R.id.ivCardFront) ImageView ivCardFront;
+
   @Inject DeckDetailPresenter presenter;
   private int TIMER;
 
@@ -66,6 +72,9 @@ public class DeckDetailFragment extends BaseFragment
   @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     TIMER = getActivity().getResources().getInteger(R.integer.flip_card_anim);
+
+    Card card = getArguments().getParcelable(CHOSEN_CARD);
+    ivCardFront.setImageResource(card.getImageResourceBig());
   }
 
   @Override public void onResume() {

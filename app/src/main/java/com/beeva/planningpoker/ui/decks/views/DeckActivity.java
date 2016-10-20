@@ -12,7 +12,10 @@ import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
 import com.beeva.planningpoker.ui.decks.feature.detail.DeckDetailFragment;
 import com.beeva.planningpoker.ui.decks.feature.mainDeck.DeckChooseFragment;
+import com.beeva.planningpoker.ui.decks.model.Card;
 import com.beeva.planningpoker.views.dialogs.PickedCardDialogFragment;
+
+import static com.beeva.planningpoker.utils.BundleConstants.CHOSEN_CARD;
 
 public class DeckActivity extends BaseActivity
     implements PickedCardDialogFragment.PickedCardDialogListener {
@@ -80,9 +83,17 @@ public class DeckActivity extends BaseActivity
         .commit();
   }
 
+  //TODO: Better implementation
   @Override public void onDialogPositiveClick(DialogFragment dialog) {
     ((PickedCardDialogFragment.PickedCardDialogListener) fragment).onDialogPositiveClick(dialog);
-    setFragment(DeckDetailFragment.newInstance());
+
+    Card pickedCard = ((DeckChooseFragment) fragment).getPickedCard();
+    Bundle args = new Bundle();
+    args.putParcelable(CHOSEN_CARD, pickedCard);
+
+    Fragment deckDetailFragment = new DeckDetailFragment();
+    deckDetailFragment.setArguments(args);
+    setFragment(deckDetailFragment);
   }
 
   @Override public void onDialogNegativeClick(DialogFragment dialog) {

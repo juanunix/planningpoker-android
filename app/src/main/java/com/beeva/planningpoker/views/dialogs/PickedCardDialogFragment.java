@@ -5,13 +5,19 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.ContextThemeWrapper;
-import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.ui.BaseDialogFragment;
+import com.beeva.planningpoker.ui.decks.model.Card;
+
+import static com.beeva.planningpoker.utils.BundleConstants.CHOSEN_CARD;
 
 /**
  * Created by david.gonzalez on 27/9/16.
@@ -20,29 +26,24 @@ import com.beeva.planningpoker.ui.BaseDialogFragment;
 public class PickedCardDialogFragment extends BaseDialogFragment
     implements DialogInterface.OnShowListener {
 
+  @BindView(R.id.ivCard) ImageView ivCard;
+
   PickedCardDialogListener mListener;
 
   @NonNull @Override public Dialog onCreateDialog(Bundle savedInstanceState) {
     Context context = new ContextThemeWrapper(getActivity(), R.style.CustomAlertDialog);
 
     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-    LayoutInflater inflater = getActivity().getLayoutInflater();
+    View view = View.inflate(getContext(), R.layout.layout_dialog_pick_card, null);
+    ButterKnife.bind(this, view);
 
-    builder.setView(inflater.inflate(R.layout.layout_dialog_pick_card, null));
-    //builder.setView(inflater.inflate(R.layout.layout_dialog_pick_card, null))
-    //    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-    //      @Override public void onClick(DialogInterface dialog, int id) {
-    //        mListener.onDialogPositiveClick(PickedCardDialogFragment.this);
-    //      }
-    //    })
-    //    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-    //      public void onClick(DialogInterface dialog, int id) {
-    //        mListener.onDialogNegativeClick(PickedCardDialogFragment.this);
-    //      }
-    //    });
+    builder.setView(view);
 
     AlertDialog alertDialog = builder.create();
     alertDialog.setOnShowListener(this);
+
+    Card card = getArguments().getParcelable(CHOSEN_CARD);
+    ivCard.setBackgroundResource(card.getImageResourceBig());
 
     return alertDialog;
   }
@@ -56,8 +57,12 @@ public class PickedCardDialogFragment extends BaseDialogFragment
     }
   }
 
-  @Override public void onShow(DialogInterface dialog) {
-    super.onShow(dialog);
+  @OnClick(R.id.btnAccept) public void onClickAcceptDialog(){
+    mListener.onDialogPositiveClick(this);
+  }
+
+  @OnClick(R.id.btnCancel) public void onClickCancelDialog(){
+    mListener.onDialogNegativeClick(this);
   }
 
   public interface PickedCardDialogListener {
@@ -65,4 +70,5 @@ public class PickedCardDialogFragment extends BaseDialogFragment
 
     void onDialogNegativeClick(DialogFragment dialog);
   }
+
 }

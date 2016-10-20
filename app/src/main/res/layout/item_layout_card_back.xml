@@ -6,22 +6,11 @@
     >
 
   <ImageView
+      android:id="@+id/ivCardBack"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:padding="16dp"
-      android:src="@mipmap/ic_launcher"
-      android:textColor="@android:color/darker_gray"
-      android:tint="@color/beeva.gray"
+      android:src="@drawable/card_big_question"
       />
-
-  <TextView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:gravity="center"
-      android:text="Trasera"
-      android:textColor="@android:color/white"
-      style="@style/Base.TextAppearance.AppCompat.Display1"
-      />
-
 
 </FrameLayout>

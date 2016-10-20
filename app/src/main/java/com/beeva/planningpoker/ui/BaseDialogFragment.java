@@ -22,6 +22,8 @@ import com.beeva.planningpoker.utils.FontUtils;
 
 public class BaseDialogFragment extends DialogFragment implements DialogInterface.OnShowListener {
 
+  Drawable drawableBackground;
+
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomAlertDialog);
@@ -31,10 +33,10 @@ public class BaseDialogFragment extends DialogFragment implements DialogInterfac
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
 
-    Drawable drawable = ContextCompat.getDrawable(PlanningPokerAplication.getContext(), R.drawable.bg_main);
-    drawable.setAlpha(191);
+    drawableBackground = ContextCompat.getDrawable(PlanningPokerAplication.getContext(), R.drawable.bg_main);
+    drawableBackground.setAlpha(191);
 
-    getDialog().getWindow().setBackgroundDrawable(drawable);
+    getDialog().getWindow().setBackgroundDrawable(drawableBackground);
 
     return super.onCreateView(inflater, container, savedInstanceState);
   }
@@ -52,5 +54,11 @@ public class BaseDialogFragment extends DialogFragment implements DialogInterfac
 
     button = alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
     button.setTypeface(typeface);
+  }
+
+  //Alpha is setted to 255 because all R.drawable.bg_main gets that alpha on the entire app
+  @Override public void onDismiss(DialogInterface dialog) {
+    super.onDismiss(dialog);
+    drawableBackground.setAlpha(255);
   }
 }

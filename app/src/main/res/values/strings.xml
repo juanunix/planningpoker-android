@@ -122,7 +122,7 @@
   <string name="font.corporative.regular">font_regular.otf</string>
 
   <!-- Dialogs -->
-  <string name="dialog.title.card.picked">Are you sure you want to choose this card?</string>
+  <string name="dialog.title.card.picked">Are you sure you want\nto choose this card?</string>
 
   <!-- Toast -->
   <string name="toast.error.message.application_not_installed">Application not installed</string>
