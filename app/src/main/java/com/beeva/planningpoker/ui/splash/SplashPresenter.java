@@ -27,7 +27,6 @@ public class SplashPresenter extends Presenter<SplashPresenter.View> {
   }
 
   public void onStart() {
-    view.startAnimation();
     view.startTimer();
   }
 
@@ -42,8 +41,6 @@ public class SplashPresenter extends Presenter<SplashPresenter.View> {
   }
 
   public interface View extends Presenter.View {
-    void startAnimation();
-
     void startTimer();
 
     void navigateToMainActivity();

@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <item android:title="@string/label.menu.deckType">
-    <menu>
-      <item
-          android:id="@+id/nav_numbers_deck"
-          android:icon="@drawable/ic_menu_manage"
-          android:title="@string/label.menu.numbers"/>
-      <item
-          android:id="@+id/nav_sizes_deck"
-          android:icon="@drawable/ic_menu_manage"
-          android:title="@string/label.menu.sizes"/>
-    </menu>
-  </item>
+  <item
+      android:id="@+id/nav_play"
+      android:icon="@drawable/menu_ic_play"
+      android:title="@string/label.menu.play"/>
 
   <group
       android:id="@+id/group1"
@@ -20,15 +12,15 @@
 
     <item
         android:id="@+id/nav_settings"
-        android:icon="@drawable/ic_menu_manage"
+        android:icon="@drawable/menu_ic_settings"
         android:title="@string/label.menu.settings"/>
     <item
         android:id="@+id/nav_howToPlay"
-        android:icon="@drawable/ic_menu_manage"
+        android:icon="@drawable/menu_ic_manual"
         android:title="@string/label.menu.how_to_play"/>
     <item
         android:id="@+id/nav_share"
-        android:icon="@drawable/ic_menu_share"
+        android:icon="@drawable/menu_ic_share"
         android:title="@string/label.menu.share"/>
   </group>
 
@@ -38,12 +30,8 @@
 
     <item
         android:id="@+id/nav_aboutApp"
-        android:icon="@drawable/ic_menu_manage"
+        android:icon="@drawable/menu_ic_about"
         android:title="@string/label.menu.about_app"/>
-    <item
-        android:id="@+id/nav_logOut"
-        android:icon="@drawable/ic_menu_manage"
-        android:title="@string/label.menu.log_out"/>
   </group>
 
 

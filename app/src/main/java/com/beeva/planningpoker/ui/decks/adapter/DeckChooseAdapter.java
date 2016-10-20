@@ -37,9 +37,7 @@ public class DeckChooseAdapter extends RecyclerView.Adapter<DeckChooseAdapter.Vi
     Card card = cardList.get(position);
     holder.setClickListener(card, onItemClickListener);
 
-    String description = card.getDescription();
     int imageResource = card.getImageResource();
-    int value = card.getValue();
     Drawable drawable =
         ContextCompat.getDrawable(PlanningPokerAplication.getContext(), imageResource);
 

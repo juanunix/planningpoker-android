@@ -23,14 +23,9 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
     super.initialize();
     view = getView();
 
-    view.setCheckKeepScreenOn(dataRepository.isKeepScreenOn());
     view.setCheckPressToShow(dataRepository.isPressToShow());
     view.setCheckShakeToShow(dataRepository.isShakeToShow());
     view.setRadioButtonLanguage(dataRepository.getAppLanguage());
-  }
-
-  public void onClickKeepScreenOn(boolean checked) {
-    dataRepository.setKeepScreenOn(checked);
   }
 
   public void onClickPressToShow(boolean checked) {
@@ -49,7 +44,6 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
   }
 
   public interface View extends Presenter.View {
-    void setCheckKeepScreenOn(boolean state);
 
     void setCheckPressToShow(boolean state);
 

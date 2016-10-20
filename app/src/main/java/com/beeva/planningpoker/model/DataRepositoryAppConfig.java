@@ -9,8 +9,6 @@ import javax.inject.Inject;
  */
 
 interface DataRepositoryAppConfigInput {
-  void setKeepScreenOn(boolean state);
-
   void setPressToShow(boolean state);
 
   void setShakeToShow(boolean state);
@@ -19,8 +17,6 @@ interface DataRepositoryAppConfigInput {
 }
 
 interface DataRepositoryAppConfigOutput {
-  boolean isKeepScreenOn();
-
   boolean isPressToShow();
 
   boolean isShakeToShow();
@@ -35,14 +31,6 @@ public class DataRepositoryAppConfig
 
   public DataRepositoryAppConfig(SharedPreferences sharedPreferences) {
     this.sharedPreferences = sharedPreferences;
-  }
-
-  public boolean isKeepScreenOn() {
-    return sharedPreferences.getBooleanPreference(SharedPreferences.SETTINGS_KEEP_SCREEN_ON);
-  }
-
-  public void setKeepScreenOn(boolean state) {
-    sharedPreferences.setBooleanPreference(SharedPreferences.SETTINGS_KEEP_SCREEN_ON, state);
   }
 
   public boolean isPressToShow() {

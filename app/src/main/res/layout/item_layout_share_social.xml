@@ -2,69 +2,78 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     >
 
-  <LinearLayout
-      android:layout_width="0dp"
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:gravity="center"
       >
-    <Button
-        android:id="@+id/btnLinkedIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableTop="@mipmap/ic_launcher"
-        android:text="@string/label.share.linkedin"
-        />
-  </LinearLayout>
 
-  <LinearLayout
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:gravity="center"
-      >
-    <Button
-        android:id="@+id/btnFacebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableTop="@mipmap/ic_launcher"
-        android:text="@string/label.share.facebook"
-        />
-  </LinearLayout>
-
-  <LinearLayout
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:gravity="center"
-
-      >
-    <Button
+    <com.beeva.corporate.Button
         android:id="@+id/btnTwitter"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:drawableTop="@mipmap/ic_launcher"
+        android:drawableTop="@drawable/selector_share_ic_twitter"
         android:text="@string/label.share.twitter"
+        style="@style/Button.Share"
+        />
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnFacebook"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/selector_share_ic_facebook"
+        android:text="@string/label.share.facebook"
+        style="@style/Button.Share"
+        />
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnLinkedIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/selector_share_ic_linkedin"
+        android:text="@string/label.share.linkedin"
+        style="@style/Button.Share"
         />
   </LinearLayout>
+
+  <Space
+      android:layout_width="wrap_content"
+      android:layout_height="25dp"
+      />
 
   <LinearLayout
-      android:layout_width="0dp"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_weight="1"
-      android:gravity="center"
-
       >
-    <Button
-        android:id="@+id/btnGoogle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableTop="@mipmap/ic_launcher"
-        android:text="@string/label.share.google"
-        />
-  </LinearLayout>
 
+    <com.beeva.corporate.Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/selector_share_ic_googleplus"
+        android:text="@string/label.share.google"
+        style="@style/Button.Share"
+        />
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnMail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/selector_share_ic_mail"
+        android:text="@string/label.share.mail"
+        style="@style/Button.Share"
+        />
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnWhatsapp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/selector_share_ic_whatsapp"
+        android:text="@string/label.share.whatsapp"
+        style="@style/Button.Share"
+        />
+
+  </LinearLayout>
 </LinearLayout>

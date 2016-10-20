@@ -10,8 +10,6 @@
 
   <include layout="@layout/item_layout_settings_language"/>
   <include layout="@layout/separator_list"/>
-  <include layout="@layout/item_layout_settings_keepscreenon"/>
-  <include layout="@layout/separator_list"/>
   <include layout="@layout/item_layout_settings_presstoshow"/>
   <include layout="@layout/separator_list"/>
   <include layout="@layout/item_layout_settings_shaketoshow"/>

@@ -24,7 +24,6 @@ import javax.inject.Inject;
  */
 public class SettingsFragment extends BaseFragment
     implements SettingsPresenter.View, RadioGroup.OnCheckedChangeListener {
-  @BindView(R.id.cbKeepScreenOn) CheckBox cbKeepScreenOn;
   @BindView(R.id.cbPressToShow) CheckBox cbPressToShow;
   @BindView(R.id.cbShakeToShow) CheckBox cbShakeToShow;
   @BindView(R.id.rgLanguage) RadioGroup rgLanguage;
@@ -73,10 +72,6 @@ public class SettingsFragment extends BaseFragment
     unbinder.unbind();
   }
 
-  @OnCheckedChanged(R.id.cbKeepScreenOn) public void onClickKeepScreenOn() {
-    presenter.onClickKeepScreenOn(cbKeepScreenOn.isChecked());
-  }
-
   @OnCheckedChanged(R.id.cbPressToShow) public void onClickPressToShow() {
     presenter.onClickPressToShow(cbPressToShow.isChecked());
   }
@@ -100,9 +95,6 @@ public class SettingsFragment extends BaseFragment
     }
   }
 
-  @Override public void setCheckKeepScreenOn(boolean state) {
-    cbKeepScreenOn.setChecked(state);
-  }
 
   @Override public void setCheckPressToShow(boolean state) {
     cbPressToShow.setChecked(state);

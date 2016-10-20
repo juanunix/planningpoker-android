@@ -3,24 +3,30 @@ package com.beeva.planningpoker.views.dialogs;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.ContextThemeWrapper;
-import android.view.LayoutInflater;
-import android.widget.Button;
+import android.view.View;
+import android.widget.ImageView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.beeva.planningpoker.R;
-import com.beeva.planningpoker.utils.FontUtils;
+import com.beeva.planningpoker.ui.BaseDialogFragment;
+import com.beeva.planningpoker.ui.decks.model.Card;
+
+import static com.beeva.planningpoker.utils.BundleConstants.CHOSEN_CARD;
 
 /**
  * Created by david.gonzalez on 27/9/16.
  */
 
-public class PickedCardDialogFragment extends DialogFragment
+public class PickedCardDialogFragment extends BaseDialogFragment
     implements DialogInterface.OnShowListener {
+
+  @BindView(R.id.ivCard) ImageView ivCard;
 
   PickedCardDialogListener mListener;
 
@@ -28,29 +34,18 @@ public class PickedCardDialogFragment extends DialogFragment
     Context context = new ContextThemeWrapper(getActivity(), R.style.CustomAlertDialog);
 
     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-    LayoutInflater inflater = getActivity().getLayoutInflater();
+    View view = View.inflate(getContext(), R.layout.layout_dialog_pick_card, null);
+    ButterKnife.bind(this, view);
 
-    builder.setView(inflater.inflate(R.layout.layout_dialog_pick_card, null))
-        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-          @Override public void onClick(DialogInterface dialog, int id) {
-            mListener.onDialogPositiveClick(PickedCardDialogFragment.this);
-          }
-        })
-        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-          public void onClick(DialogInterface dialog, int id) {
-            mListener.onDialogNegativeClick(PickedCardDialogFragment.this);
-          }
-        });
+    builder.setView(view);
 
     AlertDialog alertDialog = builder.create();
     alertDialog.setOnShowListener(this);
 
-    return alertDialog;
-  }
+    Card card = getArguments().getParcelable(CHOSEN_CARD);
+    ivCard.setBackgroundResource(card.getImageResourceBig());
 
-  @Override public void onCreate(@Nullable Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setStyle(DialogFragment.STYLE_NO_TITLE, R.style.CustomAlertDialog);
+    return alertDialog;
   }
 
   @Override public void onAttach(Context context) {
@@ -62,19 +57,12 @@ public class PickedCardDialogFragment extends DialogFragment
     }
   }
 
-  @Override public void onShow(DialogInterface dialog) {
-    AlertDialog alertDialog = (AlertDialog) dialog;
-    Typeface typeface = FontUtils.getDefaultTypeface(getActivity());
+  @OnClick(R.id.btnAccept) public void onClickAcceptDialog(){
+    mListener.onDialogPositiveClick(this);
+  }
 
-    Button button = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
-    button.setAllCaps(true);
-    button.setTypeface(typeface);
-
-    button = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
-    button.setTypeface(typeface);
-
-    button = alertDialog.getButton(DialogInterface.BUTTON_NEUTRAL);
-    button.setTypeface(typeface);
+  @OnClick(R.id.btnCancel) public void onClickCancelDialog(){
+    mListener.onDialogNegativeClick(this);
   }
 
   public interface PickedCardDialogListener {
@@ -82,4 +70,5 @@ public class PickedCardDialogFragment extends DialogFragment
 
     void onDialogNegativeClick(DialogFragment dialog);
   }
+
 }

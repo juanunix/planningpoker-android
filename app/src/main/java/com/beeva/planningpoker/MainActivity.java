@@ -2,7 +2,6 @@ package com.beeva.planningpoker;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -15,11 +14,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.beeva.planningpoker.di.MainComponent;
 import com.beeva.planningpoker.ui.MainPresenter;
-import com.beeva.planningpoker.ui.decks.enums.DeckEnum;
-import com.beeva.planningpoker.ui.decks.views.DeckActivity;
 import com.beeva.planningpoker.ui.decks.views.DecksTypeFragment;
 import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
-import com.beeva.planningpoker.utils.BundleConstants;
 import javax.inject.Inject;
 
 public class MainActivity extends BaseActivity
@@ -44,13 +40,6 @@ public class MainActivity extends BaseActivity
   @Override protected void onResume() {
     super.onRestart();
     setFragment(fragment);
-
-    if (fragment instanceof DecksTypeFragment) {
-      int size = nav_view.getMenu().size();
-      for (int i = 0; i < size; i++) {
-        nav_view.getMenu().getItem(i).setChecked(false);
-      }
-    }
   }
 
   @Override protected int getLayoutId() {
@@ -107,7 +96,13 @@ public class MainActivity extends BaseActivity
     if (drawer.isDrawerOpen(GravityCompat.START)) {
       drawer.closeDrawer(GravityCompat.START);
     } else {
-      super.onBackPressed();
+      if (!(fragment instanceof DecksTypeFragment)) {
+        putDefaultFragment();
+        setFragment(fragment);
+        clearMenu();
+      } else {
+        super.onBackPressed();
+      }
     }
   }
 
@@ -119,14 +114,14 @@ public class MainActivity extends BaseActivity
         .commit();
   }
 
-  @Override public void navigateToDeckActivity(DeckEnum deckEnum) {
-    Intent intent = new Intent(this, DeckActivity.class);
-    intent.putExtra(BundleConstants.DECK_TYPE, deckEnum);
-
-    startActivity(intent);
-  }
-
   @Override public void putDefaultFragment() {
     this.fragment = DecksTypeFragment.newInstance();
+  }
+
+  @Override public void clearMenu() {
+    int size = nav_view.getMenu().size();
+    for (int i = 0; i < size; i++) {
+      nav_view.getMenu().getItem(i).setChecked(false);
+    }
   }
 }

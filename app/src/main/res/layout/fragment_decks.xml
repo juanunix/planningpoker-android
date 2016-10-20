@@ -34,11 +34,16 @@
           android:layout_height="wrap_content"
           android:background="@null"
           android:drawablePadding="12dp"
-          android:drawableTop="@mipmap/ic_launcher"
+          android:drawableTop="@drawable/selector_choose_deck_ic_numbers"
           android:text="@string/decks.label.numbers"
           android:textAllCaps="false"
           android:textSize="16sp"
           style="@style/Button"
+          />
+
+      <Space
+          android:layout_width="20dp"
+          android:layout_height="wrap_content"
           />
 
       <com.beeva.corporate.Button
@@ -47,7 +52,7 @@
           android:layout_height="wrap_content"
           android:background="@null"
           android:drawablePadding="12dp"
-          android:drawableTop="@mipmap/ic_launcher"
+          android:drawableTop="@drawable/selector_choose_deck_ic_sizes"
           android:text="@string/decks.label.sizes"
           android:textAllCaps="false"
           android:textSize="16sp"

@@ -12,7 +12,7 @@ import android.view.SubMenu;
 import com.beeva.planningpoker.Presenter;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.ui.aboutApp.AboutAppFragment;
-import com.beeva.planningpoker.ui.decks.enums.DeckEnum;
+import com.beeva.planningpoker.ui.decks.views.DecksTypeFragment;
 import com.beeva.planningpoker.ui.howToPlay.HowToPlayFragment;
 import com.beeva.planningpoker.ui.settings.SettingsFragment;
 import com.beeva.planningpoker.ui.share.ShareFragment;
@@ -36,17 +36,12 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
   }
 
   public void onNavigationItemSelected(MenuItem item) {
-    Fragment fragment = null;
+    Fragment fragment;
     int id = item.getItemId();
 
     switch (id) {
-      case R.id.nav_numbers_deck:
-        fragment = null;
-        view.navigateToDeckActivity(DeckEnum.NUMBERS);
-        break;
-      case R.id.nav_sizes_deck:
-        fragment = null;
-        view.navigateToDeckActivity(DeckEnum.SIZES);
+      case R.id.nav_play:
+        fragment = DecksTypeFragment.newInstance();
         break;
       case R.id.nav_settings:
         fragment = SettingsFragment.newInstance();
@@ -60,8 +55,6 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
       case R.id.nav_aboutApp:
         fragment = AboutAppFragment.newInstance();
         break;
-      case R.id.nav_logOut:
-        break;
       default:
         fragment = LoginFragment.newInstance();
         break;
@@ -69,10 +62,10 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
 
     if (fragment != null) {
       view.setFragment(fragment);
+      if (fragment instanceof DecksTypeFragment) view.clearMenu();
     } else {
       view.putDefaultFragment();
     }
-
   }
 
   public void initializeMenu(Context context, NavigationView navigationView) {
@@ -105,8 +98,8 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
   public interface View extends Presenter.View {
     void setFragment(Fragment fragment);
 
-    void navigateToDeckActivity(DeckEnum deckEnum);
-
     void putDefaultFragment();
+
+    void clearMenu();
   }
 }

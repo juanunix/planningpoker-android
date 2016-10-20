@@ -30,12 +30,12 @@
       android:layout_width="wrap_content"
       android:layout_height="match_parent"
       android:layout_gravity="start"
+      android:background="@color/beeva.gray"
       android:fitsSystemWindows="true"
       app:itemBackground="@drawable/selector_list_menu_background"
       app:itemIconTint="@color/selector_list_menu_item"
       app:itemTextColor="@color/selector_list_menu_item"
       app:menu="@menu/activity_main_drawer"
-      style="@style/CommonBase"
       >
 
     <LinearLayout
@@ -48,7 +48,9 @@
       <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:src="@mipmap/ic_launcher"
+          android:layout_marginBottom="20dp"
+          android:layout_marginLeft="20dp"
+          android:src="@drawable/logo_beeva"
           />
     </LinearLayout>
 

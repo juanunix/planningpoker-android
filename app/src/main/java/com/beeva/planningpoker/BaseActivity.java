@@ -1,6 +1,7 @@
 package com.beeva.planningpoker;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -24,6 +25,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Presente
     initializeToolbar();
     initializeDrawer();
     setHeaderTitle(this);
+
+    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
   }
 
   @Override public void showProgress(int resourceMessage) {
@@ -62,9 +65,9 @@ public abstract class BaseActivity extends AppCompatActivity implements Presente
   }
 
   @Override public boolean onTouchEvent(MotionEvent event) {
-    InputMethodManager imm = (InputMethodManager) getSystemService(Context.
-        INPUT_METHOD_SERVICE);
-    imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+    //InputMethodManager imm = (InputMethodManager) getSystemService(Context.
+    //    INPUT_METHOD_SERVICE);
+    //imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
     return true;
   }
 }

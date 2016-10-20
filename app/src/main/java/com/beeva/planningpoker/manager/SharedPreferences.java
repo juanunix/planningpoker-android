@@ -10,7 +10,6 @@ import com.beeva.planningpoker.application.PlanningPokerAplication;
 public class SharedPreferences {
 
   public static final String SETTINGS_LANGUAGE = "language";
-  public static final String SETTINGS_KEEP_SCREEN_ON = "keepScreenOn";
   public static final String SETTINGS_PUSH_TO_SHOW = "pushToShow";
   public static final String SETTINGS_SHAKE_TO_SHOW = "shakeToShow";
   private static final String SHARED_PREFERENCES_ENVIROMENT = "SharedPrefsEnviroment";
