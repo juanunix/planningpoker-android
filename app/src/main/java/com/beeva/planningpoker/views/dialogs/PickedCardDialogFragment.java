@@ -43,7 +43,7 @@ public class PickedCardDialogFragment extends BaseDialogFragment
     alertDialog.setOnShowListener(this);
 
     Card card = getArguments().getParcelable(CHOSEN_CARD);
-    ivCard.setBackgroundResource(card.getImageResourceBig());
+    ivCard.setImageResource(card.getImageResourceBig());
 
     return alertDialog;
   }
