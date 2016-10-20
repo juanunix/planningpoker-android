@@ -3,6 +3,8 @@ package com.beeva.planningpoker.ui.share;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import com.beeva.planningpoker.Presenter;
+import com.beeva.planningpoker.R;
+import com.beeva.planningpoker.application.PlanningPokerAplication;
 import java.util.List;
 import javax.inject.Inject;
 
@@ -24,7 +26,6 @@ public class SharePresenter extends Presenter<SharePresenter.View> {
     view = getView();
   }
 
-  //TODO: Empty ShowToast
   //TODO: Share Messaging (Multiples messages?)
   public void shareTo(ShareEnum shareEnum) {
     String packageName = shareEnum.getPackageName(shareEnum);
@@ -35,7 +36,7 @@ public class SharePresenter extends Presenter<SharePresenter.View> {
       share.setMessage("This is a test again!");
       view.sendSharedMessage(share);
     } else {
-      view.showToast(0);
+      view.showToast(R.string.toast_error_message_application_not_installed);
     }
   }
 
@@ -63,6 +64,10 @@ public class SharePresenter extends Presenter<SharePresenter.View> {
     void onClickTwitter();
 
     void onClickGoogle();
+
+    void onClickMail();
+
+    void onClickWhatsapp();
 
     void sendSharedMessage(Share share);
   }

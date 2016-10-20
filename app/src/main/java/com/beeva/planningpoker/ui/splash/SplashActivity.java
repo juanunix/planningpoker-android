@@ -20,9 +20,6 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
   private static final long ANIM_ITEM_DURATION = 1250;
   private static final long TIMER_TIME = STARTUP_DELAY + ANIM_ITEM_DURATION + 250;
 
-  @BindView(R.id.tvBeeva) TextView tvBeeva;
-  @BindView(R.id.tvPlanning) TextView tvPlanning;
-  @BindView(R.id.tvPoker) TextView tvPoker;
 
   @Inject SplashPresenter presenter;
 
@@ -59,31 +56,6 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
 
   @Override protected int getHeaderTitle() {
     return 0;
-  }
-
-  @Override public void startAnimation() {
-    ViewCompat.animate(tvBeeva)
-        .translationY(-25)
-        .setStartDelay(STARTUP_DELAY)
-        .setDuration(ANIM_ITEM_DURATION)
-        .setInterpolator(new DecelerateInterpolator(1.2f))
-        .start();
-
-    ViewCompat.animate(tvPlanning)
-        .translationY(125)
-        .alpha(1.0f)
-        .setStartDelay(STARTUP_DELAY)
-        .setDuration(ANIM_ITEM_DURATION)
-        .setInterpolator(new DecelerateInterpolator(1.2f))
-        .start();
-
-    ViewCompat.animate(tvPoker)
-        .translationY(125)
-        .alpha(1.0f)
-        .setStartDelay(STARTUP_DELAY)
-        .setDuration(ANIM_ITEM_DURATION)
-        .setInterpolator(new DecelerateInterpolator(1.2f))
-        .start();
   }
 
   @Override public void startTimer() {

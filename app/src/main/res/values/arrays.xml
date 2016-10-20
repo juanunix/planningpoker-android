@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <integer-array name="number_cards">
+    <item>@drawable/selector_card_numbers_0</item>
+    <item>@drawable/selector_card_numbers_1</item>
+    <item>@drawable/selector_card_numbers_1half</item>
+    <item>@drawable/selector_card_numbers_2</item>
+    <item>@drawable/selector_card_numbers_3</item>
+    <item>@drawable/selector_card_numbers_5</item>
+    <item>@drawable/selector_card_numbers_8</item>
+    <item>@drawable/selector_card_numbers_13</item>
+    <item>@drawable/selector_card_numbers_20</item>
+    <item>@drawable/selector_card_numbers_40</item>
+    <item>@drawable/selector_card_numbers_100</item>
+    <item>@drawable/selector_card_common_cup</item>
+    <item>@drawable/selector_card_common_question</item>
+    <item>@drawable/selector_card_common_infinite</item>
+  </integer-array>
+
+  <integer-array name="number_cards_big">
+    <item>@drawable/card_numbers_big_0</item>
+    <item>@drawable/card_numbers_big_1</item>
+    <item>@drawable/card_numbers_big_1half</item>
+    <item>@drawable/card_numbers_big_2</item>
+    <item>@drawable/card_numbers_big_3</item>
+    <item>@drawable/card_numbers_big_5</item>
+    <item>@drawable/card_numbers_big_8</item>
+    <item>@drawable/card_numbers_big_13</item>
+    <item>@drawable/card_numbers_big_20</item>
+    <item>@drawable/card_numbers_big_40</item>
+    <item>@drawable/card_numbers_big_100</item>
+    <item>@drawable/card_big_cup</item>
+    <item>@drawable/card_big_question</item>
+    <item>@drawable/card_big_infinite</item>
+  </integer-array>
+
+  <string-array name="number_cards_string">
+    <item>@string/card.number.0</item>
+    <item>@string/card.number.1</item>
+    <item>@string/card.number.1half</item>
+    <item>@string/card.number.2</item>
+    <item>@string/card.number.3</item>
+    <item>@string/card.number.5</item>
+    <item>@string/card.number.8</item>
+    <item>@string/card.number.13</item>
+    <item>@string/card.number.20</item>
+    <item>@string/card.number.40</item>
+    <item>@string/card.number.100</item>
+    <item>@string/card.common.cup</item>
+    <item>@string/card.common.question</item>
+    <item>@string/card.common.infinite</item>
+  </string-array>
+
+  <integer-array name="size_cards">
+    <item>@drawable/selector_card_sizes_xs</item>
+    <item>@drawable/selector_card_sizes_s</item>
+    <item>@drawable/selector_card_sizes_m</item>
+    <item>@drawable/selector_card_sizes_l</item>
+    <item>@drawable/selector_card_sizes_xl</item>
+    <item>@drawable/selector_card_common_cup</item>
+    <item>@drawable/selector_card_common_question</item>
+    <item>@drawable/selector_card_common_infinite</item>
+  </integer-array>
+
+  <integer-array name="size_cards_big">
+    <item>@drawable/card_sizes_big_s</item>
+    <item>@drawable/card_sizes_big_s</item>
+    <item>@drawable/card_sizes_big_m</item>
+    <item>@drawable/card_sizes_big_l</item>
+    <item>@drawable/card_sizes_big_xl</item>
+    <item>@drawable/card_big_cup</item>
+    <item>@drawable/card_big_question</item>
+    <item>@drawable/card_big_infinite</item>
+  </integer-array>
+
+  <string-array name="size_cards_string">
+    <item>@string/card.sizes.xs</item>
+    <item>@string/card.sizes.s</item>
+    <item>@string/card.sizes.m</item>
+    <item>@string/card.sizes.l</item>
+    <item>@string/card.sizes.xl</item>
+    <item>@drawable/selector_card_common_cup</item>
+    <item>@drawable/selector_card_common_question</item>
+    <item>@drawable/selector_card_common_infinite</item>
+  </string-array>
+
+</resources>

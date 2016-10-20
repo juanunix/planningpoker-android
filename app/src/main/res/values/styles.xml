@@ -20,7 +20,7 @@
   </style>
 
   <style name="SplashTheme" parent="AppTheme.NoActionBar">
-    <item name="android:windowBackground">@drawable/background_splash</item>
+    <item name="android:windowBackground">@drawable/bg_main</item>
   </style>
 
   <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
@@ -28,7 +28,7 @@
   <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
   <style name="CommonBase">
-    <item name="android:background">@color/beeva.gray</item>
+    <item name="android:background">@drawable/bg_main</item>
   </style>
 
 
@@ -40,12 +40,25 @@
   </style>
 
   <style name="Button.Share">
-    <item name="android:textColor">@color/beeva.texts.color.default</item>
     <item name="android:background">@null</item>
     <item name="android:textAllCaps">false</item>
-    <item name="android:minWidth">130dp</item>
-    <item name="android:padding">23dp</item>
-    <item name="font">@string/font.avenir.book</item>
+    <item name="android:drawablePadding">10dp</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="Button.Dialog" parent="Button">
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="Button.Dialog.Yellow" parent="Button.Dialog">
+    <item name="android:background">@color/beeva.yellow</item>
+    <item name="android:textColor">@color/beeva.black</item>
+  </style>
+
+  <style name="Button.Dialog.Black" parent="Button.Dialog">
+    <item name="android:background">@color/beeva.black</item>
+    <item name="android:textColor">@color/beeva.white</item>
   </style>
 
   <style name="CheckBox">
@@ -103,7 +116,6 @@
   </style>
 
   <style name="CustomAlertDialog" parent="@android:style/Theme.Dialog">
-    <item name="android:background">@color/beeva.gray</item>
   </style>
 
 </resources>

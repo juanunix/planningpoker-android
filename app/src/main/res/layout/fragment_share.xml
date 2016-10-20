@@ -20,19 +20,19 @@
 
       <Space
           android:layout_width="wrap_content"
-          android:layout_height="26dp"
+          android:layout_height="20dp"
           />
 
       <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
-          android:src="@mipmap/ic_launcher"
+          android:src="@drawable/share_ic"
           />
 
       <Space
           android:layout_width="wrap_content"
-          android:layout_height="26dp"
+          android:layout_height="20dp"
           />
 
       <com.beeva.corporate.TextView
@@ -51,7 +51,14 @@
 
       <Space
           android:layout_width="wrap_content"
-          android:layout_height="70dp"
+          android:layout_height="26dp"
+          />
+
+      <include layout="@layout/separator_main"/>
+
+      <Space
+          android:layout_width="wrap_content"
+          android:layout_height="47dp"
           />
 
       <include layout="@layout/item_layout_share_social"/>

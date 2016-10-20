@@ -11,7 +11,9 @@ public enum ShareEnum {
   LINKEDIN,
   FACEBOOK,
   TWITTER,
-  GOOGLE;
+  GOOGLE,
+  MAIL,
+  WHATSAPP;
 
   String packageName;
 
@@ -27,6 +29,10 @@ public enum ShareEnum {
         return resources.getString(R.string.packageName_share_twitter);
       case GOOGLE:
         return resources.getString(R.string.packageName_share_google);
+      case MAIL:
+        return resources.getString(R.string.packageName_share_gmail);
+      case WHATSAPP:
+        return resources.getString(R.string.packageName_share_whatsapp);
     }
 
     return packageName;

@@ -71,6 +71,14 @@ public class ShareFragment extends BaseFragment implements SharePresenter.View {
     presenter.shareTo(ShareEnum.GOOGLE);
   }
 
+  @OnClick(R.id.btnMail) @Override public void onClickMail() {
+    presenter.shareTo(ShareEnum.MAIL);
+  }
+
+  @OnClick(R.id.btnWhatsapp) @Override public void onClickWhatsapp() {
+    presenter.shareTo(ShareEnum.WHATSAPP);
+  }
+
   @Override public void sendSharedMessage(Share share) {
     Intent intent = new Intent(Intent.ACTION_SEND);
     intent.putExtra(Intent.EXTRA_TEXT, share.getMessage());
