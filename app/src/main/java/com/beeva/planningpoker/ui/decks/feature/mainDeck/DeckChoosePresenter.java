@@ -32,7 +32,6 @@ public class DeckChoosePresenter extends Presenter<DeckChoosePresenter.View> {
     view = getView();
   }
 
-  //TODO: Remove mocked
   public void start(Intent intent, DeckChooseAdapter.OnItemClickListener onItemClickListener) {
     DeckEnum deckEnum = ((DeckEnum) intent.getSerializableExtra(BundleConstants.DECK_TYPE));
     boolean isNumbersSelected = deckEnum == DeckEnum.NUMBERS;
