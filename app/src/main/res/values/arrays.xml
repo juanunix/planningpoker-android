@@ -63,7 +63,7 @@
   </integer-array>
 
   <integer-array name="size_cards_big">
-    <item>@drawable/card_sizes_big_s</item>
+    <item>@drawable/card_sizes_big_xs</item>
     <item>@drawable/card_sizes_big_s</item>
     <item>@drawable/card_sizes_big_m</item>
     <item>@drawable/card_sizes_big_l</item>
