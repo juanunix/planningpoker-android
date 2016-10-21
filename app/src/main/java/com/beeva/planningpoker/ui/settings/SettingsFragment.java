@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
@@ -29,6 +30,7 @@ public class SettingsFragment extends BaseFragment
   @BindView(R.id.rgLanguage) RadioGroup rgLanguage;
   @BindView(R.id.rbSpanish) RadioButton rbSpanish;
   @BindView(R.id.rbEnglish) RadioButton rbEnglish;
+  @BindView(R.id.rlShakeToShow) RelativeLayout rlShakeToShow;
 
   @Inject SettingsPresenter presenter;
 
@@ -95,6 +97,9 @@ public class SettingsFragment extends BaseFragment
     }
   }
 
+  @Override public void removeShakeToShowOption() {
+    rlShakeToShow.setVisibility(View.GONE);
+  }
 
   @Override public void setCheckPressToShow(boolean state) {
     cbPressToShow.setChecked(state);

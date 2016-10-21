@@ -1,6 +1,7 @@
 package com.beeva.planningpoker.ui.settings;
 
 import com.beeva.planningpoker.Presenter;
+import com.beeva.planningpoker.manager.PackageManager;
 import com.beeva.planningpoker.manager.language.LanguageEnum;
 import com.beeva.planningpoker.manager.language.LanguageManager;
 import com.beeva.planningpoker.model.DataRepository;
@@ -13,6 +14,8 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
 
   @Inject DataRepository dataRepository;
   @Inject LanguageManager languageManager;
+  @Inject PackageManager packageManager;
+
   private View view;
 
   @Inject public SettingsPresenter() {
@@ -26,6 +29,10 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
     view.setCheckPressToShow(dataRepository.isPressToShow());
     view.setCheckShakeToShow(dataRepository.isShakeToShow());
     view.setRadioButtonLanguage(dataRepository.getAppLanguage());
+
+    if (!packageManager.existsGyroscopeInDevice()){
+      view.removeShakeToShowOption();
+    }
   }
 
   public void onClickPressToShow(boolean checked) {
@@ -44,6 +51,8 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
   }
 
   public interface View extends Presenter.View {
+
+    void removeShakeToShowOption();
 
     void setCheckPressToShow(boolean state);
 

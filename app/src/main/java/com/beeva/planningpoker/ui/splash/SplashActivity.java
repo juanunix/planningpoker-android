@@ -59,7 +59,7 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
   }
 
   @Override public void startTimer() {
-    new CountDownTimer(TIMER_TIME, 1000) {
+    new CountDownTimer(TIMER_TIME, 1) {
 
       public void onTick(long millisUntilFinished) {
       }

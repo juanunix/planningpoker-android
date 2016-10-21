@@ -29,4 +29,9 @@ public class PackageManager {
     return packManager.queryIntentActivities(intent,
         android.content.pm.PackageManager.MATCH_DEFAULT_ONLY);
   }
+
+  public boolean existsGyroscopeInDevice(){
+    android.content.pm.PackageManager pm = PlanningPokerAplication.getContext().getPackageManager();
+    return pm.hasSystemFeature(android.content.pm.PackageManager.FEATURE_SENSOR_ACCELEROMETER);
+  }
 }
