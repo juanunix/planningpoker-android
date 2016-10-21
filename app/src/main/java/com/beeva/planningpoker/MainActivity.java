@@ -40,6 +40,7 @@ public class MainActivity extends BaseActivity
   @Override protected void onResume() {
     super.onRestart();
     setFragment(fragment);
+    mainPresenter.onResume(getIntent());
   }
 
   @Override protected int getLayoutId() {
@@ -123,5 +124,9 @@ public class MainActivity extends BaseActivity
     for (int i = 0; i < size; i++) {
       nav_view.getMenu().getItem(i).setChecked(false);
     }
+  }
+
+  @Override public void setSettingsFragment() {
+    drawerPresenter.onNavigationItemSelected(R.id.nav_settings);
   }
 }

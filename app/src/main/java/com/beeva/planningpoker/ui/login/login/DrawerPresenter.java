@@ -36,10 +36,14 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
   }
 
   public void onNavigationItemSelected(MenuItem item) {
-    Fragment fragment;
     int id = item.getItemId();
+    onNavigationItemSelected(id);
+  }
 
-    switch (id) {
+  public void onNavigationItemSelected(int itemId) {
+    Fragment fragment;
+
+    switch (itemId) {
       case R.id.nav_play:
         fragment = DecksTypeFragment.newInstance();
         break;

@@ -48,6 +48,7 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
   public void onLanguageChanged(LanguageEnum language) {
     languageManager.changeLocale(language);
     dataRepository.setAppLanguage(language);
+    view.forceChangeLanguage();
   }
 
   public interface View extends Presenter.View {
@@ -61,5 +62,9 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
     void setRadioButtonLanguage(LanguageEnum language);
 
     void checkDefaultPressed();
+
+    void forceChangeLanguage();
   }
+
+
 }

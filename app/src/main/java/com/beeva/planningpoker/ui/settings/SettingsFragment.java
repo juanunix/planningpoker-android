@@ -1,5 +1,6 @@
 package com.beeva.planningpoker.ui.settings;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,7 @@ import com.beeva.planningpoker.BaseFragment;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.di.MainComponent;
 import com.beeva.planningpoker.manager.language.LanguageEnum;
+import com.beeva.planningpoker.utils.BundleConstants;
 import javax.inject.Inject;
 
 /**
@@ -129,5 +131,12 @@ public class SettingsFragment extends BaseFragment
     if (!cbPressToShow.isChecked() && !cbShakeToShow.isChecked()) {
       cbPressToShow.setChecked(true);
     }
+  }
+
+  @Override public void forceChangeLanguage() {
+    Intent intent = getActivity().getIntent();
+    intent.putExtra(BundleConstants.SETTINGS_FRAGMENT, true);
+    getActivity().finish();
+    startActivity(intent);
   }
 }

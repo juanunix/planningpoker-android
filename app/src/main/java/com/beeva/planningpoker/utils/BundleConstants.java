@@ -7,4 +7,5 @@ package com.beeva.planningpoker.utils;
 public class BundleConstants {
   public static final String DECK_TYPE = "deck_type";
   public static final String CHOSEN_CARD = "chosen_card";
+  public static final String SETTINGS_FRAGMENT = "settings_fragment";
 }
