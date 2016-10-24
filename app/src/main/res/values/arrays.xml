@@ -34,6 +34,23 @@
     <item>@drawable/card_big_infinite</item>
   </integer-array>
 
+  <integer-array name="number_cards_bigger">
+    <item>@drawable/card_numbers_0_bigger</item>
+    <item>@drawable/card_numbers_1_bigger</item>
+    <item>@drawable/card_numbers_1half_bigger</item>
+    <item>@drawable/card_numbers_2_bigger</item>
+    <item>@drawable/card_numbers_3_bigger</item>
+    <item>@drawable/card_numbers_5_bigger</item>
+    <item>@drawable/card_numbers_8_bigger</item>
+    <item>@drawable/card_numbers_13_bigger</item>
+    <item>@drawable/card_numbers_20_bigger</item>
+    <item>@drawable/card_numbers_40_bigger</item>
+    <item>@drawable/card_numbers_100_bigger</item>
+    <item>@drawable/card_bigger_cup</item>
+    <item>@drawable/card_bigger_question</item>
+    <item>@drawable/card_bigger_infinite</item>
+  </integer-array>
+
   <string-array name="number_cards_string">
     <item>@string/card.number.0</item>
     <item>@string/card.number.1</item>
@@ -71,6 +88,17 @@
     <item>@drawable/card_big_cup</item>
     <item>@drawable/card_big_question</item>
     <item>@drawable/card_big_infinite</item>
+  </integer-array>
+
+  <integer-array name="size_cards_bigger">
+    <item>@drawable/card_sizes_bigger_xs</item>
+    <item>@drawable/card_sizes_bigger_s</item>
+    <item>@drawable/card_sizes_bigger_m</item>
+    <item>@drawable/card_sizes_bigger_l</item>
+    <item>@drawable/card_sizes_bigger_xl</item>
+    <item>@drawable/card_bigger_cup</item>
+    <item>@drawable/card_bigger_question</item>
+    <item>@drawable/card_bigger_infinite</item>
   </integer-array>
 
   <string-array name="size_cards_string">

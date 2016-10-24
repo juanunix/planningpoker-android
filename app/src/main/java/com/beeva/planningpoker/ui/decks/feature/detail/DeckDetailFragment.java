@@ -74,7 +74,7 @@ public class DeckDetailFragment extends BaseFragment
     TIMER = getActivity().getResources().getInteger(R.integer.flip_card_anim);
 
     Card card = getArguments().getParcelable(CHOSEN_CARD);
-    ivCardFront.setImageResource(card.getImageResourceBig());
+    ivCardFront.setImageResource(card.getImageResourceBigger());
   }
 
   @Override public void onResume() {

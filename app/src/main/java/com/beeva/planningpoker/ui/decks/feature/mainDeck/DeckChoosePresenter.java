@@ -44,6 +44,9 @@ public class DeckChoosePresenter extends Presenter<DeckChoosePresenter.View> {
     TypedArray cardImagesBig = context.getResources()
         .obtainTypedArray(isNumbersSelected ? R.array.number_cards_big : R.array.size_cards_big);
 
+    TypedArray cardImagesBigger = context.getResources()
+        .obtainTypedArray(isNumbersSelected ? R.array.number_cards_bigger : R.array.size_cards_bigger);
+
     TypedArray stringImages = context.getResources()
         .obtainTypedArray(
             isNumbersSelected ? R.array.number_cards_string : R.array.size_cards_string);
@@ -58,11 +61,13 @@ public class DeckChoosePresenter extends Presenter<DeckChoosePresenter.View> {
           .getString(stringImages.getResourceId(i, 0));
 
       cardList.add(
-          new Card(cardImages.getResourceId(i, 0), cardImagesBig.getResourceId(i, 0), description,
+          new Card(cardImages.getResourceId(i, 0), cardImagesBig.getResourceId(i, 0), cardImagesBigger.getResourceId(i, 0), description,
               i));
     }
 
     cardImages.recycle();
+    cardImagesBig.recycle();
+    cardImagesBigger.recycle();
     stringImages.recycle();
     DeckChooseAdapter adapter = new DeckChooseAdapter(cardList, onItemClickListener);
     view.prepareRecyclerView(spanCount);

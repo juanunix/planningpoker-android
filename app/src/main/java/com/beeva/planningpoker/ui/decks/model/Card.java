@@ -11,12 +11,15 @@ public class Card implements Parcelable {
 
   int imageResource;
   int imageResourceBig;
+  int imageResourceBigger;
   String description;
   int value;
 
-  public Card(int imageResource, int imageResourceBig, String description, int value) {
+  public Card(int imageResource, int imageResourceBig, int imageResourceBigger, String description,
+      int value) {
     this.imageResource = imageResource;
     this.imageResourceBig = imageResourceBig;
+    this.imageResourceBigger = imageResourceBigger;
     this.description = description;
     this.value = value;
   }
@@ -35,6 +38,14 @@ public class Card implements Parcelable {
 
   public void setImageResourceBig(int imageResourceBig) {
     this.imageResourceBig = imageResourceBig;
+  }
+
+  public int getImageResourceBigger() {
+    return imageResourceBigger;
+  }
+
+  public void setImageResourceBigger(int imageResourceBigger) {
+    this.imageResourceBigger = imageResourceBigger;
   }
 
   public String getDescription() {
@@ -60,14 +71,15 @@ public class Card implements Parcelable {
   @Override public void writeToParcel(Parcel dest, int flags) {
     dest.writeInt(this.imageResource);
     dest.writeInt(this.imageResourceBig);
+    dest.writeInt(this.imageResourceBigger);
     dest.writeString(this.description);
     dest.writeInt(this.value);
   }
 
-
   protected Card(Parcel in) {
     this.imageResource = in.readInt();
     this.imageResourceBig = in.readInt();
+    this.imageResourceBigger = in.readInt();
     this.description = in.readString();
     this.value = in.readInt();
   }
