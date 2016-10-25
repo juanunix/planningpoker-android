@@ -16,39 +16,69 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
   @Inject LanguageManager languageManager;
   @Inject PackageManager packageManager;
 
+  private boolean isPressToShowChecked = false;
+  private boolean isShakeToShowChecked = false;
+  private boolean isGyroscopeAvailable = false;
+
   private View view;
 
-  @Inject public SettingsPresenter() {
+  @Inject SettingsPresenter() {
 
   }
 
+  //We don't need to check if Gyroscope is available on the device when settings are changed, because by default shakeToShow is false
   @Override public void initialize() {
     super.initialize();
     view = getView();
 
-    view.setCheckPressToShow(dataRepository.isPressToShow());
-    view.setCheckShakeToShow(dataRepository.isShakeToShow());
+    isPressToShowChecked = dataRepository.isPressToShow();
+    isShakeToShowChecked = dataRepository.isShakeToShow();
+    isGyroscopeAvailable = packageManager.existsGyroscopeInDevice();
+
+    view.setCheckPressToShow(isPressToShowChecked);
+    view.setCheckShakeToShow(isShakeToShowChecked);
     view.setRadioButtonLanguage(dataRepository.getAppLanguage());
 
-    if (!packageManager.existsGyroscopeInDevice()){
+    if (!isGyroscopeAvailable) {
       view.removeShakeToShowOption();
     }
   }
 
-  public void onClickPressToShow(boolean checked) {
-    view.checkDefaultPressed();
-    dataRepository.setPressToShow(checked);
+  void onClickPressToShow(boolean checked) {
+    isPressToShowChecked = checked;
+    if (isChecksFollowingPolicy()) {
+      dataRepository.setPressToShow(checked);
+    }
   }
 
-  public void onClickShakeToShow(boolean checked) {
-    view.checkDefaultPressed();
-    dataRepository.setShakeToShow(checked);
+  void onClickShakeToShow(boolean checked) {
+    isShakeToShowChecked = checked;
+    if (isChecksFollowingPolicy()) {
+      dataRepository.setShakeToShow(checked);
+    }
   }
 
-  public void onLanguageChanged(LanguageEnum language) {
+  void onLanguageChanged(LanguageEnum language) {
     languageManager.changeLocale(language);
     dataRepository.setAppLanguage(language);
     view.forceChangeLanguage();
+  }
+
+  private boolean isChecksFollowingPolicy() {
+    boolean isCkecksNotFollowingPolicy = (!isPressToShowChecked && !isShakeToShowChecked);
+
+    if (isCkecksNotFollowingPolicy) {
+      setChecksDefaultState();
+      return false;
+    }
+
+    return true;
+  }
+
+  private void setChecksDefaultState() {
+    view.setChecksDefaultState();
+    dataRepository.setPressToShow(true);
+    dataRepository.setShakeToShow(false);
   }
 
   public interface View extends Presenter.View {
@@ -61,10 +91,8 @@ public class SettingsPresenter extends Presenter<SettingsPresenter.View> {
 
     void setRadioButtonLanguage(LanguageEnum language);
 
-    void checkDefaultPressed();
+    void setChecksDefaultState();
 
     void forceChangeLanguage();
   }
-
-
 }

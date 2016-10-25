@@ -126,11 +126,9 @@ public class SettingsFragment extends BaseFragment
   }
 
   //TODO: Dialog
-  //We need cbPressToShow as default check
-  @Override public void checkDefaultPressed() {
-    if (!cbPressToShow.isChecked() && !cbShakeToShow.isChecked()) {
+  @Override public void setChecksDefaultState() {
       cbPressToShow.setChecked(true);
-    }
+      cbShakeToShow.setChecked(false);
   }
 
   @Override public void forceChangeLanguage() {
