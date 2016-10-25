@@ -27,7 +27,12 @@ public class SplashPresenter extends Presenter<SplashPresenter.View> {
   }
 
   public void onStart() {
+    view.initTimer();
     view.startTimer();
+  }
+
+  public void onStop(){
+    view.stopTimer();
   }
 
   private void setAplicationLanguage() {
@@ -41,7 +46,11 @@ public class SplashPresenter extends Presenter<SplashPresenter.View> {
   }
 
   public interface View extends Presenter.View {
+    void initTimer();
+
     void startTimer();
+
+    void stopTimer();
 
     void navigateToMainActivity();
   }

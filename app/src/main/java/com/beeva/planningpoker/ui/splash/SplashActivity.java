@@ -3,11 +3,7 @@ package com.beeva.planningpoker.ui.splash;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v4.view.ViewCompat;
-import android.view.animation.DecelerateInterpolator;
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import com.beeva.corporate.TextView;
 import com.beeva.planningpoker.BaseActivity;
 import com.beeva.planningpoker.MainActivity;
 import com.beeva.planningpoker.R;
@@ -19,9 +15,8 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
   private static final long STARTUP_DELAY = 1000;
   private static final long ANIM_ITEM_DURATION = 1250;
   private static final long TIMER_TIME = STARTUP_DELAY + ANIM_ITEM_DURATION + 250;
-
-
   @Inject SplashPresenter presenter;
+  private CountDownTimer countDownTimer;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -31,6 +26,11 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
   @Override protected void onStart() {
     super.onStart();
     presenter.onStart();
+  }
+
+  @Override protected void onStop() {
+    super.onStop();
+    presenter.onStop();
   }
 
   @Override protected int getLayoutId() {
@@ -58,8 +58,8 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
     return 0;
   }
 
-  @Override public void startTimer() {
-    new CountDownTimer(TIMER_TIME, 1) {
+  @Override public void initTimer() {
+    countDownTimer = new CountDownTimer(TIMER_TIME, 1) {
 
       public void onTick(long millisUntilFinished) {
       }
@@ -68,6 +68,14 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
         navigateToMainActivity();
       }
     }.start();
+  }
+
+  @Override public void startTimer() {
+    countDownTimer.start();
+  }
+
+  @Override public void stopTimer() {
+    countDownTimer.cancel();
   }
 
   @Override public void navigateToMainActivity() {
