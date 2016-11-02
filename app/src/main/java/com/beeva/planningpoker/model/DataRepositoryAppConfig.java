@@ -24,12 +24,12 @@ interface DataRepositoryAppConfigOutput {
   LanguageEnum getAppLanguage();
 }
 
-public class DataRepositoryAppConfig
+class DataRepositoryAppConfig
     implements DataRepositoryAppConfigInput, DataRepositoryAppConfigOutput {
 
   @Inject SharedPreferences sharedPreferences;
 
-  public DataRepositoryAppConfig(SharedPreferences sharedPreferences) {
+  DataRepositoryAppConfig(SharedPreferences sharedPreferences) {
     this.sharedPreferences = sharedPreferences;
   }
 
