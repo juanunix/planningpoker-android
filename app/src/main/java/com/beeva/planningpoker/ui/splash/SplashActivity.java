@@ -12,9 +12,8 @@ import javax.inject.Inject;
 
 public class SplashActivity extends BaseActivity implements SplashPresenter.View {
 
-  private static final long STARTUP_DELAY = 1000;
-  private static final long ANIM_ITEM_DURATION = 1250;
-  private static final long TIMER_TIME = STARTUP_DELAY + ANIM_ITEM_DURATION + 250;
+  private final long STARTUP_DELAY = 1000;
+
   @Inject SplashPresenter presenter;
   private CountDownTimer countDownTimer;
 
@@ -59,7 +58,7 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
   }
 
   @Override public void initTimer() {
-    countDownTimer = new CountDownTimer(TIMER_TIME, 1) {
+    countDownTimer = new CountDownTimer(STARTUP_DELAY, 1) {
 
       public void onTick(long millisUntilFinished) {
       }

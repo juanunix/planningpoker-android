@@ -28,7 +28,7 @@ public class SplashPresenter extends Presenter<SplashPresenter.View> {
 
   public void onStart() {
     view.initTimer();
-    view.startTimer();
+//    view.startTimer();
   }
 
   public void onStop(){
