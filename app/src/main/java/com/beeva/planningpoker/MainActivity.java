@@ -16,6 +16,8 @@ import com.beeva.planningpoker.di.MainComponent;
 import com.beeva.planningpoker.ui.MainPresenter;
 import com.beeva.planningpoker.ui.decks.views.DecksTypeFragment;
 import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
+import com.beeva.planningpoker.utils.BundleConstants;
+
 import javax.inject.Inject;
 
 public class MainActivity extends BaseActivity
@@ -41,6 +43,8 @@ public class MainActivity extends BaseActivity
     super.onRestart();
     setFragment(fragment);
     mainPresenter.onResume(getIntent());
+    //We need remove Settings Extra, because if we force to reload view extra persists
+    getIntent().removeExtra(BundleConstants.SETTINGS_FRAGMENT);
   }
 
   @Override protected int getLayoutId() {
