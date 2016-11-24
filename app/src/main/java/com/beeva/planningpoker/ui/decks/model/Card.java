@@ -28,32 +28,12 @@ public class Card implements Parcelable {
     return imageResource;
   }
 
-  public void setImageResource(int imageResource) {
-    this.imageResource = imageResource;
-  }
-
   public int getImageResourceBig() {
     return imageResourceBig;
   }
 
-  public void setImageResourceBig(int imageResourceBig) {
-    this.imageResourceBig = imageResourceBig;
-  }
-
   public int getImageResourceBigger() {
     return imageResourceBigger;
-  }
-
-  public void setImageResourceBigger(int imageResourceBigger) {
-    this.imageResourceBigger = imageResourceBigger;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
   }
 
   public int getValue() {
