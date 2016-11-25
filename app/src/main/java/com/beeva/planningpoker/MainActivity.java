@@ -12,7 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.manager.BrowserManager;
 import com.beeva.planningpoker.ui.MainPresenter;
 import com.beeva.planningpoker.ui.decks.views.DecksTypeFragment;
 import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
@@ -132,5 +134,9 @@ public class MainActivity extends BaseActivity
 
   @Override public void setSettingsFragment() {
     drawerPresenter.onNavigationItemSelected(R.id.nav_settings);
+  }
+
+  @OnClick(R.id.ibBeevaLogo) public void onClickLogoBeeva(){
+    BrowserManager.openBeevaWebsite(this);
   }
 }

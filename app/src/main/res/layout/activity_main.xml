@@ -45,11 +45,13 @@
         android:orientation="vertical"
         >
 
-      <ImageView
+      <ImageButton
+          android:id="@+id/ibBeevaLogo"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginBottom="20dp"
           android:layout_marginLeft="20dp"
+          android:background="@null"
           android:src="@drawable/logo_beeva"
           />
     </LinearLayout>

@@ -2,6 +2,7 @@ package com.beeva.planningpoker.ui.share;
 
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
 import com.beeva.planningpoker.Presenter;
 import com.beeva.planningpoker.R;
 import com.beeva.planningpoker.application.PlanningPokerAplication;
@@ -33,7 +34,7 @@ public class SharePresenter extends Presenter<SharePresenter.View> {
 
     if (isSocialAppInstalled) {
       Share share = getDataForSocialSharing(packageName);
-      share.setMessage("This is a test again!");
+      share.setMessage(getStringToShare(shareEnum));
       view.sendSharedMessage(share);
     } else {
       view.showToast(R.string.toast_error_message_application_not_installed);
@@ -54,6 +55,22 @@ public class SharePresenter extends Presenter<SharePresenter.View> {
       }
     }
     return share;
+  }
+
+  private String getStringToShare(ShareEnum shareEnum) {
+    Resources resources = PlanningPokerAplication.getContext().getResources();
+
+    switch (shareEnum) {
+      case TWITTER:
+        return resources.getString(R.string.label_share_message_twitter);
+      case LINKEDIN:
+      case FACEBOOK:
+      case GOOGLE:
+      case MAIL:
+      case WHATSAPP:
+        return resources.getString(R.string.label_share_message_another);
+    }
+    return null;
   }
 
   public interface View extends Presenter.View {

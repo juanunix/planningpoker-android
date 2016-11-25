@@ -13,10 +13,12 @@
       android:layout_height="36dp"
       />
 
-  <ImageView
+  <ImageButton
+      android:id="@+id/ibBeevaLogo"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
+      android:background="@null"
       android:src="@drawable/logo_beeva_screens"
       />
 
@@ -29,21 +31,22 @@
 
   <Space
       android:layout_width="wrap_content"
-      android:layout_height="31dp"
+      android:layout_height="11dp"
       />
 
   <ScrollView
       android:layout_width="wrap_content"
       android:layout_height="match_parent"
-      android:paddingRight="20dp"
       >
     <com.beeva.corporate.TextView
         android:id="@+id/txtAboutUs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="10dp"
+        android:paddingBottom="20dp"
         android:paddingLeft="44dp"
         android:paddingRight="17dp"
+        android:paddingTop="20dp"
         android:text="@string/info.about.beeva"
         android:textSize="16sp"
         style="@style/TextView"
