@@ -38,13 +38,13 @@
 
 
   <!-- NavDrawer -->
-  <string name="label.menu.play">Jugar</string>
+  <string name="label.menu.play">Estimar</string>
   <string name="label.menu.deckType">Deck Type</string>
   <string name="label.menu.settings">Ajustes</string>
-  <string name="label.menu.how_to_play">Como jugar</string>
+  <string name="label.menu.how_to_play">Manual</string>
   <string name="label.menu.log_out">Log out</string>
   <string name="label.menu.share">Compartir</string>
-  <string name="label.menu.about_app">Sobre Planning Poker</string>
+  <string name="label.menu.about_app">Acerca de</string>
 
   <!-- Login -->
   <string name="login.header.title">Login</string>
@@ -56,21 +56,22 @@
   <string name="howtoplay.header.title">How to play</string>
 
   <!-- Decks -->
-  <string name="decks.label.title">Choose a deck type: </string>
-  <string name="decks.label.numbers">Numbers</string>
-  <string name="decks.label.sizes">Sizes</string>
+  <string name="decks.label.title"> Elige un tipo de baraja</string>
+  <string name="decks.label.numbers">Números</string>
+  <string name="decks.label.sizes">Tallas</string>
 
   <!-- Settings -->
   <string name="settings.header.title">@string/label.menu.settings</string>
-  <string name="settings.label.language">Language</string>
+  <string name="settings.label.language">Idioma</string>
   <string name="settings.label.language.spanish">ES</string>
   <string name="settings.label.language.english">EN</string>
   <string name="settings.label.keep_screen_on">Keep screen on</string>
-  <string name="settings.label.press_to_show">Push to show</string>
-  <string name="settings.label.shake_to_show">Shake to show</string>
+  <string name="settings.label.press_to_show">Pulsar para mostrar</string>
+  <string name="settings.label.shake_to_show">Agitar para mostrar</string>
 
   <!-- Share -->
   <string name="share.header.title">@string/label.menu.share</string>
+  <string name="label.share">¿Te ha gustado BEEVA PLANNING POKER? Compártelo con el mundo.</string>
   <string name="label.share.linkedin">LinkedIn</string>
   <string name="label.share.facebook">Facebook</string>
   <string name="label.share.twitter">Twitter</string>
@@ -127,4 +128,23 @@
   <!-- Toast -->
   <string name="toast.error.message.application_not_installed">Application not installed</string>
 
+  <!-- About Beeva -->
+  <string name="info.about.beeva"><b>SOBRE BEEVA</b>\n\nSomos una compañía tecnológica y de innovación que tiene como misión ayudar a las empresas en su transformación digital y aportar valor en el momento emergente de las tecnologías. No queremos ser una compañía IT más, así que cuando la tecnología se convierte en commodity, nosotros buscamos nuevos retos.\n\n
+    Nuestro core se centra en cloud computing, big data y machine intelligence. Damos mucha importancia a la innovación, tanta que creamos nuestro propia área de innovación en 2012 y desde entonces lo consideramos una filosofía transversal a la compañía y una forma de entender la tecnología y nuestro trabajo.\n\n\n
+    <b>METODOLOGÍAS ÁGILES</b>\n\nEn BEEVA formamos a nuestros equipos y comenzamos a implantar metodologías ágiles desde 2012, implicando a nuestros clientes en todos los pasos del proyecto, minimizando el impacto de los cambios, reduciendo costes y los tiempos de desarrollo.</string>
+
+  <!-- User's guide -->
+  <string name="info.userguide">1. El Product Owner elige el tipo de baraja (números o tallas).\n\n
+    2. El Product Owner lee el ítem a estimar, resuelve dudas y se discute a alto nivel.\n\n
+    3. Cada participante selecciona una carta con su estimación y la oculta pulsando sobre ella o agitando su dispositivo móvil.\n\n
+    4. Una vez todos han ocultado sus cartas se dan la vuelta al mismo tiempo.\n\n
+    5. Si las estimaciones no coinciden, se discute preguntando a los que han estimado valores extremos.\n\n
+    6. Repetimos los pasos 3 a 5 hasta llegar a un acuerdo de estimación.\n\n
+    7. Volvemos al paso 2 con el siguiente ítem.\n\n\n
+    <b>CONSEJOS</b>\n\n
+    Cero (0) para cosas hechas.\n
+    Infinito (∞) para cosas imposibles.\n
+    Interrogación (?) si no tienes ni idea.\n
+    El Product Owner no estima.
+  </string>
 </resources>

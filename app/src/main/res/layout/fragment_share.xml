@@ -45,7 +45,7 @@
           android:paddingLeft="25dp"
           android:paddingRight="25dp"
           android:scrollbars="horizontal"
-          android:text="@string/lorem.short"
+          android:text="@string/label.share"
           android:maxLines="2"
           android:textAlignment="center"
           android:textSize="16sp"

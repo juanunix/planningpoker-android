@@ -44,7 +44,7 @@
         android:lineSpacingExtra="10dp"
         android:paddingLeft="44dp"
         android:paddingRight="17dp"
-        android:text="@string/lorem.long"
+        android:text="@string/info.about.beeva"
         android:textSize="16sp"
         style="@style/TextView"
         />

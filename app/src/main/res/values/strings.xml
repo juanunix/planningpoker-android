@@ -38,13 +38,13 @@
 
 
   <!-- NavDrawer -->
-  <string name="label.menu.play">Play</string>
+  <string name="label.menu.play">Estimate</string>
   <string name="label.menu.deckType">Deck Type</string>
   <string name="label.menu.settings">Settings</string>
-  <string name="label.menu.how_to_play">How to play</string>
+  <string name="label.menu.how_to_play">User\'s guide</string>
   <string name="label.menu.log_out">Log out</string>
   <string name="label.menu.share">Share</string>
-  <string name="label.menu.about_app">About Planning Poker</string>
+  <string name="label.menu.about_app">About</string>
 
   <!-- Login -->
   <string name="login.header.title">Login</string>
@@ -56,7 +56,7 @@
   <string name="howtoplay.header.title">How to play</string>
 
   <!-- Decks -->
-  <string name="decks.label.title">Choose a deck type: </string>
+  <string name="decks.label.title">Choose a kind of deck</string>
   <string name="decks.label.numbers">Numbers</string>
   <string name="decks.label.sizes">Sizes</string>
 
@@ -66,11 +66,12 @@
   <string name="settings.label.language.spanish">ES</string>
   <string name="settings.label.language.english">EN</string>
   <string name="settings.label.keep_screen_on">Keep screen on</string>
-  <string name="settings.label.press_to_show">Push to show</string>
-  <string name="settings.label.shake_to_show">Shake to show</string>
+  <string name="settings.label.press_to_show">Tap to reveal</string>
+  <string name="settings.label.shake_to_show">Shake to reveal</string>
 
   <!-- Share -->
   <string name="share.header.title">@string/label.menu.share</string>
+  <string name="label.share">Did you like BEEVA PLANNING POKER? Share with the world.</string>
   <string name="label.share.linkedin">LinkedIn</string>
   <string name="label.share.facebook">Facebook</string>
   <string name="label.share.twitter">Twitter</string>
@@ -126,5 +127,25 @@
 
   <!-- Toast -->
   <string name="toast.error.message.application_not_installed">Application not installed</string>
+
+  <!-- About Beeva -->
+  <string name="info.about.beeva"><b>ABOUT BEEVA</b>\n\nBEEVA is a technology and innovation company whose mission is to help companies in their digital transformation and add value as new technologies emerge. We do not want to be just another IT company, so when the technology becomes a commodity, we seeks new challenges.\n\n
+    Our core focus is cloud computing, big data and machine learning. We attaches great importance to innovation, thereby creating our own innovation area in 2012, since which time innovation has been considered a philosophy throughout the company and a way of understanding technology and its work.\n\n\n
+    <b>AGILE</b>\n\nWe train our teams and began to implement agile methodologies from 2012, involving its customers in all steps of the project, thereby minimizing the impact of change and reducing costs and development time.</string>
+
+  <!-- User's guide -->
+  <string name="info.userguide">1. The product Owner chooses a kind of deck (numbers or sizes).\n\n
+    2. The Product Owner provides a short overview, then the team is given an opportunity to ask questions and discuss to clarify assumptions and risks.\n\n
+    3. Each individual lays a card face down representing their estimate by pressing it or shaking the mobile device.\n\n
+    4. Once it\'s ready, everyone calls their cards simultaneously by turning them over.\n\n
+    5. If estimations don\'t match, people with high estimates and low estimates are given an opportunity to offer their justification for their estimate.\n\n
+    6. Repeat the steps 3-5 until a consensus is reached.\n\n
+    7. We go back to step 2 to start the next feature.\n\n\n
+    <b>ADVICES</b>\n\n
+    Zero (0) for done tasks.\n
+    Infinite (∞) for impossible tasks.\n
+    Question mark (?) if you\'re clueless\n
+    The Product Owner doesn\'t estimate.
+  </string>
 
 </resources>
