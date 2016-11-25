@@ -1,0 +1,29 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.beeva.planningpoker.ui.decks.feature.detail.DeckDetailFragment"
+    style="@style/CommonBase"
+    >
+
+  <FrameLayout
+      android:id="@+id/cardFront"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      >
+    <include layout="@layout/item_layout_card_front"/>
+
+  </FrameLayout>
+
+  <FrameLayout
+      android:id="@+id/cardBack"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+    <include layout="@layout/item_layout_card_back"/>
+  </FrameLayout>
+
+</FrameLayout>

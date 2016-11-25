@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+  <com.beeva.corporate.TextView
+      android:id="@+id/txtHeaderTitle"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/height.header.titleBar"
+      android:layout_centerInParent="true"
+      android:background="@color/beeva.black"
+      android:gravity="center"
+      android:text="@string/lorem.title.short"
+      android:textSize="15sp"
+      style="@style/TextView"
+      />
+
+  <include layout="@layout/gradient_view"/>
+
+</LinearLayout>

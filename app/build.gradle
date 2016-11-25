@@ -1,15 +1,20 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'android-apt'
+apply plugin: 'kotlin-android-extensions'
+
 
 android {
-  compileSdkVersion 24
-  buildToolsVersion "23.0.3"
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
     applicationId "com.beeva.planningpoker"
-    minSdkVersion 16
-    targetSdkVersion 24
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 1
     versionName "1.0"
+    testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
   }
   buildTypes {
     release {
@@ -17,11 +22,52 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+  }
 }
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile project(':customViews')
+
   testCompile 'junit:junit:4.12'
-  compile 'com.android.support:appcompat-v7:24.2.1'
-  compile 'com.android.support:design:24.2.1'
+
+  compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+  compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+  compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+  compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+
+  compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+  kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+
+  compile "com.google.firebase:firebase-core:$rootProject.ext.firebaseVersion"
+  compile "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
+  compile "com.google.firebase:firebase-database:$rootProject.ext.firebaseVersion"
+  compile "com.google.firebase:firebase-crash:$rootProject.ext.firebaseVersion"
+
+  kapt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+  compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+  provided "org.glassfish:javax.annotation:10.0-b28"
+
+  compile "org.greenrobot:eventbus:$rootProject.ext.eventBusVersion"
+  compile "de.hdodenhof:circleimageview:$rootProject.ext.circleImageViewVersion"
+  compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+  compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+  // Espresso UI Testing
+  androidTestCompile "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
+  androidTestCompile "com.android.support.test.espresso:espresso-contrib:$rootProject.ext.espressoVersion"
+  androidTestCompile "com.android.support.test.espresso:espresso-intents:$rootProject.ext.espressoVersion"
+
+  // Resolve conflicts between main and test APK:
+  androidTestCompile "com.android.support:support-annotations:$rootProject.ext.supportLibraryVersion"
+  androidTestCompile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+  androidTestCompile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+  androidTestCompile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+  androidTestCompile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+}
+
+repositories {
+  mavenCentral()
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.login.signup.SignUpActivity"
+    style="@style/CommonBase"
+    >
+
+  <include
+      layout="@layout/app_bar_main"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      />
+
+  <include layout="@layout/item_layout_header_title"/>
+
+  <include layout="@layout/item_layout_signup_name"/>
+  <include layout="@layout/separator_list"/>
+  <include layout="@layout/item_layout_signup_email"/>
+  <include layout="@layout/separator_list"/>
+  <include layout="@layout/item_layout_signup_password"/>
+  <include layout="@layout/separator_list"/>
+  <include layout="@layout/item_layout_signup_passwordrepeat"/>
+  <include layout="@layout/separator_list"/>
+  <include layout="@layout/item_layout_signup_privacity"/>
+
+  <com.beeva.corporate.Button
+      android:id="@+id/btnSignup"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/beeva.yellow"
+      android:text="@string/signup.label.signup"
+      android:textAllCaps="false"
+      android:textColor="@color/beeva.gray"
+      style="@style/Button"
+      />
+
+  <include layout="@layout/item_layout_signup_google"/>
+
+
+</LinearLayout>

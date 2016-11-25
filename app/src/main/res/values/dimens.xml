@@ -6,4 +6,20 @@
   <dimen name="activity_horizontal_margin">16dp</dimen>
   <dimen name="activity_vertical_margin">16dp</dimen>
   <dimen name="fab_margin">16dp</dimen>
+
+
+  <dimen name="height.header.titleBar">37dp</dimen>
+  <dimen name="space.deck.gridLayout">5dp</dimen>
+
+  <dimen name="height.item.settings">60dp</dimen>
+  <dimen name="padding.right.item.settings">24dp</dimen>
+  <dimen name="padding.left.item.settings">24dp</dimen>
+
+
+  <!-- Fonts -->
+  <dimen name="font.size.edittext.signup">16sp</dimen>
+
+  <!-- Fonts -->
+  <dimen name="dimen.edittext.signup.width">16sp</dimen>
+  <dimen name="share.distance.icons">25dp</dimen>
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+  <gradient
+      android:centerColor="@color/beeva.white.5opacity"
+      android:endColor="@color/beeva.black.5opacity"
+      android:startColor="@color/beeva.white.5opacity"
+      android:gradientRadius="500"
+      android:type="radial">
+
+  </gradient>
+
+</shape>

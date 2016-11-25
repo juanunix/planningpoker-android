@@ -1,0 +1,153 @@
+<resources>
+  <string name="app_name">Planning Poker</string>
+  <string name="url.beeva.website">https://www.beeva.com/</string>
+
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="action_settings">Settings</string>
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+  <!-- Common Strings -->
+  <string name="beeva">BEEVA</string>
+  <string name="planning">planning</string>
+  <string name="poker">poker</string>
+  <string name="planning_poker">planning poker</string>
+
+  <!-- Cards Strings -->
+  <string name="card.number.0">0</string>
+  <string name="card.number.1">1</string>
+  <string name="card.number.1half">1half</string>
+  <string name="card.number.2">2</string>
+  <string name="card.number.3">3</string>
+  <string name="card.number.5">5</string>
+  <string name="card.number.8">8</string>
+  <string name="card.number.13">13</string>
+  <string name="card.number.20">20</string>
+  <string name="card.number.40">40</string>
+  <string name="card.number.100">100</string>
+
+  <string name="card.sizes.xs">XS</string>
+  <string name="card.sizes.s">S</string>
+  <string name="card.sizes.m">M</string>
+  <string name="card.sizes.l">L</string>
+  <string name="card.sizes.xl">XL</string>
+
+  <string name="card.common.cup">cup</string>
+  <string name="card.common.question">question</string>
+  <string name="card.common.infinite">infinite</string>
+
+
+  <!-- NavDrawer -->
+  <string name="label.menu.play">Estimar</string>
+  <string name="label.menu.deckType">Deck Type</string>
+  <string name="label.menu.settings">Ajustes</string>
+  <string name="label.menu.how_to_play">Manual</string>
+  <string name="label.menu.log_out">Log out</string>
+  <string name="label.menu.share">Compartir</string>
+  <string name="label.menu.about_app">Acerca de</string>
+
+  <!-- Login -->
+  <string name="login.header.title">Login</string>
+  <string name="login.message.email">Email</string>
+  <string name="login.message.password">Password</string>
+  <string name="login.button.signin">Log in</string>
+
+  <!-- How to play -->
+  <string name="howtoplay.header.title">How to play</string>
+
+  <!-- Decks -->
+  <string name="decks.label.title"> Elige un tipo de baraja</string>
+  <string name="decks.label.numbers">Números</string>
+  <string name="decks.label.sizes">Tallas</string>
+
+  <!-- Settings -->
+  <string name="settings.header.title">@string/label.menu.settings</string>
+  <string name="settings.label.language">Idioma</string>
+  <string name="settings.label.language.spanish">ES</string>
+  <string name="settings.label.language.english">EN</string>
+  <string name="settings.label.keep_screen_on">Keep screen on</string>
+  <string name="settings.label.press_to_show">Pulsar para mostrar</string>
+  <string name="settings.label.shake_to_show">Agitar para mostrar</string>
+
+  <!-- Share -->
+  <string name="share.header.title">@string/label.menu.share</string>
+  <string name="label.share">¿Te ha gustado BEEVA PLANNING POKER? Compártelo con el mundo.</string>
+  <string name="label.share.message.twitter">BEEVA Planning Poker la app para estimar en proyectos agile de @beeva_es</string>
+  <string name="label.share.message.another">BEEVA Planning Poker la app para estimar en proyectos agile</string>
+  <string name="label.share.linkedin">LinkedIn</string>
+  <string name="label.share.facebook">Facebook</string>
+  <string name="label.share.twitter">Twitter</string>
+  <string name="label.share.google">GooglePlus</string>
+  <string name="label.share.mail">Mail</string>
+  <string name="label.share.whatsapp">WhatsApp</string>
+  <string name="packageName.share.linkedin">com.linkedin.android</string>
+  <string name="packageName.share.facebook">com.facebook.katana</string>
+  <string name="packageName.share.twitter">com.twitter.android</string>
+  <string name="packageName.share.google">com.google.android.apps.plus</string>
+  <string name="packageName.share.whatsapp">com.whatsapp</string>
+  <string name="packageName.share.gmail">com.google.android.gm</string>
+
+  <!-- Sign Up -->
+  <string name="signup.hint.name">Full name</string>
+  <string name="signup.hint.email">Email</string>
+  <string name="signup.hint.password">Password</string>
+  <string name="signup.hint.passwordrepeat">Repeat password</string>
+  <string name="signup.label.privacity">I have read and accept the privacy policy</string>
+  <string name="signup.label.signup">Sign up</string>
+  <string name="signup.label.google">I want to login in with Google</string>
+
+  <!-- Sign Up Errors-->
+  <string name="signup.error.emptyfield.name">Name field is empty</string>
+  <string name="signup.error.emptyfield.email">Email field is empty</string>
+  <string name="signup.error.emptyfield.password">Password field is empty</string>
+  <string name="signup.error.emptyfield.passwordrepeat">Password field is empty</string>
+
+  <string name="signup.error.notvalid.email">Your email is not valid</string>
+  <string name="signup.error.notmatch.passwords">Passwords don\'t match</string>
+  <string name="signup.error.notaccepted.policy">You have to accept privacy policy</string>
+
+
+  <!-- AboutApp -->
+  <string name="aboutapp.header.title">@string/label.menu.about_app</string>
+
+  <!-- Console Errors -->
+  <string name="error.missing.header">Missing header include</string>
+
+  <!-- Dummy Data-->
+  <string name="lorem.title.short">Lorem ipsum</string>
+  <string name="lorem.short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis arcu sed risus pulvinar, sed pellentesque magna molestie.</string>
+  <string name="lorem.long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis arcu sed risus pulvinar, sed pellentesque magna molestie. Mauris at ex dui. Aliquam congue ultricies metus sit amet ultrices. Nullam auctor, nunc in tempor pulvinar, augue leo efficitur lectus, ut mattis nisl tellus a nibh. Sed felis neque, porttitor sed viverra id, placerat sit amet erat. Aliquam pulvinar hendrerit dolor ut finibus. Nullam condimentum urna at dolor molestie, quis lobortis ante dictum.</string>
+
+  <!-- Corporate Font Strings -->
+  <string name="font.avenir.book">avenir_book.otf</string>
+  <string name="font.avenir.heavy">avenir_heavy.otf</string>
+  <string name="font.corporative.heavy">font_heavy.otf</string>
+  <string name="font.corporative.regular">font_regular.otf</string>
+
+  <!-- Dialogs -->
+  <string name="dialog.title.card.picked">¿Estás seguro de que\nquieres elegir esta carta?</string>
+
+  <!-- Toast -->
+  <string name="toast.error.message.application_not_installed">Application not installed</string>
+
+  <!-- About Beeva -->
+  <string name="info.about.beeva"><b>SOBRE BEEVA</b>\n\nSomos una compañía tecnológica y de innovación que tiene como misión ayudar a las empresas en su transformación digital y aportar valor en el momento emergente de las tecnologías. No queremos ser una compañía IT más, así que cuando la tecnología se convierte en commodity, nosotros buscamos nuevos retos.\n\n
+    Nuestro core se centra en cloud computing, big data y machine intelligence. Damos mucha importancia a la innovación, tanta que creamos nuestro propia área de innovación en 2012 y desde entonces lo consideramos una filosofía transversal a la compañía y una forma de entender la tecnología y nuestro trabajo.\n\n\n
+    <b>METODOLOGÍAS ÁGILES</b>\n\nEn BEEVA formamos a nuestros equipos y comenzamos a implantar metodologías ágiles desde 2012, implicando a nuestros clientes en todos los pasos del proyecto, minimizando el impacto de los cambios, reduciendo costes y los tiempos de desarrollo.</string>
+
+  <!-- User's guide -->
+  <string name="info.userguide">1. El Product Owner elige el tipo de baraja (números o tallas).\n\n
+    2. El Product Owner lee el ítem a estimar, resuelve dudas y se discute a alto nivel.\n\n
+    3. Cada participante selecciona una carta con su estimación y la oculta pulsando sobre ella o agitando su dispositivo móvil.\n\n
+    4. Una vez todos han ocultado sus cartas se dan la vuelta al mismo tiempo.\n\n
+    5. Si las estimaciones no coinciden, se discute preguntando a los que han estimado valores extremos.\n\n
+    6. Repetimos los pasos 3 a 5 hasta llegar a un acuerdo de estimación.\n\n
+    7. Volvemos al paso 2 con el siguiente ítem.\n\n\n
+    <b>CONSEJOS</b>\n\n
+    Cero (0) para cosas hechas.\n
+    Infinito (∞) para cosas imposibles.\n
+    Interrogación (?) si no tienes ni idea.\n
+    El Product Owner no estima.
+  </string>
+</resources>

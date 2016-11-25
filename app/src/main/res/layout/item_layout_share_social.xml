@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnTwitter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/share.distance.icons"
+        android:drawableTop="@drawable/selector_share_ic_twitter"
+        android:text="@string/label.share.twitter"
+        style="@style/Button.Share"
+        />
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnFacebook"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/selector_share_ic_facebook"
+        android:text="@string/label.share.facebook"
+        style="@style/Button.Share"
+        />
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnLinkedIn"
+        android:layout_width="0dp"
+        android:layout_marginRight="@dimen/share.distance.icons"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/selector_share_ic_linkedin"
+        android:text="@string/label.share.linkedin"
+        style="@style/Button.Share"
+        />
+  </LinearLayout>
+
+  <Space
+      android:layout_width="wrap_content"
+      android:layout_height="25dp"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/share.distance.icons"
+        android:drawableTop="@drawable/selector_share_ic_googleplus"
+        android:text="@string/label.share.google"
+        style="@style/Button.Share"
+        />
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnMail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/selector_share_ic_mail"
+        android:text="@string/label.share.mail"
+        style="@style/Button.Share"
+        />
+
+    <com.beeva.corporate.Button
+        android:id="@+id/btnWhatsapp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/share.distance.icons"
+        android:drawableTop="@drawable/selector_share_ic_whatsapp"
+        android:text="@string/label.share.whatsapp"
+        style="@style/Button.Share"
+        />
+
+  </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.beeva.planningpoker.ui.decks.views.DecksTypeFragment"
+    style="@style/CommonBase"
+    >
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:orientation="vertical"
+      >
+
+    <com.beeva.corporate.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:gravity="center"
+        android:text="@string/decks.label.title"
+        android:textSize="16sp"
+        style="@style/TextView"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+      <com.beeva.corporate.Button
+          android:id="@+id/btnNumbers"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          android:drawablePadding="12dp"
+          android:drawableTop="@drawable/selector_choose_deck_ic_numbers"
+          android:text="@string/decks.label.numbers"
+          android:textAllCaps="false"
+          android:textSize="16sp"
+          style="@style/Button"
+          />
+
+      <Space
+          android:layout_width="20dp"
+          android:layout_height="wrap_content"
+          />
+
+      <com.beeva.corporate.Button
+          android:id="@+id/btnSizes"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          android:drawablePadding="12dp"
+          android:drawableTop="@drawable/selector_choose_deck_ic_sizes"
+          android:text="@string/decks.label.sizes"
+          android:textAllCaps="false"
+          android:textSize="16sp"
+          style="@style/Button"
+          />
+    </LinearLayout>
+
+  </LinearLayout>
+
+</RelativeLayout>
