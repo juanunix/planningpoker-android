@@ -62,13 +62,15 @@ public class SharePresenter extends Presenter<SharePresenter.View> {
 
     switch (shareEnum) {
       case TWITTER:
-        return resources.getString(R.string.label_share_message_twitter);
+        return String.format("%s - %s", resources.getString(R.string.label_share_message_twitter),
+            resources.getString(R.string.url_play_store));
       case LINKEDIN:
       case FACEBOOK:
       case GOOGLE:
       case MAIL:
       case WHATSAPP:
-        return resources.getString(R.string.label_share_message_another);
+        return String.format("%s - %s", resources.getString(R.string.label_share_message_another),
+            resources.getString(R.string.url_play_store));
     }
     return null;
   }
