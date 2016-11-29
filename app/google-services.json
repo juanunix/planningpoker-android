@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "699175781445",
+    "project_id": "beeva-planning-poker"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699175781445:android:d1009b1ec028e38b",
+        "android_client_info": {
+          "package_name": "com.beeva.planningpoker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjAd313sSF91grt0v0NI86nxCmGmEh9Yw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-49789516-7"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

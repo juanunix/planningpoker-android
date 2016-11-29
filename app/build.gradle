@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'android-apt'
 apply plugin: 'kotlin-android-extensions'
 
-
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion rootProject.ext.buildToolsVersion
@@ -37,6 +36,7 @@ dependencies {
   compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
   compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
   compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+  compile "com.google.android.gms:play-services-analytics:$rootProject.ext.googleServicesVersion"
 
   compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
   kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
@@ -68,6 +68,9 @@ dependencies {
   androidTestCompile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
 }
 
+
 repositories {
   mavenCentral()
 }
+
+apply plugin: 'com.google.gms.google-services'
