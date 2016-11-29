@@ -67,7 +67,7 @@
   <string name="login.button.signin">Log in</string>
 
   <!-- How to play -->
-  <string name="howtoplay.header.title">How to play</string>
+  <string name="howtoplay.header.title">Manual</string>
 
   <!-- Decks -->
   <string name="decks.label.title"> Elige un tipo de baraja</string>
