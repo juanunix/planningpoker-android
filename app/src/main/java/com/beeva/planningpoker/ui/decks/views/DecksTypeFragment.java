@@ -54,10 +54,14 @@ public class DecksTypeFragment extends BaseFragment {
   }
 
   @OnClick(R.id.btnNumbers) public void onClickBtnNumbers() {
+    sendEventAnalytics(getResources().getString(R.string.analytics_category_use),
+        getResources().getString(R.string.analytics_category_use_consume_numbers));
     navigateToDeckActivity(DeckEnum.NUMBERS);
   }
 
   @OnClick(R.id.btnSizes) public void onClickBtnSizes() {
+    sendEventAnalytics(getResources().getString(R.string.analytics_category_use),
+        getResources().getString(R.string.analytics_category_use_consume_sizes));
     navigateToDeckActivity(DeckEnum.SIZES);
   }
 

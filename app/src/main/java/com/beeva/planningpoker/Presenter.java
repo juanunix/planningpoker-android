@@ -25,5 +25,7 @@ public class Presenter<T extends Presenter.View> {
     void hideLoading();
 
     void showToast(int resourceMessage);
+
+    void sendEventAnalytics(String category, String action);
   }
 }
