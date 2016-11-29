@@ -87,4 +87,5 @@ public class ShareFragment extends BaseFragment implements SharePresenter.View {
 
     startActivity(intent);
   }
+
 }

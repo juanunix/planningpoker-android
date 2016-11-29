@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'android-apt'
 apply plugin: 'kotlin-android-extensions'
 
-
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion rootProject.ext.buildToolsVersion
@@ -37,22 +36,23 @@ dependencies {
   compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
   compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
   compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+  compile "com.google.android.gms:play-services-analytics:$rootProject.ext.googleServicesVersion"
 
   compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
   kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
 
-  compile "com.google.firebase:firebase-core:$rootProject.ext.firebaseVersion"
-  compile "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
-  compile "com.google.firebase:firebase-database:$rootProject.ext.firebaseVersion"
-  compile "com.google.firebase:firebase-crash:$rootProject.ext.firebaseVersion"
+//  compile "com.google.firebase:firebase-core:$rootProject.ext.firebaseVersion"
+//  compile "com.google.firebase:firebase-auth:$rootProject.ext.firebaseVersion"
+//  compile "com.google.firebase:firebase-database:$rootProject.ext.firebaseVersion"
+//  compile "com.google.firebase:firebase-crash:$rootProject.ext.firebaseVersion"
 
   kapt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
   compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
   provided "org.glassfish:javax.annotation:10.0-b28"
 
-  compile "org.greenrobot:eventbus:$rootProject.ext.eventBusVersion"
-  compile "de.hdodenhof:circleimageview:$rootProject.ext.circleImageViewVersion"
-  compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+//  compile "org.greenrobot:eventbus:$rootProject.ext.eventBusVersion"
+//  compile "de.hdodenhof:circleimageview:$rootProject.ext.circleImageViewVersion"
+//  compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
   compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
   // Espresso UI Testing
@@ -68,6 +68,9 @@ dependencies {
   androidTestCompile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
 }
 
+
 repositories {
   mavenCentral()
 }
+
+apply plugin: 'com.google.gms.google-services'

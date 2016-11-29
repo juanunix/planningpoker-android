@@ -64,6 +64,8 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
       }
 
       public void onFinish() {
+        sendEventAnalytics(getResources().getString(R.string.analytics_category_use),
+            getResources().getString(R.string.analytics_category_use_consume));
         navigateToMainActivity();
       }
     }.start();
@@ -80,5 +82,9 @@ public class SplashActivity extends BaseActivity implements SplashPresenter.View
   @Override public void navigateToMainActivity() {
     Intent intent = new Intent(this, MainActivity.class);
     startActivity(intent);
+  }
+
+  @Override public void sendEventAnalytics(String category, String action) {
+    super.sendEventAnalytics(category, action);
   }
 }

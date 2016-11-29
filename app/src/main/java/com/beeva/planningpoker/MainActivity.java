@@ -19,7 +19,6 @@ import com.beeva.planningpoker.ui.MainPresenter;
 import com.beeva.planningpoker.ui.decks.views.DecksTypeFragment;
 import com.beeva.planningpoker.ui.login.login.DrawerPresenter;
 import com.beeva.planningpoker.utils.BundleConstants;
-
 import javax.inject.Inject;
 
 public class MainActivity extends BaseActivity
@@ -45,6 +44,7 @@ public class MainActivity extends BaseActivity
     super.onRestart();
     setFragment(fragment);
     mainPresenter.onResume(getIntent());
+
     //We need remove Settings Extra, because if we force to reload view extra persists
     getIntent().removeExtra(BundleConstants.SETTINGS_FRAGMENT);
   }
@@ -123,6 +123,8 @@ public class MainActivity extends BaseActivity
 
   @Override public void putDefaultFragment() {
     this.fragment = DecksTypeFragment.newInstance();
+    sendEventAnalytics(getResources().getString(R.string.analytics_category_visits),
+        getResources().getString(R.string.analytics_category_visits_estimate));
   }
 
   @Override public void clearMenu() {
@@ -136,7 +138,7 @@ public class MainActivity extends BaseActivity
     drawerPresenter.onNavigationItemSelected(R.id.nav_settings);
   }
 
-  @OnClick(R.id.ibBeevaLogo) public void onClickLogoBeeva(){
+  @OnClick(R.id.ibBeevaLogo) public void onClickLogoBeeva() {
     BrowserManager.openBeevaWebsite(this);
   }
 }

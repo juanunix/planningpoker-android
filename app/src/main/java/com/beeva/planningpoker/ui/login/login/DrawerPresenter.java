@@ -2,6 +2,7 @@ package com.beeva.planningpoker.ui.login.login;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.support.design.widget.NavigationView;
 import android.text.Spannable;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import com.beeva.planningpoker.Presenter;
 import com.beeva.planningpoker.R;
+import com.beeva.planningpoker.application.PlanningPokerAplication;
 import com.beeva.planningpoker.ui.aboutApp.AboutAppFragment;
 import com.beeva.planningpoker.ui.decks.views.DecksTypeFragment;
 import com.beeva.planningpoker.ui.howToPlay.HowToPlayFragment;
@@ -42,22 +44,29 @@ public class DrawerPresenter extends Presenter<DrawerPresenter.View> {
 
   public void onNavigationItemSelected(int itemId) {
     Fragment fragment;
+    Resources resources = PlanningPokerAplication.getContext().getResources();
+    String categoryAnalytics = resources.getString(R.string.analytics_category_visits);
 
     switch (itemId) {
       case R.id.nav_play:
         fragment = DecksTypeFragment.newInstance();
+        view.sendEventAnalytics(categoryAnalytics, resources.getString(R.string.analytics_category_visits_estimate));
         break;
       case R.id.nav_settings:
         fragment = SettingsFragment.newInstance();
+        view.sendEventAnalytics(categoryAnalytics, resources.getString(R.string.analytics_category_visits_settings));
         break;
       case R.id.nav_howToPlay:
         fragment = HowToPlayFragment.newInstance();
+        view.sendEventAnalytics(categoryAnalytics, resources.getString(R.string.analytics_category_visits_usersguide));
         break;
       case R.id.nav_share:
         fragment = ShareFragment.newInstance();
+        view.sendEventAnalytics(categoryAnalytics, resources.getString(R.string.analytics_category_visits_share));
         break;
       case R.id.nav_aboutApp:
         fragment = AboutAppFragment.newInstance();
+        view.sendEventAnalytics(categoryAnalytics, resources.getString(R.string.analytics_category_visits_about));
         break;
       default:
         fragment = LoginFragment.newInstance();
