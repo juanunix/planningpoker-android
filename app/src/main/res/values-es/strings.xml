@@ -6,7 +6,20 @@
   <string name="navigation_drawer_close">Close navigation drawer</string>
   <string name="action_settings">Settings</string>
   <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="url.play.store">https://play.google.com/store/apps/details?id=com.beeva.planningpoker</string>
 
+  <!-- Analytics Strings -->
+  <string name="analytics.category.use">Uso</string>
+  <string name="analytics.category.use.consume">Consumo</string>
+  <string name="analytics.category.use.consume.numbers">Elegir - Números</string>
+  <string name="analytics.category.use.consume.sizes">Elegir - Tallas</string>
+
+  <string name="analytics.category.visits">Visitas</string>
+  <string name="analytics.category.visits.estimate">Estimar</string>
+  <string name="analytics.category.visits.settings">Ajustes</string>
+  <string name="analytics.category.visits.usersguide">Manual</string>
+  <string name="analytics.category.visits.share">Compartir</string>
+  <string name="analytics.category.visits.about">Acerca de</string>
 
   <!-- Common Strings -->
   <string name="beeva">BEEVA</string>

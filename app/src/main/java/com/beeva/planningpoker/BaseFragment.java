@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.beeva.planningpoker.application.PlanningPokerAplication;
 import com.beeva.planningpoker.di.MainComponent;
+import com.beeva.planningpoker.manager.TrackerManager;
 import com.beeva.planningpoker.utils.DialogsUtils;
 
 /**
@@ -61,10 +62,15 @@ public abstract class BaseFragment extends Fragment implements Presenter.View {
     DialogsUtils.showToast(getActivity(), resourceMessage);
   }
 
+  @Override public void sendEventAnalytics(String category, String action) {
+    TrackerManager.sendEvent(getActivity(), category, action);
+  }
+
   //Abstract Classes
   protected abstract void initializePresenter();
 
   protected abstract void initializeDagger(MainComponent mainComponent);
 
   protected abstract void unbindButterknife();
+
 }
